@@ -1,10 +1,26 @@
 ﻿@page "/"
 
 <div class="container">
-    <div class="login-form bg-white">
-        <EditForm Model="Model" class="max-size ">
-            
-        </EditForm>
+    <div class="flex-centered gap-3 max-size">
+        <div class="form-container">
+            <EditForm Model="Model" class="login-form">
+                <div class="input-container">
+                    <label for="identifier">Email or Username:</label>
+                    <InputText id="identifier" @bind-Value="Model.LoginIdentifier" class="form-control" />
+                </div>
+
+
+                <div class="input-container">
+                    <label for="password">Password:</label>
+                    <InputText id="password" @bind-Value="Model.Password" class="form-control" />
+                </div>
+            </EditForm>
+            <div class="button-container flex-centered flex-column">
+                <p>By creating an account, you agree to the <a>Terms of use</a> and <a>Privacy Policy.</a></p>
+                <button class="button">Sign in</button>
+            </div>
+        </div>
+
     </div>
 
 </div>
