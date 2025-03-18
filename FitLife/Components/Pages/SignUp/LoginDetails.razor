@@ -1,0 +1,20 @@
+﻿@layout Layout.SignUpLayout
+@page "/signup/login-details"
+
+<div class="form-container">
+    <EditForm Model="Model" FormName="CredentialSignUpForm">
+        <DataAnnotationsValidator />
+
+        <label for="login-identifier">What’s your email?</label>
+        <InputText id="login-identifier" class="form-control" @bind-Value="Model!.LoginIdentifier" />
+
+        <label for="password">What’s your password?</label>
+        <InputText id="password" class="form-control" @bind-Value="Model!.Password" />
+
+        <button type="submit">Next</button>
+    </EditForm>
+</div>
+
+@code {
+
+}

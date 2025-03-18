@@ -1,0 +1,99 @@
+﻿.container {
+	width: 100%;
+	height: 100vh;
+	background-image: url('/images/signup/signup-background.jpg');
+	background-size: contain;
+	background-position: 117%;
+	background-color: #D8404061;
+	background-blend-mode: overlay;
+	display: grid;
+	grid-template-columns: 1fr 20%;
+
+	position: relative;
+}
+
+.white-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+
+	background-color: white;
+}
+
+.form-container {
+	height: 66%;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.header-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+	.header-container > * {
+		margin: 0;
+		padding: 0;
+	}
+
+	.header-container > h3 {
+		font-family: "Poppins", sans-serif;
+		font-size: 2rem;
+		font-weight: 500;
+	}
+
+	.header-container > p {
+		font-family: "Poppins", sans-serif;
+		font-size: 1rem;
+		font-weight: 400;
+	}
+
+.step-container {
+	display: grid;
+	grid-template-columns: auto 1fr auto 1fr auto;
+	grid-column-gap: 1rem;
+	justify-items: center;
+	width: 60%;
+	margin-bottom: 2rem;
+}
+
+
+.step-description-container {
+	position: absolute;
+	left: 50%;
+	top: 100%;
+	width: auto;
+	white-space: nowrap;
+	color: black;
+	transform: translateX(-50%);
+}
+
+.numbered-step-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: black;
+	width: 2rem;
+	height: 2rem;
+	color: white;
+	border-radius: 100%;
+	position: relative;
+}
+
+.horizontal-line {
+	width: 100%;
+	height: 0.1rem;
+	border-top: solid 1px black;
+}
+
+
+::deep a {
+	text-decoration: underline;;
+	color: #111111;
+	
+}
