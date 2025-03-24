@@ -1,9 +1,20 @@
 using FitLife.Components;
+using FitLife.Data;
+using FitLife.Models.State;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
+var connString = builder.Configuration.GetConnectionString("DefaultConnection");
+
 // Add services to the container.
-builder.Services.AddRazorComponents();
+builder.Services.AddRazorComponents().AddInteractiveServerComponents();
+
+builder.Services.AddScoped<UserSignUpState>();
+
+builder.Services.AddDbContext<DatabaseContext>(
+    options => options.UseSqlServer(connString).EnableSensitiveDataLogging()
+    );
 
 var app = builder.Build();
 
@@ -21,6 +32,7 @@ app.UseHttpsRedirection();
 app.UseAntiforgery();
 
 app.MapStaticAssets();
-app.MapRazorComponents<App>();
+app.MapRazorComponents<App>().AddInteractiveServerRenderMode();
+
 
 app.Run();
