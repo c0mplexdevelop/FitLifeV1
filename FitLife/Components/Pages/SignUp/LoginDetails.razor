@@ -1,20 +1,33 @@
 ﻿@layout Layout.SignUpLayout
 @page "/signup/login-details"
 
+@rendermode InteractiveServer
+
+
 <div class="form-container">
-    <EditForm Model="Model" FormName="CredentialSignUpForm">
-        <DataAnnotationsValidator />
+    <EditForm Model="@State.UserSignUpCredential" FormName="CredentialSignUpForm" OnValidSubmit="HandleValidSubmit" OnInvalidSubmit="HandleInvalidSubmit">
+        @* <DataAnnotationsValidator />
+        <ValidationSummary /> *@
 
-        <label for="login-identifier">What’s your email?</label>
-        <InputText id="login-identifier" class="form-control" @bind-Value="Model!.LoginIdentifier" />
+        <div class="flex-container">
 
-        <label for="password">What’s your password?</label>
-        <InputText id="password" class="form-control" @bind-Value="Model!.Password" />
+            <div>
+                <label for="email">What’s your email?</label>
+                <InputText id="email" class="form-control" placeholder="Enter your email.." @bind-Value="State!.UserSignUpCredential.Email" />
+            </div>
+
+            <div>
+                <label for="username">What's your username?'</label>
+                <InputText id="username" class="form-control" placeholder="Enter your username.." @bind-Value="State!.UserSignUpCredential.Username" />
+            </div>
+        </div>
+
+        <div>
+            <label for="password">What’s your password?</label>
+            <InputText id="password" type="password" class="form-control" placeholder="Enter your password.." @bind-Value="State!.UserSignUpCredential.Password" />
+        </div>
+
 
         <button type="submit">Next</button>
     </EditForm>
 </div>
-
-@code {
-
-}

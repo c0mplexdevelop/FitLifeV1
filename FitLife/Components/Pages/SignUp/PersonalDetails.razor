@@ -1,0 +1,59 @@
+﻿@layout Layout.SignUpLayout
+@page "/signup/personal-details"
+@using FitLife.Models.User.Enum
+@rendermode InteractiveServer
+
+
+<PageTitle>Personal Details</PageTitle>
+
+<div class="form-container">
+    <p>Provide essential details that will help us create a personalized experiece for you. <span>All required fields are denoted with a *</span>.</p>
+
+    <EditForm Model="State">
+        <div class="flex-container">
+            <div>
+                <label for="first-name">First Name:</label>
+                <InputText type="text" id="first-name" @bind-Value="State!.UserSignUpInformation.FirstName"></InputText>
+            </div>
+
+
+            <div>
+                <label for="middle-name">Middle Name:</label>
+                <InputText type="text" id="middle-name" @bind-Value="State!.UserSignUpInformation.MiddleName"></InputText>
+            </div>
+        </div>
+
+        <div class="flex-container">
+            <div>
+                <label for="last-name">Last Name:</label>
+                <InputText type="text" id="last-name" @bind-Value="State!.UserSignUpInformation.LastName"></InputText>
+            </div>
+            @* <div>
+                <label for="What's your Gender?'"></label>
+                <InputText></InputText>
+            </div> *@
+            <fieldset class="flex-container radio-container">
+                <legend>What is your Sex?</legend>
+                <InputRadioGroup @bind-Value="State.UserSignUpInformation.Sex">
+                    @foreach(var gender in Enum.GetValues<Sex>()) 
+                    {
+                        <label>
+                            <InputRadio Value="gender" /> @gender.ToString()
+                        </label>
+                        
+                    }
+                </InputRadioGroup>
+            </fieldset>
+        </div>
+
+        <div class="flex-container">
+            <label for="date-of-birth">What's your date of birth?'</label>
+            <div id="date-of-birth">
+                
+            </div>
+        </div>
+
+        <button type="submit">Next</button>
+    </EditForm>
+</div>
+
