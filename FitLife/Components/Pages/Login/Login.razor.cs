@@ -6,6 +6,6 @@ using FitLife.Models.User;
 
 public partial class Login
 {
-    private UserCredential Model = new();
+    private UserLoginCredential Model = new();
 }
 
