@@ -1,41 +1,45 @@
 ﻿using FitLife.Data.Repository.Interface;
 using FitLife.Models.User;
+using Microsoft.AspNetCore.Identity;
 using System.Text.RegularExpressions;
 
 namespace FitLife.Auth;
 
 public class AuthService
 {
-    private readonly IUserRepository _userRepository;
-    public AuthService(IUserRepository userRepository)
+
+    private readonly UserManager<User> _userManager;
+    private readonly SignInManager<User> _signInManager;
+
+    public AuthService(UserManager<User> userManager, SignInManager<User> signInManager)
     {
-        _userRepository = userRepository;
+        _userManager = userManager;
+        _signInManager = signInManager;
     }
 
-    public async Task<User?> LoginAsyncUsingUsername(string username, string password)
+    public async Task<SignInResult> SignInUser(UserLoginCredential userLoginCredential)
     {
-        var user = await _userRepository.GetAllAsync();
-        return user.FirstOrDefault(x => x.Username == username && x.Password == password);
-    }
-
-    public async Task<User?> LoginAsyncUsingEmail(string email, string password)
-    {
-        var user = await _userRepository.GetAllAsync();
-        return user.FirstOrDefault(x => x.Email == email && x.Password == password);
-    }
-
-    public async Task<User?> LoginAsync(UserLoginCredential userLoginCredential)
-    {
-        if(IsIdentifierEmailFormat(userLoginCredential.LoginIdentifier))
+        User? _applicationUser;
+        if (IsIdentifierEmailFormat(userLoginCredential.LoginIdentifier))
         {
-            return await LoginAsyncUsingEmail(userLoginCredential.LoginIdentifier, userLoginCredential.Password);
+            _applicationUser = await _userManager.FindByEmailAsync(userLoginCredential.LoginIdentifier);
         }
-        return await LoginAsyncUsingUsername(userLoginCredential.LoginIdentifier, userLoginCredential.Password);
+        else
+        {
+            _applicationUser = await _userManager.FindByNameAsync(userLoginCredential.LoginIdentifier);
+        }
+
+        if (_applicationUser == null)
+        {
+            return SignInResult.Failed;
+        }
+
+        return await _signInManager.PasswordSignInAsync(_applicationUser, userLoginCredential.Password, isPersistent : true, false);
     }
 
-    private bool IsIdentifierEmailFormat(string identifier)
+    public static bool IsIdentifierEmailFormat(string identifier)
     {
-        var emailRegex = new Regex(@"^[A-Za-z0-9!@#$%^&*()|{}~^_\-+=]+@[A-Za-z0-9-]+(?:\.[a-zA-Z0-9-]+)*");
+        var emailRegex = new Regex(@"^[A-Za-z0-9!@#$%^&*()|{}~^_\-+=.]+@[A-Za-z0-9-]+(\.[a-zA-Z0-9-]+)");
         return emailRegex.IsMatch(identifier);
     }
 }

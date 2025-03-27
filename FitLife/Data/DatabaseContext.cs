@@ -1,36 +1,50 @@
 ﻿using FitLife.Models.User;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity;
 
 namespace FitLife.Data;
 
-public class DatabaseContext : DbContext
+public class DatabaseContext(DbContextOptions<DatabaseContext> options) : IdentityDbContext<User, IdentityRole<int>, int>(options)
 {
-    public DbSet<User> Users { get; set; }
+    public DbSet<User> Accounts { get; set; }
 
-    public DatabaseContext(DbContextOptions<DatabaseContext> options) : base(options)
+    protected override void OnModelCreating(ModelBuilder builder)
     {
+        builder.Entity<User>().ToTable("Users");
+        base.OnModelCreating(builder);
     }
 
-    protected override void OnModelCreating(ModelBuilder modelBuilder)
+    public void SeedDataAsync()
     {
-        modelBuilder.Entity<User>().HasData(
-            [
-                new()
-                {
-                    Id = -1,
-                    Email = "test@test.com",
-                    FirstName = "John",
-                    MiddleName = null,
-                    LastName = "Doe",
-                    Sex = Models.User.Enum.Sex.Male,
-                    DateOfBirth = DateOnly.MinValue,
-                    Username = "John Doe",
-                    Password = "Test!23"
-                }
-            ]
-        );
 
-        base.OnModelCreating(modelBuilder);
+        User user = new()
+        {
+            Id = -1,
+            Email = "test@test.com",
+            NormalizedEmail = "test@test.com".ToUpper(),
+            FirstName = "John",
+            MiddleName = null,
+            LastName = "Doe",
+            Sex = FitLife.Models.User.Enum.Sex.Male,
+            DateOfBirth = DateOnly.MinValue,
+            UserName = "John Doe"
+        };
+        user.PasswordHash = new PasswordHasher<User>().HashPassword(user, "Test!23");
+        Set<User>().Add(user);
+
+        Database.OpenConnection();
+        try
+        {
+            Database.ExecuteSqlRaw("SET IDENTITY_INSERT [dbo].[AspNetUsers] ON");
+            SaveChanges();
+            Database.ExecuteSqlRaw("SET IDENTITY_INSERT [dbo].[AspNetUsers] OFF");
+        }
+        finally
+        {
+            Database.CloseConnection();
+        }
+
 
     }
 }
