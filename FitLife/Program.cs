@@ -15,7 +15,34 @@ builder.Services.AddRazorComponents().AddInteractiveServerComponents();
 builder.Services.AddScoped<UserSignUpState>();
 
 builder.Services.AddDbContext<DatabaseContext>(
-    options => options.UseSqlServer(connString).EnableSensitiveDataLogging()
+    options => options.UseSqlServer(connString)
+    //.UseSeeding((context, _) =>
+    //{
+    //    var testUser = context.Set<User>().FirstOrDefault();
+    //    if (testUser == null)
+    //    {
+    //        context.Database.ExecuteSqlRaw("SET IDENTITY_INSERT [dbo].[AspNetUsers] ON");
+    //        User user = new()
+    //        {
+    //            Id = -1,
+    //            Email = "test@test.com",
+    //            NormalizedEmail = "test@test.com".ToUpper(),
+    //            FirstName = "John",
+    //            MiddleName = null,
+    //            LastName = "Doe",
+    //            Sex = FitLife.Models.User.Enum.Sex.Male,
+    //            DateOfBirth = DateOnly.MinValue,
+    //            UserName = "John Doe"
+    //        };
+    //        user.PasswordHash = new PasswordHasher<User>().HashPassword(user, "Test!23");
+    //        context.Set<User>().Add(user);
+    //        context.Database.ExecuteSqlRaw("SET IDENTITY_INSERT [dbo].[AspNetUsers] OFF");
+
+    //        context.SaveChanges();
+    //    }
+
+    //})
+    .EnableSensitiveDataLogging()
     );
 
 builder.Services.AddIdentity<User, IdentityRole<int>>(options =>
@@ -49,6 +76,10 @@ app.UseAntiforgery();
 
 app.MapStaticAssets();
 app.MapRazorComponents<App>().AddInteractiveServerRenderMode();
+
+using var scope = app.Services.CreateScope();
+var context = scope.ServiceProvider.GetRequiredService<DatabaseContext>();
+context.SeedDataAsync();
 
 
 app.Run();

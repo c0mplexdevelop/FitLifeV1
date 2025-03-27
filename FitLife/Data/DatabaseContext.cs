@@ -7,8 +7,17 @@ namespace FitLife.Data;
 
 public class DatabaseContext(DbContextOptions<DatabaseContext> options) : IdentityDbContext<User, IdentityRole<int>, int>(options)
 {
-    protected override void OnModelCreating(ModelBuilder modelBuilder)
+    public DbSet<User> Accounts { get; set; }
+
+    protected override void OnModelCreating(ModelBuilder builder)
     {
+        builder.Entity<User>().ToTable("Users");
+        base.OnModelCreating(builder);
+    }
+
+    public void SeedDataAsync()
+    {
+
         User user = new()
         {
             Id = -1,
@@ -17,14 +26,25 @@ public class DatabaseContext(DbContextOptions<DatabaseContext> options) : Identi
             FirstName = "John",
             MiddleName = null,
             LastName = "Doe",
-            Sex = Models.User.Enum.Sex.Male,
+            Sex = FitLife.Models.User.Enum.Sex.Male,
             DateOfBirth = DateOnly.MinValue,
-            Username = "John Doe"
+            UserName = "John Doe"
         };
         user.PasswordHash = new PasswordHasher<User>().HashPassword(user, "Test!23");
-        modelBuilder.Entity<User>().HasData(user);
+        Set<User>().Add(user);
 
-        base.OnModelCreating(modelBuilder);
+        Database.OpenConnection();
+        try
+        {
+            Database.ExecuteSqlRaw("SET IDENTITY_INSERT [dbo].[AspNetUsers] ON");
+            SaveChanges();
+            Database.ExecuteSqlRaw("SET IDENTITY_INSERT [dbo].[AspNetUsers] OFF");
+        }
+        finally
+        {
+            Database.CloseConnection();
+        }
+
 
     }
 }
