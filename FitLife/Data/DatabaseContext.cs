@@ -32,7 +32,8 @@ public class DatabaseContext(DbContextOptions<DatabaseContext> options) : Identi
             LastName = "Doe",
             Sex = FitLife.Models.User.Enum.Sex.Male,
             DateOfBirth = DateOnly.MinValue,
-            UserName = "John Doe"
+            UserName = "JohnDoe",
+            SecurityStamp = Guid.NewGuid().ToString()
         };
         user.PasswordHash = new PasswordHasher<User>().HashPassword(user, "Test!23");
         Set<User>().Add(user);
