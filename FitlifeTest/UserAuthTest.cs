@@ -24,5 +24,16 @@ public class UserAuthTest
         Assert.True(result);
     }
 
+    [Fact]
+    public void IsIdentifierEmailFormat_Returns_False_WithInvalidEmail()
+    {
+        // Arrange
+        var testEmail = "test@test";
+        // Act
+        var result = AuthService.IsIdentifierEmailFormat(testEmail);
+        // Assert
+        Assert.False(result);
+    }
+
     
 }

@@ -21,7 +21,7 @@ public class DatabaseTest
         LastName = "Doe",
         Sex = Sex.Male,
         DateOfBirth = DateOnly.MinValue,
-        Username = "John Doe"
+        UserName = "John Doe"
     };
 
     private User ReturnExpectedUserWithHashedPassword()
