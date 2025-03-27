@@ -28,7 +28,7 @@ public class User : IdentityUser<int>
     [Required]
     [StringLength(16, MinimumLength = 6)]
     [ProtectedPersonalData]
-    public string Username { get; set; } = null!;
+    public override string? UserName { get; set; } = null!;
 
     // Apparently we dont need to do this anymore.. Identity  Handles it
 
