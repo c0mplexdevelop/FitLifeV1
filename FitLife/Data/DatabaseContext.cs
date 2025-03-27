@@ -17,8 +17,12 @@ public class DatabaseContext(DbContextOptions<DatabaseContext> options) : Identi
 
     public void SeedDataAsync()
     {
-
-        User user = new()
+        User? user = Set<User>().Find(-1);
+        if (user != null)
+        {
+            return;
+        }
+        user = new()
         {
             Id = -1,
             Email = "test@test.com",
