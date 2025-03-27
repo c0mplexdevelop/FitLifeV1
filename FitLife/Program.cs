@@ -4,15 +4,20 @@ using FitLife.Models.State;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity;
 using FitLife.Models.User;
+using FitLife.Auth;
 
 var builder = WebApplication.CreateBuilder(args);
 
 var connString = builder.Configuration.GetConnectionString("DefaultConnection");
 
+builder.Logging.ClearProviders();
+builder.Logging.AddConsole();
+
 // Add services to the container.
 builder.Services.AddRazorComponents().AddInteractiveServerComponents();
 
 builder.Services.AddScoped<UserSignUpState>();
+builder.Services.AddScoped<AuthService>();
 
 builder.Services.AddDbContext<DatabaseContext>(
     options => options.UseSqlServer(connString)
@@ -45,6 +50,15 @@ builder.Services.AddDbContext<DatabaseContext>(
     .EnableSensitiveDataLogging()
     );
 
+
+
+builder.Services.AddAuthentication(options =>
+{
+    options.DefaultScheme = "Cookies";
+
+})
+    .AddCookie("Cookies");
+
 builder.Services.AddIdentity<User, IdentityRole<int>>(options =>
 {
     options.Password.RequireDigit = true;
@@ -56,6 +70,14 @@ builder.Services.AddIdentity<User, IdentityRole<int>>(options =>
 })
     .AddEntityFrameworkStores<DatabaseContext>()
     .AddDefaultTokenProviders();
+
+builder.Services.ConfigureApplicationCookie(options =>
+{
+    // Set your custom login path here
+    options.LoginPath = "/login";
+    options.ReturnUrlParameter = "/login";
+    options.AccessDeniedPath = "/login";
+});
 
 var app = builder.Build();
 
@@ -75,6 +97,7 @@ app.UseAuthorization();
 app.UseAntiforgery();
 
 app.MapStaticAssets();
+app.MapBlazorHub();
 app.MapRazorComponents<App>().AddInteractiveServerRenderMode();
 
 using var scope = app.Services.CreateScope();
