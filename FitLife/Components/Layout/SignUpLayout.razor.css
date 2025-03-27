@@ -1,29 +1,45 @@
 ﻿.container {
+	margin: 0;
 	width: 100%;
-	height: 100vh;
+	height: 120%;
 	background-image: url('/images/signup/signup-background.jpg');
 	background-size: contain;
-	background-position: 117%;
+	background-position: 105%;
 	background-color: #D8404061;
 	background-blend-mode: overlay;
 	display: grid;
-	grid-template-columns: 1fr 20%;
-
+	grid-template-columns: 1fr 15%;
 	position: relative;
+}
+
+.textFont {
+	font-family: "Poppins", sans-serif;
 }
 
 .white-container {
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
 	align-items: center;
-
 	background-color: white;
 }
+
+.testlogo {
+	display: flex;
+	align-items: center;
+	height: 10%;
+	width: 100%;
+}
+
+	.testlogo > h1 {
+		color: #EE1D52;
+		font-size: 4vh;
+		margin: 0vh 0vw 0vh 2vw;
+	}
 
 .form-container {
 	height: 66%;
 	width: 100%;
+	margin: 5vh 0vw 0vh 0vw;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -34,7 +50,6 @@
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-
 	margin-bottom: 3rem;
 }
 
@@ -44,13 +59,11 @@
 	}
 
 	.header-container > h1 {
-		font-family: "Poppins", sans-serif;
 		font-size: 1.5rem;
 		font-weight: 500;
 	}
 
 	.header-container > p {
-		font-family: "Poppins", sans-serif;
 		font-size: 0.9rem;
 		font-weight: 400;
 	}
@@ -78,7 +91,6 @@
 }
 
 	.numbered-step-container > span {
-		font-family: 'Poppins', sans-serif;
 		font-size: 0.9rem;
 		font-weight: 500;
 	}
@@ -94,10 +106,8 @@
 }
 
 	.step-description-container > span {
-		font-family: 'Poppins', sans-serif;
 		font-size: 0.85rem;
 		font-weight: 300;
-
 	}
 
 
