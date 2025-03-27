@@ -12,9 +12,9 @@ public class AuthService
     private readonly UserManager<User> _userManager;
     private readonly SignInManager<User> _signInManager;
 
-    private ILogger<AuthService> _logger;
+    private ILogger<AuthService>? _logger;
 
-    public AuthService(UserManager<User> userManager, SignInManager<User> signInManager, ILogger<AuthService> logger)
+    public AuthService(UserManager<User> userManager, SignInManager<User> signInManager, ILogger<AuthService>? logger = null)
     {
         _userManager = userManager;
         _signInManager = signInManager;
@@ -41,6 +41,8 @@ public class AuthService
             _logger.LogWarning("User not found.");
             return SignInResult.Failed;
         }
+
+        _logger.LogInformation($"User found: {_applicationUser.UserName} {_applicationUser.NormalizedUserName}");
 
         return await _signInManager.PasswordSignInAsync(_applicationUser, userLoginCredential.Password, isPersistent : false, false);
     }

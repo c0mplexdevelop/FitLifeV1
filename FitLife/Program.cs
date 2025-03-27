@@ -5,6 +5,8 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity;
 using FitLife.Models.User;
 using FitLife.Auth;
+using FitLife.Identity;
+using Microsoft.Extensions.DependencyInjection.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -18,6 +20,7 @@ builder.Services.AddRazorComponents().AddInteractiveServerComponents();
 
 builder.Services.AddScoped<UserSignUpState>();
 builder.Services.AddScoped<AuthService>();
+
 
 builder.Services.AddDbContext<DatabaseContext>(
     options => options.UseSqlServer(connString)
