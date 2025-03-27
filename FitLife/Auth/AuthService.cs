@@ -39,7 +39,7 @@ public class AuthService
 
     public static bool IsIdentifierEmailFormat(string identifier)
     {
-        var emailRegex = new Regex(@"^[A-Za-z0-9!@#$%^&*()|{}~^_\-+=]+@[A-Za-z0-9-]+(?:\.[a-zA-Z0-9-]+)*");
+        var emailRegex = new Regex(@"^[A-Za-z0-9!@#$%^&*()|{}~^_\-+=.]+@[A-Za-z0-9-]+(\.[a-zA-Z0-9-]+)");
         return emailRegex.IsMatch(identifier);
     }
 }
