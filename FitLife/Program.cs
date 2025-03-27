@@ -2,8 +2,6 @@ using FitLife.Components;
 using FitLife.Data;
 using FitLife.Models.State;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.AspNetCore.Identity;
-using FitLife.Models.User;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -15,47 +13,8 @@ builder.Services.AddRazorComponents().AddInteractiveServerComponents();
 builder.Services.AddScoped<UserSignUpState>();
 
 builder.Services.AddDbContext<DatabaseContext>(
-    options => options.UseSqlServer(connString)
-    //.UseSeeding((context, _) =>
-    //{
-    //    var testUser = context.Set<User>().FirstOrDefault();
-    //    if (testUser == null)
-    //    {
-    //        context.Database.ExecuteSqlRaw("SET IDENTITY_INSERT [dbo].[AspNetUsers] ON");
-    //        User user = new()
-    //        {
-    //            Id = -1,
-    //            Email = "test@test.com",
-    //            NormalizedEmail = "test@test.com".ToUpper(),
-    //            FirstName = "John",
-    //            MiddleName = null,
-    //            LastName = "Doe",
-    //            Sex = FitLife.Models.User.Enum.Sex.Male,
-    //            DateOfBirth = DateOnly.MinValue,
-    //            UserName = "John Doe"
-    //        };
-    //        user.PasswordHash = new PasswordHasher<User>().HashPassword(user, "Test!23");
-    //        context.Set<User>().Add(user);
-    //        context.Database.ExecuteSqlRaw("SET IDENTITY_INSERT [dbo].[AspNetUsers] OFF");
-
-    //        context.SaveChanges();
-    //    }
-
-    //})
-    .EnableSensitiveDataLogging()
+    options => options.UseSqlServer(connString).EnableSensitiveDataLogging()
     );
-
-builder.Services.AddIdentity<User, IdentityRole<int>>(options =>
-{
-    options.Password.RequireDigit = true;
-    options.Password.RequireLowercase = true;
-    options.Password.RequireUppercase = true;
-    options.Password.RequireNonAlphanumeric = true;
-    options.Password.RequiredLength = 8;
-    options.User.RequireUniqueEmail = true;
-})
-    .AddEntityFrameworkStores<DatabaseContext>()
-    .AddDefaultTokenProviders();
 
 var app = builder.Build();
 
@@ -69,17 +28,11 @@ if (!app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
-app.UseAuthentication();
-app.UseAuthorization();
 
 app.UseAntiforgery();
 
 app.MapStaticAssets();
 app.MapRazorComponents<App>().AddInteractiveServerRenderMode();
-
-using var scope = app.Services.CreateScope();
-var context = scope.ServiceProvider.GetRequiredService<DatabaseContext>();
-context.SeedDataAsync();
 
 
 app.Run();
