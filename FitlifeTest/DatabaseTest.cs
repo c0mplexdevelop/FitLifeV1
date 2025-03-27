@@ -3,6 +3,7 @@ using FitLife.Data.Repository;
 using FitLife.Data.Repository.Interface;
 using FitLife.Models.User;
 using FitLife.Models.User.Enum;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Moq;
 
@@ -20,15 +21,22 @@ public class DatabaseTest
         LastName = "Doe",
         Sex = Sex.Male,
         DateOfBirth = DateOnly.MinValue,
-        Username = "John Doe",
-        Password = "Test!23"
+        Username = "John Doe"
     };
+
+    private User ReturnExpectedUserWithHashedPassword()
+    {
+        expectedUser.PasswordHash = new PasswordHasher<User>().HashPassword(expectedUser, "Test!23");
+        return expectedUser;
+    }
 
     [Fact]
     public async Task GetByIdAsync_Returns_ValidUser()
     {
         //Arrange
         var mockUserRepository = new Mock<IUserRepository>();
+
+        User expectedUser = ReturnExpectedUserWithHashedPassword();
 
         mockUserRepository.Setup(repo => repo.GetByIdAsync(-1)).ReturnsAsync(expectedUser);
 
@@ -63,6 +71,9 @@ public class DatabaseTest
         using var context = new DatabaseContext(options);
         var userRepository = new UserRepository(context);
         
+        User expectedUser = ReturnExpectedUserWithHashedPassword();
+
+
         // Act
         await userRepository.AddAsync(expectedUser);
         await userRepository.SaveChangesAsync();
@@ -80,6 +91,9 @@ public class DatabaseTest
             .Options;
         using var context = new DatabaseContext(options);
         var userRepository = new UserRepository(context);
+
+        User expectedUser = ReturnExpectedUserWithHashedPassword();
+
 
         // Act
         await userRepository.AddRangeAsync(new List<User> { expectedUser });
@@ -99,6 +113,9 @@ public class DatabaseTest
 
         using var context = new DatabaseContext(options);
         var userRepository = new UserRepository(context);
+
+        User expectedUser = ReturnExpectedUserWithHashedPassword();
+
 
         await userRepository.AddAsync(expectedUser);
         await userRepository.SaveChangesAsync();
