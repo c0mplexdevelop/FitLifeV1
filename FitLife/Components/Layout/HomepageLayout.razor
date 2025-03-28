@@ -1,25 +1,75 @@
 ﻿@inherits LayoutComponentBase
 
-
-<div class="firstContainer textFont">
-    <h1>FITLIFE </h1>
-    <div class="subContainer1">
-        <a>Achieve Your Fitness Goals with</a>
-        <h1>FITLIFE</h1>
-        <a>Personalized fitness plans tailored to your unique goals and lifestyle. Get started on your journey to a healthier, happier you!</a>
-        <button>TRY NOW!</button>
+<body>
+    <div class="firstContainer textFont">
+        <h1>FITLIFE </h1>
+        <div class="subContainer1">
+            <a>Achieve Your Fitness Goals with</a>
+            <h1>FITLIFE</h1>
+            <a>Personalized fitness plans tailored to your unique goals and lifestyle. Get started on your journey to a healthier, happier you!</a>
+            <button>TRY NOW!</button>
+        </div>
+        <div class="subContainer2"> 
+            <p>Have an account already? <NavLink class="loginNavLink" href="/login">Login.</NavLink></p>
+        </div>
     </div>
-    <div class="subContainer2"> 
-        <a>Have an account already?</a>
-        <button class="textFont">Login</button>
-    </div>
-</div>
-<div class="secondContainer textFont">
-    <div></div>
-    <div></div>
-    <div></div>
-</div>
-@Body
 
+    <div class="secondContainer textFont">
+        <div>
+            <img src="images\homepage\icons\healthicons--gym.svg" />
+            <p>WORKOUT RECOMMENDATIONS</p>
+            <a>Receive tailored exercise advice based on your fitness level and goals to keep you motivated and moving forward!</a>
+        </div>
+        <div>
+            <img src="images\homepage\icons\medical-icon--nutrition.svg" id="mealRecoImg" />
+            <p>MEAL RECOMMENDATIONS</p>
+            <a>Receive personalized meal recommendations that align with your fitness goals, helping you fuel your body for optimal results!</a>
+        </div>
+        <div>
+            <img src="images\homepage\icons\Untitled.png" id="decAnalysisImg" />
+            <p>DECISION TREE ANALYSIS</p>
+            <a>To create data-driven decisions and find the best results depending on your preferences and goals, use decision tree analysis!</a>
+        </div>
+    </div>
+
+    <div class="thirdContainer textFont">
+        <h1>FEATURED WORKOUTS</h1>
+        <div class="thirdContentLayout"> 
+            <div>
+                <img src="images\homepage\colynary-media-yWd6Mb1y1P0-unsplash.jpg" class="thirdContentImgs" />
+                <a>BICEPS</a>
+                <p>Transform your arms with our targeted biceps workout! Build strength and definition with proven exercises that engage your muscles for maximum growth. 
+                    Whether you're aiming for bigger arms or enhanced strength, this routine will help you see results fast!</p>
+            </div>
+            <div>
+                <img src="images\homepage\shan-a-rajpoot-834GJqYQkEU-unsplash.jpg" class="thirdContentImgs" />
+                <a>SHOULDERS</a>
+                <p>
+                    Unlock stronger, more defined shoulders with our expert-designed shoulder workout! Build strength, improve mobility, and sculpt your shoulders with
+                    effective exercises that target every muscle. Achieve your fitness goals and stand tall with confidence!</p>
+            </div>
+            <div>
+                <img src="images\homepage\gordon-cowie-du-8XO5_Ft4-unsplash.jpg" class="thirdContentImgs" />
+                <a>BACK</a>
+                <p>
+                    Strengthen and sculpt your back with our powerful back workout! Target key muscles for improved posture, strength, and definition.
+                    Whether you're looking to build muscle or enhance endurance, this routine will help you unlock your full potential!</p>
+            </div>
+        </div>
+        <NavLink id="seeMoreNavLink">SEE MORE</NavLink>
+    </div>
+
+    <div class="fourthContainer textFont">
+        <div>
+            <h1>ABOUT US</h1>
+            <p>At FITLIFE, we’re dedicated to helping you achieve your fitness goals with expert guidance, personalized workout plans, and nutrition support. Our mission is to empower individuals to live healthier, stronger lives through effective resources, motivation, and a supportive community.
+                Join us and start your transformation today!</p>
+        </div>
+        <div>
+            <img src="images\homepage\9ba080c0-4161-4288-a2e3-c24f7c4347cc.jpg" />
+        </div>
+    </div>
+
+</body>
 
 
