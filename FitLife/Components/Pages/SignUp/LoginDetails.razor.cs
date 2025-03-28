@@ -15,6 +15,18 @@ public partial class LoginDetails
     [Inject]
     private UserSignUpState State { get; set; } = null!;
 
+    private bool IsPasswordVisible { get; set; } = false;
+
+    private string PasswordVisibilityState { get; set; } = "password";
+    private string EyeVisibilityState { get; set; } = "fa-eye";
+
+    private async Task ChangePasswordVisibility(Microsoft.AspNetCore.Components.Web.MouseEventArgs args)
+    {
+        PasswordVisibilityState = IsPasswordVisible ? "text" : "password";
+        EyeVisibilityState = IsPasswordVisible ? "fa-eye" : "fa-eye-slash";
+        IsPasswordVisible = !IsPasswordVisible;
+    }
+
     private void HandleValidSubmit()
     {
         Navigation.NavigateTo("/signup/personal-details");

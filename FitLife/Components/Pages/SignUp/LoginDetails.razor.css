@@ -3,13 +3,43 @@
 	gap: 2rem;
 }
 
+	.flex-container > div{
+		width: 100%;
+	}
+
 .form-container {
 	width: 65%;
 
 	margin-top: 4rem;
 }
 
-button {
+.flex {
+	display: flex;
+}
+
+::deep .gray-border {
+	border: 1px solid #66666659;
+	border-radius: 0.5rem;
+}
+
+::deep .input {
+	width: 100%;
+	height: 3.1rem;
+}
+	
+	.eye-button {
+		background-color: transparent;
+		box-shadow: none;
+		border: none;
+
+		cursor: pointer;
+	}
+
+	::deep .input > input {
+		margin-left: 1rem;
+	}
+
+#submit-button {
 	border: none;
 	background: none;
 	width: 100%;
@@ -37,13 +67,26 @@ button {
 }
 
 ::deep input {
+	all: unset;
 	width: 100%;
-	height: 3.1rem;
-	border-radius: 0.5rem;
+	border: none;
 
 	font-family: 'Poppins', sans-serif;
 	font-weight: 500;
 	font-size: 1.05rem;
+}
+
+	::deep input:focus {
+		outline: none;
+		box-shadow: none;
+	}
+
+::deep input.invalid {
+	outline: none;
+}
+
+::deep input.valid {
+	outline: none;
 }
 
 	::deep input::placeholder {

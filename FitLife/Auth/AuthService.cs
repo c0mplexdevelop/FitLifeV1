@@ -12,9 +12,9 @@ public class AuthService
     private readonly UserManager<User> _userManager;
     private readonly SignInManager<User> _signInManager;
 
-    private ILogger<AuthService>? _logger;
+    private ILogger<AuthService> _logger;
 
-    public AuthService(UserManager<User> userManager, SignInManager<User> signInManager, ILogger<AuthService>? logger = null)
+    public AuthService(UserManager<User> userManager, SignInManager<User> signInManager, ILogger<AuthService> logger)
     {
         _userManager = userManager;
         _signInManager = signInManager;

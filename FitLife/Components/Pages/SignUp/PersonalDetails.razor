@@ -13,20 +13,32 @@
         <div class="flex-container">
             <div>
                 <label for="first-name">First Name:</label>
-                <InputText type="text" id="first-name" @bind-Value="State!.UserSignUpInformation.FirstName"></InputText>
+                <div class="input-container">
+                    <InputText type="text" id="first-name"
+                               @bind-Value="State!.UserSignUpInformation.FirstName"
+                               placeholder="Enter your first name.." />
+                </div>
             </div>
 
 
             <div>
                 <label for="middle-name">Middle Name:</label>
-                <InputText type="text" id="middle-name" @bind-Value="State!.UserSignUpInformation.MiddleName"></InputText>
+                <div class="input-container">
+                    <InputText type="text" id="middle-name"
+                               @bind-Value="State!.UserSignUpInformation.MiddleName"
+                               placeholder="Enter your middle name.." />
+                </div>
             </div>
         </div>
 
         <div class="flex-container">
             <div>
                 <label for="last-name">Last Name:</label>
-                <InputText type="text" id="last-name" @bind-Value="State!.UserSignUpInformation.LastName"></InputText>
+                <div class="input-container">
+                    <InputText type="text" id="last-name"
+                               @bind-Value="State!.UserSignUpInformation.LastName"
+                               placeholder="Enter your last name.." />
+                </div>
             </div>
             @* <div>
                 <label for="What's your Gender?'"></label>
@@ -35,12 +47,12 @@
             <fieldset class="flex-container radio-container">
                 <legend>What is your Sex?</legend>
                 <InputRadioGroup @bind-Value="State.UserSignUpInformation.Sex">
-                    @foreach(var gender in Enum.GetValues<Sex>()) 
+                    @foreach (var gender in Enum.GetValues<Sex>())
                     {
                         <label>
                             <InputRadio Value="gender" /> @gender.ToString()
                         </label>
-                        
+
                     }
                 </InputRadioGroup>
             </fieldset>
@@ -49,7 +61,15 @@
         <div class="flex-container">
             <label for="date-of-birth">What's your date of birth?'</label>
             <div id="date-of-birth">
-                
+            </div>
+        </div>
+
+        <div>
+            <label for="date-of-birth">What's your date of birth?'</label>
+            <div>
+                @* <InputSelect @bind-Value="">
+                    
+                </InputSelect> *@
             </div>
         </div>
 
