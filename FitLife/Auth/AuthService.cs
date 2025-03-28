@@ -1,5 +1,6 @@
 ﻿using FitLife.Data.Repository.Interface;
 using FitLife.Models.User;
+using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Identity;
 using System.Text.RegularExpressions;
 
@@ -11,10 +12,13 @@ public class AuthService
     private readonly UserManager<User> _userManager;
     private readonly SignInManager<User> _signInManager;
 
-    public AuthService(UserManager<User> userManager, SignInManager<User> signInManager)
+    private ILogger<AuthService> _logger;
+
+    public AuthService(UserManager<User> userManager, SignInManager<User> signInManager, ILogger<AuthService> logger)
     {
         _userManager = userManager;
         _signInManager = signInManager;
+        _logger = logger;
     }
 
     public async Task<SignInResult> SignInUser(UserLoginCredential userLoginCredential)
@@ -22,19 +26,25 @@ public class AuthService
         User? _applicationUser;
         if (IsIdentifierEmailFormat(userLoginCredential.LoginIdentifier))
         {
+            _logger.LogInformation("Identifier is in email format.");
             _applicationUser = await _userManager.FindByEmailAsync(userLoginCredential.LoginIdentifier);
         }
         else
         {
+            _logger.LogInformation("Identifier is in username format.");
             _applicationUser = await _userManager.FindByNameAsync(userLoginCredential.LoginIdentifier);
         }
 
+
         if (_applicationUser == null)
         {
+            _logger.LogWarning("User not found.");
             return SignInResult.Failed;
         }
 
-        return await _signInManager.PasswordSignInAsync(_applicationUser, userLoginCredential.Password, isPersistent : true, false);
+        _logger.LogInformation($"User found: {_applicationUser.UserName} {_applicationUser.NormalizedUserName}");
+
+        return await _signInManager.PasswordSignInAsync(_applicationUser, userLoginCredential.Password, isPersistent : false, false);
     }
 
     public static bool IsIdentifierEmailFormat(string identifier)

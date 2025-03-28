@@ -17,8 +17,12 @@ public class DatabaseContext(DbContextOptions<DatabaseContext> options) : Identi
 
     public void SeedDataAsync()
     {
-
-        User user = new()
+        User? user = Set<User>().Find(-1);
+        if (user != null)
+        {
+            return;
+        }
+        user = new()
         {
             Id = -1,
             Email = "test@test.com",
@@ -28,7 +32,9 @@ public class DatabaseContext(DbContextOptions<DatabaseContext> options) : Identi
             LastName = "Doe",
             Sex = FitLife.Models.User.Enum.Sex.Male,
             DateOfBirth = DateOnly.MinValue,
-            UserName = "John Doe"
+            UserName = "JohnDoe",
+            NormalizedUserName = "JohnDoe".ToUpper(),
+            SecurityStamp = Guid.NewGuid().ToString()
         };
         user.PasswordHash = new PasswordHasher<User>().HashPassword(user, "Test!23");
         Set<User>().Add(user);
