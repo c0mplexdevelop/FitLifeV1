@@ -8,6 +8,11 @@ namespace FitLife.Auth;
 
 public class AuthService
 {
+    private readonly IUserRepository _userRepository;
+    public AuthService(IUserRepository userRepository)
+    {
+        _userRepository = userRepository;
+    }
 
     private readonly UserManager<User> _userManager;
     private readonly SignInManager<User> _signInManager;
@@ -21,7 +26,7 @@ public class AuthService
         _logger = logger;
     }
 
-    public async Task<SignInResult> SignInUser(UserLoginCredential userLoginCredential)
+    public async Task<User?> LoginAsyncUsingEmail(string email, string password)
     {
         User? _applicationUser;
         if (IsIdentifierEmailFormat(userLoginCredential.LoginIdentifier))
@@ -45,11 +50,22 @@ public class AuthService
         _logger.LogInformation($"User found: {_applicationUser.UserName} {_applicationUser.NormalizedUserName}");
 
         return await _signInManager.PasswordSignInAsync(_applicationUser, userLoginCredential.Password, isPersistent : false, false);
+        var user = await _userRepository.GetAllAsync();
+        return user.FirstOrDefault(x => x.Email == email && x.Password == password);
     }
 
-    public static bool IsIdentifierEmailFormat(string identifier)
+    public async Task<User?> LoginAsync(UserLoginCredential userLoginCredential)
     {
-        var emailRegex = new Regex(@"^[A-Za-z0-9!@#$%^&*()|{}~^_\-+=.]+@[A-Za-z0-9-]+(\.[a-zA-Z0-9-]+)");
+        if(IsIdentifierEmailFormat(userLoginCredential.LoginIdentifier))
+        {
+            return await LoginAsyncUsingEmail(userLoginCredential.LoginIdentifier, userLoginCredential.Password);
+        }
+        return await LoginAsyncUsingUsername(userLoginCredential.LoginIdentifier, userLoginCredential.Password);
+    }
+
+    private bool IsIdentifierEmailFormat(string identifier)
+    {
+        var emailRegex = new Regex(@"^[A-Za-z0-9!@#$%^&*()|{}~^_\-+=]+@[A-Za-z0-9-]+(?:\.[a-zA-Z0-9-]+)*");
         return emailRegex.IsMatch(identifier);
     }
 }

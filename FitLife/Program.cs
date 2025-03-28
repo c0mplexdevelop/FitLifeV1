@@ -2,10 +2,12 @@ using FitLife.Components;
 using FitLife.Data;
 using FitLife.Models.State;
 using Microsoft.EntityFrameworkCore;
+
 using Microsoft.AspNetCore.Identity;
 using FitLife.Models.User;
 using FitLife.Auth;
 using Microsoft.Extensions.DependencyInjection.Extensions;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -22,34 +24,7 @@ builder.Services.AddScoped<AuthService>();
 
 
 builder.Services.AddDbContext<DatabaseContext>(
-    options => options.UseSqlServer(connString)
-    //.UseSeeding((context, _) =>
-    //{
-    //    var testUser = context.Set<User>().FirstOrDefault();
-    //    if (testUser == null)
-    //    {
-    //        context.Database.ExecuteSqlRaw("SET IDENTITY_INSERT [dbo].[AspNetUsers] ON");
-    //        User user = new()
-    //        {
-    //            Id = -1,
-    //            Email = "test@test.com",
-    //            NormalizedEmail = "test@test.com".ToUpper(),
-    //            FirstName = "John",
-    //            MiddleName = null,
-    //            LastName = "Doe",
-    //            Sex = FitLife.Models.User.Enum.Sex.Male,
-    //            DateOfBirth = DateOnly.MinValue,
-    //            UserName = "John Doe"
-    //        };
-    //        user.PasswordHash = new PasswordHasher<User>().HashPassword(user, "Test!23");
-    //        context.Set<User>().Add(user);
-    //        context.Database.ExecuteSqlRaw("SET IDENTITY_INSERT [dbo].[AspNetUsers] OFF");
-
-    //        context.SaveChanges();
-    //    }
-
-    //})
-    .EnableSensitiveDataLogging()
+    options => options.UseSqlServer(connString).EnableSensitiveDataLogging()
     );
 
 
@@ -81,6 +56,7 @@ builder.Services.ConfigureApplicationCookie(options =>
     options.AccessDeniedPath = "/login";
 });
 
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -93,8 +69,6 @@ if (!app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
-app.UseAuthentication();
-app.UseAuthorization();
 
 app.UseAntiforgery();
 

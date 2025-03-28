@@ -1,21 +1,17 @@
 ﻿using FitLife.Models.User;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
-using Microsoft.AspNetCore.Identity;
 
 namespace FitLife.Data;
 
-public class DatabaseContext(DbContextOptions<DatabaseContext> options) : IdentityDbContext<User, IdentityRole<int>, int>(options)
+public class DatabaseContext : DbContext
 {
-    public DbSet<User> Accounts { get; set; }
+    public DbSet<User> Users { get; set; }
 
-    protected override void OnModelCreating(ModelBuilder builder)
+    public DatabaseContext(DbContextOptions<DatabaseContext> options) : base(options)
     {
-        builder.Entity<User>().ToTable("Users");
-        base.OnModelCreating(builder);
     }
 
-    public void SeedDataAsync()
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         User? user = Set<User>().Find(-1);
         if (user != null)
@@ -50,7 +46,6 @@ public class DatabaseContext(DbContextOptions<DatabaseContext> options) : Identi
         {
             Database.CloseConnection();
         }
-
 
     }
 }
