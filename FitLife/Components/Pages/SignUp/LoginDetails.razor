@@ -6,28 +6,51 @@
 
 <div class="form-container">
     <EditForm Model="@State.UserSignUpCredential" FormName="CredentialSignUpForm" OnValidSubmit="HandleValidSubmit" OnInvalidSubmit="HandleInvalidSubmit">
-        @* <DataAnnotationsValidator />
-        <ValidationSummary /> *@
+        @* <DataAnnotationsValidator /> *@
+        <ValidationSummary />
 
         <div class="flex-container">
 
             <div>
                 <label for="email">What’s your email?</label>
-                <InputText id="email" class="form-control" placeholder="Enter your email.." @bind-Value="State!.UserSignUpCredential.Email" />
+                <div class="input flex gray-border">
+                    <InputText id="email" class="" placeholder="Enter your email.." @bind-Value="State!.UserSignUpCredential.Email" />
+
+                </div>
             </div>
 
             <div>
                 <label for="username">What's your username?'</label>
-                <InputText id="username" class="form-control" placeholder="Enter your username.." @bind-Value="State!.UserSignUpCredential.Username" />
+                <div class="input flex gray-border">
+                    <InputText id="username" class="" placeholder="Enter your username.." @bind-Value="State!.UserSignUpCredential.Username" />
+
+                </div>
             </div>
         </div>
 
-        <div>
-            <label for="password">What’s your password?</label>
-            <InputText id="password" type="password" class="form-control" placeholder="Enter your password.." @bind-Value="State!.UserSignUpCredential.Password" />
+        <div class="flex-container">
+            <div>
+                <label for="password">What’s your password?</label>
+                <div class="input flex gray-border">
+                    <InputText id="password" type="@PasswordVisibilityState" class="form-control" placeholder="Enter your password.." @bind-Value="State!.UserSignUpCredential.Password" />
+                    <button class="fa @EyeVisibilityState eye-button" type="button" @onclick="ChangePasswordVisibility"></button>
+
+                </div>
+
+
+            </div>
+
+            <div>
+                <label for="confirm-password">Confirm Passowrd:</label>
+                <div class="input flex gray-border">
+                    <InputText id="confirm-password" class="" type="password" placeholder="Enter password.." @bind-Value="State!.UserSignUpCredential.ConfirmPassword" />
+
+                </div>
+            </div>
         </div>
 
 
-        <button type="submit">Next</button>
+
+        <button id="submit-button" type="submit">Next</button>
     </EditForm>
 </div>

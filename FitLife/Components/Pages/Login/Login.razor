@@ -1,13 +1,18 @@
 ﻿@page "/login"
 @page "/"
 
+@layout Layout.LoginLayout
+
 <div class="container">
     <div class="flex-centered gap-3 max-size">
         <div class="form-container">
-            <EditForm Model="Model" class="login-form">
+            <EditForm Model="Model" class="login-form" OnValidSubmit="HandleValidSubmit" FormName="LoginForm">
+
+                <span>@errorMessage</span>
+
                 <div class="input-container">
                     <label for="identifier">Email or Username:</label>
-                    <InputText id="identifier" @bind-Value="Model.LoginIdentifier" class="form-control" />
+                    <InputText id="identifier" @bind-Value="Model!.LoginIdentifier" class="form-control" />
                 </div>
 
 
@@ -15,18 +20,20 @@
                     <label for="password">Password:</label>
                     <InputText id="password" @bind-Value="Model.Password" class="form-control" />
                 </div>
-            </EditForm>
-            <div class="footer-container flex-centered flex-column">
-                <div class="button-container">
-                    <p>By creating an account, you agree to the <NavLink>Terms of use</NavLink> and <NavLink>Privacy Policy.</NavLink></p>
-                    <button class="button">Sign in</button>
+
+                <div class="footer-container flex-centered flex-column">
+                    <div class="button-container">
+                        <p>By creating an account, you agree to the <NavLink>Terms of use</NavLink> and <NavLink>Privacy Policy.</NavLink></p>
+                        <button type="submit" class="button">Sign in</button>
+                    </div>
+
+                    <NavLink>Forgot your Password?</NavLink>
+
+                    <p>Dont have an account? <NavLink href="/signup/login-details">Sign Up</NavLink></p>
+
                 </div>
-                
-                <NavLink>Forgot your Password?</NavLink>
-
-                <p>Dont have an account? <NavLink href="/signup/login-details">Sign Up</NavLink></p>
-
-            </div>
+            </EditForm>
+            
         </div>
 
     </div>

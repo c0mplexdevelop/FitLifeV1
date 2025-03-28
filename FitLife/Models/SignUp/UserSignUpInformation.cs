@@ -22,4 +22,8 @@ public class UserSignUpInformation
     [Required]
     [DataType(DataType.Date)]
     public DateOnly DateOfBirth { get; set; }
+
+    public int SelectedMonth { get; set; }
+    public int SelectedDay { get; set; }
+    public int SelectedYear { get; set; }
 }
