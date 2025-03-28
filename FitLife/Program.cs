@@ -100,8 +100,8 @@ app.UseAuthorization();
 app.UseAntiforgery();
 
 app.MapStaticAssets();
-app.MapBlazorHub();
 app.MapRazorComponents<App>().AddInteractiveServerRenderMode();
+
 
 using var scope = app.Services.CreateScope();
 var context = scope.ServiceProvider.GetRequiredService<DatabaseContext>();
