@@ -1,4 +1,6 @@
-﻿using FitLife.Models.State;
+﻿using FitLife.Auth;
+using FitLife.Models.State;
+using FitLife.Models.User;
 using Microsoft.AspNetCore.Components;
 
 namespace FitLife.Components.Pages.SignUp;
@@ -17,10 +19,16 @@ public partial class PersonalDetails
     [Inject]
     private UserSignUpState State { get; set; } = null!;
 
+    [Inject]
+    private ILogger<PersonalDetails> Logger { get; set; } = null!;
+
+    [Inject]
+    private AuthService AuthService { get; set; } = null!;
+
     private readonly DateModel dateModel = new()
     {
-        Day = 1,
-        Month = 1,
+        Day = DateTime.Now.Day,
+        Month = DateTime.Now.Month,
         Year = DateTime.Now.Year
     };
 
@@ -47,6 +55,37 @@ public partial class PersonalDetails
     private IEnumerable<int> days => Enumerable.Range(1, DateTime.DaysInMonth(dateModel.Year, dateModel.Month));
 
     private IEnumerable<int> years => Enumerable.Range(MIN_YEAR, DateTime.Now.Year - MIN_YEAR + 1);
+
+    private void OnMonthOrYearChanged()
+    {
+        Logger.LogInformation($"Month or year changed, {dateModel.Year} {dateModel.Month}");
+        var maxDays =  DateTime.DaysInMonth(dateModel.Year, dateModel.Month);
+        if (dateModel.Day > maxDays)
+        {
+            dateModel.Day = maxDays;
+        }
+
+        StateHasChanged();
+    }
+
+    private async Task HandleValidSubmit()
+    {
+        Logger.LogInformation("Personal details form submitted");
+        State.UserSignUpInformation.DateOfBirth = DateOnly.FromDateTime(new DateTime(dateModel.Year, dateModel.Month, dateModel.Day));
+        
+        Logger.LogInformation(State.UserSignUpInformation.ToString());
+        Logger.LogInformation(State.UserSignUpCredential.ToString());
+
+        User? user = await AuthService.RegisterUserAsync(State);
+        if (user != null)
+        {
+            Navigation.NavigateTo("/");
+        }
+        else
+        {
+            Logger.LogError("User registration failed.");
+        }
+    }
 }
 
 

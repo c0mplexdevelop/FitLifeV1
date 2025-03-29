@@ -23,7 +23,8 @@ public class UserSignUpInformation
     [DataType(DataType.Date)]
     public DateOnly DateOfBirth { get; set; }
 
-    public int SelectedMonth { get; set; }
-    public int SelectedDay { get; set; }
-    public int SelectedYear { get; set; }
+    public override string ToString()
+    {
+        return $"FirstName: {FirstName}, MiddleName: {MiddleName}, LastName: {LastName}, Sex: {Sex.ToString()}, DateOfBirth: {DateOfBirth}";
+    }
 }

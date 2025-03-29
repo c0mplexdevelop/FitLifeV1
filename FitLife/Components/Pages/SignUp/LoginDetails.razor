@@ -6,7 +6,7 @@
 
 <div class="form-container">
     <EditForm Model="@State.UserSignUpCredential" FormName="CredentialSignUpForm" OnValidSubmit="HandleValidSubmit" OnInvalidSubmit="HandleInvalidSubmit">
-        @* <DataAnnotationsValidator /> *@
+        <DataAnnotationsValidator />
         <ValidationSummary />
 
         <div class="flex-container">
