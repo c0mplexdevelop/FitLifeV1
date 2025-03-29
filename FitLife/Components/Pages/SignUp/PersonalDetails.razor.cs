@@ -17,10 +17,13 @@ public partial class PersonalDetails
     [Inject]
     private UserSignUpState State { get; set; } = null!;
 
+    [Inject]
+    private ILogger<PersonalDetails> Logger { get; set; } = null!;
+
     private readonly DateModel dateModel = new()
     {
-        Day = 1,
-        Month = 1,
+        Day = DateTime.Now.Day,
+        Month = DateTime.Now.Month,
         Year = DateTime.Now.Year
     };
 
@@ -47,6 +50,18 @@ public partial class PersonalDetails
     private IEnumerable<int> days => Enumerable.Range(1, DateTime.DaysInMonth(dateModel.Year, dateModel.Month));
 
     private IEnumerable<int> years => Enumerable.Range(MIN_YEAR, DateTime.Now.Year - MIN_YEAR + 1);
+
+    private void OnMonthOrYearChanged()
+    {
+        Logger.LogInformation($"Month or year changed, {dateModel.Year} {dateModel.Month}");
+        var maxDays =  DateTime.DaysInMonth(dateModel.Year, dateModel.Month);
+        if (dateModel.Day > maxDays)
+        {
+            dateModel.Day = maxDays;
+        }
+
+        StateHasChanged();
+    }
 }
 
 
