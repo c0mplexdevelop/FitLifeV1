@@ -1,4 +1,6 @@
-﻿using FitLife.Models.State;
+﻿using FitLife.Auth;
+using FitLife.Models.State;
+using FitLife.Models.User;
 using Microsoft.AspNetCore.Components;
 
 namespace FitLife.Components.Pages.SignUp;
@@ -19,6 +21,9 @@ public partial class PersonalDetails
 
     [Inject]
     private ILogger<PersonalDetails> Logger { get; set; } = null!;
+
+    [Inject]
+    private AuthService AuthService { get; set; } = null!;
 
     private readonly DateModel dateModel = new()
     {
@@ -61,6 +66,25 @@ public partial class PersonalDetails
         }
 
         StateHasChanged();
+    }
+
+    private async Task HandleValidSubmit()
+    {
+        Logger.LogInformation("Personal details form submitted");
+        State.UserSignUpInformation.DateOfBirth = DateOnly.FromDateTime(new DateTime(dateModel.Year, dateModel.Month, dateModel.Day));
+        
+        Logger.LogInformation(State.UserSignUpInformation.ToString());
+        Logger.LogInformation(State.UserSignUpCredential.ToString());
+
+        User? user = await AuthService.RegisterUserAsync(State);
+        if (user != null)
+        {
+            Navigation.NavigateTo("/");
+        }
+        else
+        {
+            Logger.LogError("User registration failed.");
+        }
     }
 }
 
