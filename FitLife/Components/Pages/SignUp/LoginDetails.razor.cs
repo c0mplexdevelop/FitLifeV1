@@ -18,7 +18,7 @@ public partial class LoginDetails
     private bool IsPasswordVisible { get; set; } = false;
 
     private string PasswordVisibilityState { get; set; } = "password";
-    private string EyeVisibilityState { get; set; } = "fa-eye";
+    private string EyeVisibilityState { get; set; } = "fa-eye-slash";
 
     private async Task ChangePasswordVisibility(Microsoft.AspNetCore.Components.Web.MouseEventArgs args)
     {

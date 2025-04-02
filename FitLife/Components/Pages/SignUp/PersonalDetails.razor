@@ -7,12 +7,14 @@
 <PageTitle>Personal Details</PageTitle>
 
 <div class="form-container">
-    <p>Provide essential details that will help us create a personalized experiece for you. <span>All required fields are denoted with a *</span>.</p>
+    <p class="standard-font">Provide essential details that will help us create a personalized experiece for you. <span>All required fields are denoted with a *</span>.</p>
 
-    <EditForm Model="State">
+    <EditForm Model="State" OnValidSubmit="HandleValidSubmit">
+        <DataAnnotationsValidator />
+        <ValidationSummary />
         <div class="flex-container">
             <div>
-                <label for="first-name">First Name:</label>
+                <label class="standard-font label-input" for="first-name">First Name:</label>
                 <div class="input-container">
                     <InputText type="text" id="first-name"
                                @bind-Value="State!.UserSignUpInformation.FirstName"
@@ -22,7 +24,7 @@
 
 
             <div>
-                <label for="middle-name">Middle Name:</label>
+                <label class="standard-font label-input" for="middle-name">Middle Name:</label>
                 <div class="input-container">
                     <InputText type="text" id="middle-name"
                                @bind-Value="State!.UserSignUpInformation.MiddleName"
@@ -33,7 +35,7 @@
 
         <div class="flex-container">
             <div>
-                <label for="last-name">Last Name:</label>
+                <label class="standard-font label-input" for="last-name">Last Name:</label>
                 <div class="input-container">
                     <InputText type="text" id="last-name"
                                @bind-Value="State!.UserSignUpInformation.LastName"
@@ -58,18 +60,60 @@
             </fieldset>
         </div>
 
-        <div class="flex-container">
+        @* <div class="flex-container">
             <label for="date-of-birth">What's your date of birth?'</label>
             <div id="date-of-birth">
             </div>
-        </div>
+        </div> *@
 
         <div>
-            <label for="date-of-birth">What's your date of birth?'</label>
-            <div>
-                @* <InputSelect @bind-Value="">
-                    
-                </InputSelect> *@
+            <label for="date-of-birth">What's your date of birth?</label>
+            <div class="flex-container">
+                <div>
+                    <label for="day">Day</label>
+                    <div class="select-container">
+                        <InputSelect id="day" @bind-Value="dateModel.Day">
+                            @foreach (var day in days)
+                            {
+                                <option value="@day">@day</option>
+                            }
+                        </InputSelect>
+                        <div class="icon-container">
+                            <i class="fa fa-caret-down"></i>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div>
+                    <label for="month">Month:</label>
+                    <div class="select-container">
+                        <InputSelect id="month" @bind-Value="dateModel.Month" @bind-Value:after="OnMonthOrYearChanged">
+                            @foreach (var month in MonthDict)
+                            {
+                                <option value="@month.Value">@month.Key</option>
+                            }
+                        </InputSelect>
+                        <div class="icon-container">
+                            <i class="fa fa-caret-down"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <label for="year">Year:</label>
+                    <div class="select-container">
+                        <InputSelect id="year" @bind-Value="dateModel.Year" @bind-Value:after="OnMonthOrYearChanged">
+                            @foreach (var year in years)
+                            {
+                                <option value="@year">@year</option>
+                            }
+                        </InputSelect>
+                        <div class="icon-container">
+                            <i class="fa fa-caret-down"></i>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 

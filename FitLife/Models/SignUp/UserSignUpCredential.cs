@@ -26,4 +26,9 @@ public class UserSignUpCredential
     [DataType(DataType.Password)]
     [Compare("Password", ErrorMessage = "Password are not identical!")]
     public string ConfirmPassword { get; set; } = null!;
+
+    public override string ToString()
+    {
+        return $"Email: {Email}, Username: {Username}, Password: {Password}, ConfirmPassword: {ConfirmPassword}";
+    }
 }
