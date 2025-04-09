@@ -1,14 +1,12 @@
 ﻿.container {
 	width: 100%;
-	height: 100vh;
-	background-image: url('/images/signup/signup-background.jpg');
-	background-size: contain;
+	height: 150vh;
+	background: url('/images/signup/signup-background.jpg') center/cover no-repeat;
 	background-position: 117%;
 	background-color: #D8404061;
 	background-blend-mode: overlay;
 	display: grid;
 	grid-template-columns: 1fr 20%;
-
 	position: relative;
 }
 
