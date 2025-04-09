@@ -1,0 +1,94 @@
+﻿.header {
+    width: 95%;
+    height: 35vh;
+    display: flex;
+    flex-direction: row;
+    margin: 0vh 0vw 0vh 2vw;
+}
+
+.user-details {
+    height: 100%;
+    width: 40%;
+    margin: 0vh auto 0vh 1vw;
+    display: flex; 
+    flex-direction: column;
+    justify-content: center;
+}
+    .user-details > h1 {
+        font-family: Poppins;
+        margin: 0;
+    }
+    .user-details > p {
+        font-family: Roboto;
+        margin: 0;
+        color: #717171;
+        font-size: 2.5vh;
+    }
+
+.record-workouts {
+    height: 100%;
+    width: 40%;
+    display: flex;
+}
+    .record-workouts > div {
+        background: #FFFFFF;
+        height: 90%;
+        width: 85%;
+        margin: auto auto auto auto;
+        box-shadow: 1px 10px 15px rgba(0, 0, 0, 0.3);
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+    }
+        .record-workouts > div > div1 {
+            background: url('images/dashboard/workoutCountIcon.svg') no-repeat right center;
+            background-size: 20% 100%;
+            width: 90%;
+            height: 20%;
+            margin: 2vh 0vw 0vh 1vw;
+            display: flex;
+            flex-direction: row;
+        }
+    .record-workouts > div > div1 > a {
+        font-family: Poppins;
+        font-weight: 100;
+        color: black;
+        font-size: 4vh;
+    }
+
+    .record-workouts > div > div2 {
+        width: 90%;
+        height: 30%;
+        margin: auto 0vw 0vh 1vw;
+        display: flex;
+        flex-direction: row;
+    }
+    .record-workouts > div > div2 > a {
+        font-family: Poppins;
+        font-weight: bolder;
+        font-size: 5vh;
+        color: black;
+        margin-right: 1vw;
+    }
+
+.playlist-layout {
+    width: 95%;
+    height: 120vh;
+    margin: 5vh 0vw 0vh 2vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+    .playlist-layout > h2 { 
+        width: 50%;
+        margin: 0vh auto 5vh 2vw;
+    }
+    .playlist-layout > div {
+        background-color: #FFFFFF;
+        width: 95%;
+        height: 85%;
+        border-radius: 20px;
+        border:0;
+        box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.3);
+    }
+
