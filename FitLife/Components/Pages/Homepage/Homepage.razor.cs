@@ -4,19 +4,19 @@ using Microsoft.AspNetCore.Components.Authorization;
 
 namespace FitLife.Components.Pages.Homepage;
 
-[Authorize]
+//[Authorize]
 public partial class Homepage
 {
     [CascadingParameter]
     private Task<AuthenticationState> AuthenticationStateTask { get; set; } = null!;
 
     [Inject]
-    private NavigationManager Navigation{ get; set; } = null!;
+    private NavigationManager Navigation { get; set; } = null!;
 
     [Inject]
     private ILogger<Homepage> Logger { get; set; } = null!;
 
-    
+
 
     protected override async Task OnInitializedAsync()
     {

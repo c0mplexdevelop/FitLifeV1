@@ -32,7 +32,7 @@ public partial class Login
         var result = await AuthService.SignInUser(Model!);
         if (result.Succeeded)
         {
-            NavigationManager.NavigateTo("/homepage/");
+            NavigationManager.NavigateTo("/user-dashboard");
         }
         else
         {
