@@ -133,6 +133,8 @@
 
         .secondContainer > div > p {
             margin: 2vh auto 2vh auto;
+            width: 70%;
+            text-align: center;
             color: #A31D1D;
             font-size: 4vh;
             font-weight: bold;
