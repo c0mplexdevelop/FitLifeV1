@@ -1,0 +1,21 @@
+﻿@inherits LayoutComponentBase
+
+<div class="container1 textFont">
+    <div class="side-bar">
+        <div>
+            <img src="images\dashboard\logo.svg" />
+            <a>FITLIFE</a>
+        </div>
+        <NavLink id="iconDashboard" href="/user-dashboard">Dashboard</NavLink>
+        <NavLink id="iconWorkouts" href="/user-workouts">Workouts</NavLink>
+        <NavLink id="iconMealPlans">Meal Plans</NavLink>
+        <NavLink id="iconProfile">Profile</NavLink>
+        <NavLink id="iconSettings">Settings</NavLink>
+        <NavLink id="generateGoal">GENERATE NEW GOAL</NavLink>
+        <NavLink id="logOutBtn">Logout</NavLink>
+    </div>
+
+    <div class="user-dashboard">
+        @Body
+    </div>
+</div>

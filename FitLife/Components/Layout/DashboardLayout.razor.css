@@ -1,0 +1,159 @@
+﻿.textFont {
+    font-family: "Poppins", sans-serif;
+}
+
+.container1 {
+    width: 100%;
+    height: 150vh;
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+}
+    .side-bar {
+        width: 15%;
+        height: 100vh;
+        background-color: #121212;
+        border-radius: 0px 10px 10px 0px;
+        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+    }
+        .side-bar > div {
+            width: 100%;
+            height: 10%;
+            display: flex;
+            align-items: center;
+            flex-direction: row;
+            margin: 2vh 0vw 3vh 0vw;
+        }
+
+        .side-bar > div > a {
+            width: 40%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0vh auto 0vh 1vw;
+            color: #EE1D52;
+            font-family: "Epilogue";
+            text-decoration: none;
+        }
+
+        .side-bar > div > img {
+            border-radius: 10px;
+            height: 40%;
+            width: 15%;
+            margin: 0vh 0vw 0vh 1vw;
+        }
+
+        ::deep .side-bar > a {
+            background-color: yellow;
+            font-family: "Poppins";
+            font-weight: 100;
+            border: 0;
+            width: 100%;
+            height: 5%;
+            margin: 0vh 0vw 2vh auto;
+            cursor: pointer;
+            color: white;
+            text-decoration: none;
+            display: flex; 
+            align-items: center;
+            text-align: left;
+            padding-left: 5.5vw;
+        }
+
+        ::deep #generateGoal {
+            background-color: #EE1D52;
+            color: #FFFFFF;
+            margin: 4vh auto 0vh auto;
+            padding:0;
+            display: flex;
+            justify-content: center;
+            width: 70%;
+            height: 8%;
+            font-size: 1.5vh;
+            font-weight: bold;
+            border-radius: 5px;
+        }
+            ::deep #generateGoal:hover {
+                color: skyblue;
+            }
+
+        ::deep #logOutBtn {
+            width: 70%;
+            height: 7%;
+            display: flex;
+            justify-content:center;
+            margin: auto auto 4vh auto;
+            background: #667A8A url('images/dashboard/logoutIconWhite.svg') no-repeat 20px center;
+            background-size: 15% 100%;
+            color: white;
+            text-align: center;
+            padding-left: 20px;
+            border-radius: 5px;
+        }
+            ::deep #logOutBtn:hover {
+                color: skyblue;
+            }
+
+        /*FOR ICONS OF BUTTONS IN SIDE BAR*/
+            ::deep #iconDashboard {
+                background: url('images/dashboard/DashboardIconWhite.svg') no-repeat 20px center;
+                background-size: 15% 100%;
+            }
+                ::deep #iconDashboard:hover {
+                    background: rgb(61, 50, 50) url('images/dashboard/DashboardIconWhite.svg') no-repeat 20px center;
+                    background-size: 15% 100%;
+                    color: #EE1D52;
+                }
+
+            ::deep #iconWorkouts {
+                background: url('images/dashboard/workoutsIconWhite.svg') no-repeat 20px center;
+                background-size: 15% 100%;
+            }
+                ::deep #iconWorkouts:hover {
+                    background: rgb(61, 50, 50) url('images/dashboard/workoutsIconWhite.svg') no-repeat 20px center;
+                    background-size: 15% 100%;
+                    color: #EE1D52;
+                }
+
+            ::deep #iconMealPlans {
+                background: url('images/dashboard/mealsIconWhite.svg') no-repeat 20px center;
+                background-size: 15% 100%;
+            }
+                ::deep #iconMealPlans:hover {
+                    background: rgb(61, 50, 50) url('images/dashboard/mealsIconWhite.svg') no-repeat 20px center;
+                    background-size: 15% 100%;
+                    color: #EE1D52;
+                }
+
+            ::deep #iconProfile {
+                background: url('images/dashboard/profileIconWhite.svg') no-repeat 20px center;
+                background-size: 15% 100%;
+            }
+
+                ::deep #iconProfile:hover {
+                    background: rgb(61, 50, 50) url('images/dashboard/profileIconWhite.svg') no-repeat 20px center;
+                    background-size: 15% 100%;
+                    color: #EE1D52;
+                }
+
+            ::deep #iconSettings {
+                background: url('images/dashboard/settingsIconWhite.svg') no-repeat 20px center;
+                background-size: 15% 100%;
+            }
+                ::deep #iconSettings:hover {
+                    background: rgb(61, 50, 50) url('images/dashboard/settingsIconWhite.svg') no-repeat 20px center;
+                    background-size: 15% 100%;
+                    color: #EE1D52;
+                }
+
+.user-dashboard {
+    margin: 0vh 0vw 0vh auto;
+    width: 85%;
+    height: 100%;
+    display: flex; 
+    flex-direction: column;
+}
