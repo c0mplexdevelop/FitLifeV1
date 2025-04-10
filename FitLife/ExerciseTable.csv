@@ -1,4 +1,4 @@
-ExerciseID,Exercise Name,Exercise Type,Exercise Difficulty,Exercise Target Muscle Group,Equipment Needed,Reps,Duration,Sets
+ExerciseID,Exercise Name,Exercise Type,Exercise Difficulty,Exercise Target Muscle Group,Equipment Needed,Reps,Duration
 STR_001,Bench Press (Implied),Strength,Beginner,Chest,1,10-15,N/A
 STR_002,Bent-Over Row (Implied),Strength,Intermediate,Back,1,8-12,N/A
 STR_003,Barbell Back Squat (Implied),Strength,Advanced,Legs,1,4-8,N/A
