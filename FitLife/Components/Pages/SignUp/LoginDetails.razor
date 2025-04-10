@@ -12,7 +12,7 @@
         <div class="flex-container">
 
             <div>
-                <label for="email">What’s your email?</label>
+                <label for="email">What’s your email?<span>*</span></label>
                 <div class="input flex gray-border">
                     <InputText id="email" class="" placeholder="Enter your email.." @bind-Value="State!.UserSignUpCredential.Email" />
 
@@ -20,7 +20,7 @@
             </div>
 
             <div>
-                <label for="username">What's your username?'</label>
+                <label for="username">What's your username?<span>*</span></label>
                 <div class="input flex gray-border">
                     <InputText id="username" class="" placeholder="Enter your username.." @bind-Value="State!.UserSignUpCredential.Username" />
 
@@ -30,7 +30,7 @@
 
         <div class="flex-container">
             <div>
-                <label for="password">What’s your password?</label>
+                <label for="password">What’s your password?<span>*</span></label>
                 <div class="input flex gray-border">
                     <InputText id="password" type="@PasswordVisibilityState" class="form-control" placeholder="Enter your password.." @bind-Value="State!.UserSignUpCredential.Password" />
                     <button class="fa @EyeVisibilityState eye-button" type="button" @onclick="ChangePasswordVisibility"></button>
@@ -41,7 +41,7 @@
             </div>
 
             <div>
-                <label for="confirm-password">Confirm Passowrd:</label>
+                <label for="confirm-password">Confirm Password:<span>*</span></label>
                 <div class="input flex gray-border">
                     <InputText id="confirm-password" class="" type="password" placeholder="Enter password.." @bind-Value="State!.UserSignUpCredential.ConfirmPassword" />
 
