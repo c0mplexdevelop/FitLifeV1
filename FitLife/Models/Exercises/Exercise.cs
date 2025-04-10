@@ -5,14 +5,14 @@ namespace FitLife.Models.Exercises;
 public class Exercise
 {
     public string Id { get; set; } = string.Empty;
-    public string Name = string.Empty;
+    public string Name { get; set; } = string.Empty;
     //public string Description = string.Empty;
-    public string Type = string.Empty;
-    public ExerciseDifficulty Difficulty;
-    public string TargetMuscleGroup = string.Empty;
-    public string EquipmentNeeded = string.Empty;
-    public int Reps { get; set; }
-    public int DurationInSeconds { get; set; }
-    public int Sets { get; set; }
+    public string Type { get; set; } = string.Empty;
+    public ExerciseDifficulty Difficulty { get; set; }
+    public string TargetMuscleGroup { get; set; } = string.Empty;
+    public string EquipmentNeeded { get; set; } = string.Empty;
+    public string Reps { get; set; } = string.Empty;
+    public string Duration { get; set; } = string.Empty;
+    public string Sets { get; set; } = string.Empty;
 
 }

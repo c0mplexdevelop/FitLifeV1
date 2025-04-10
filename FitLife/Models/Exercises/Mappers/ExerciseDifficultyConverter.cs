@@ -9,6 +9,16 @@ public class ExerciseDifficultyConverter : DefaultTypeConverter
 {
     public override object? ConvertFromString(string? text, IReaderRow row, MemberMapData memberMapData)
     {
-        return Enum.TryParse<ExerciseDifficulty>(text, ignoreCase: true, out var difficulty);
+        if (string.IsNullOrEmpty(text))
+        {
+            return null;
+        }
+
+        if (Enum.TryParse<ExerciseDifficulty>(text, ignoreCase: true, out var difficulty))
+        {
+            return difficulty;
+        }
+
+        throw new Exception();
     }
 }
