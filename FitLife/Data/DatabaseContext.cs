@@ -33,7 +33,7 @@ public class DatabaseContext: IdentityDbContext<User, IdentityRole<int>, int>
     public void SeedDataAsync()
     {
         User? user = Set<User>().Find(-1);
-        if (user != null)
+        if (user == null)
         {
             return;
         }
@@ -53,6 +53,8 @@ public class DatabaseContext: IdentityDbContext<User, IdentityRole<int>, int>
         };
         user.PasswordHash = new PasswordHasher<User>().HashPassword(user, "Test!23");
         Set<User>().Add(user);
+        }
+        
 
         if(!Set<Exercise>().Any())
         {
