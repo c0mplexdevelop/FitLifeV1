@@ -1,0 +1,62 @@
+﻿ .container {
+	background-color: #FFFFFF;
+	width: 90%;
+	height: 25%;
+	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+	margin: 1vh 0vw 1vh 0vw;
+	display: flex;
+	flex-direction: row;
+}
+
+	.container > .name-container {
+		height: 100%;
+		width: 35%;
+		margin-right: 2vw;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+	}
+
+		.container > .name-container > h1 {
+			margin: 0vh 0vw 0vh 2vw;
+		}
+
+		.container > .name-container > button {
+			background-color: #EE1D52;
+			font-family: "Poppins";
+			color: white;
+			text-shadow: 0px 0px 2px black;
+			cursor: pointer;
+			margin: 2vh 0vw 0vh 2vw;
+			width: 50%;
+			height: 25%;
+			border: 0;
+			border-radius: 5px;
+		}
+
+			.container > .name-container > button:hover {
+				color: skyblue;
+			}
+
+		.container > div.exercise-details {
+			height: 100%;
+			width: 20%;
+			margin-right: 1vw;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+		}
+
+			.container > div.exercise-details > p {
+				color: rgba(0, 0, 0, 0.5);
+				margin: 1vh 0vw 0vh 0vw;
+				font-weight: 700;
+				font-size: 2.5vh;
+			}
+
+			.container > div.exercise-details > a {
+				color: black;
+				margin: 0vh 0vw 0vh 0vw;
+				font-weight: 800;
+				font-size: 2.5vh;
+			}
