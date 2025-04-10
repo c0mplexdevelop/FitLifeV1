@@ -70,7 +70,6 @@
         }
  
 /*FOR WORKOUT PLAYLIST CONTENT*/
-
 .container {
     width: 95%;
     height: 80vh;
@@ -79,7 +78,7 @@
     flex-direction: column;
     overflow-y: auto;
 }
-    .container > div {
+   /* .container > div {
         background-color: #FFFFFF;
         width: 90%;
         height: 25%;
@@ -139,7 +138,7 @@
             margin: 0vh 0vw 0vh 0vw;
             font-weight: 800;
             font-size: 2.5vh;
-        }
+        }*/
 
     /*DESIGN LINE IN EVERY WORKOUTS*/
     .container > div > .design-line {
