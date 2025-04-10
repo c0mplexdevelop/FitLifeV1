@@ -60,13 +60,29 @@
 	color: #111111;
 }
 
+.password-container {
+	width: 100%;
+	
+	border: 1px solid #33333359;
+	border-radius: 0.5rem;
+	display: flex;
+	flex-direction: row;
+}
+
+.eye-button {
+	background-color: transparent;
+	box-shadow: none;
+	border: none;
+	cursor: pointer;
+}
+
 label {
     font-size: 0.9rem;
     font-family: "Poppins", sans-serif;
     color: #666666
 }
 
-button {
+button[type=submit] {
 	border: none;
 	background: none;
 	width: 100%;
@@ -103,11 +119,39 @@ button {
 }
 
 ::deep input {
-    width: 100%;
-    height: 2.5rem;
-    border-radius: 0.5rem;
-
+	all: unset;
+	width: 100%;
+	height: 2.5rem;
+	border-radius: 0.5rem;
+	border: 1px solid #33333359; 
 }
+
+	::deep input:focus {
+		outline: none !important;
+	}
+
+	::deep input.invalid {
+		outline: none;
+	}
+
+	::deep input.valid {
+		outline: none;
+	}
+
+	::deep .valid.modified {
+		outline: none;
+	}
+
+
+::deep #password {
+	width: 95%;
+	border: none;
+}
+
+	::deep #password:focus {
+		outline: none !important;
+		/*box-shadow: none;*/
+	}
 
 .bg-test {
     background-color: green;

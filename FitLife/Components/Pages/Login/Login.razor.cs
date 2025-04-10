@@ -21,6 +21,21 @@ public partial class Login
     [Inject]
     private NavigationManager NavigationManager { get; set; } = null!;
 
+    [Inject]
+    private ILogger<Login> Logger { get; set; } = null!;
+
+    private bool IsPasswordVisible { get; set; } = false;
+    private string PasswordVisibilityState { get; set; } = "password";
+    private string EyeVisibilityState { get; set; } = "fa-eye-slash";
+
+    private void ChangePasswordVisibility(Microsoft.AspNetCore.Components.Web.MouseEventArgs args)
+    {
+        PasswordVisibilityState = IsPasswordVisible ? "text" : "password";
+        EyeVisibilityState = IsPasswordVisible ? "fa-eye" : "fa-eye-slash";
+        IsPasswordVisible = !IsPasswordVisible;
+        Logger.LogInformation($"Password visibility changed to: {PasswordVisibilityState}");
+    }
+
     protected override Task OnInitializedAsync()
     {
         Model ??= new UserLoginCredential();
