@@ -70,7 +70,6 @@
         }
  
 /*FOR WORKOUT PLAYLIST CONTENT*/
-
 .container {
     width: 95%;
     height: 80vh;
@@ -79,7 +78,7 @@
     flex-direction: column;
     overflow-y: auto;
 }
-    .container > div {
+   /* .container > div {
         background-color: #FFFFFF;
         width: 90%;
         height: 25%;
@@ -119,7 +118,7 @@
                 color: skyblue;
             }
 
-    .container > div > div1 {
+    .container > div > div.exercise-details {
         height: 100%;
         width: 20%;
         margin-right: 1vw;
@@ -127,22 +126,22 @@
         flex-direction: column;
         justify-content: center;
     }
-        .container > div > div1 > p {
+        .container > div > div.exercise-details > p {
             color: rgba(0, 0, 0, 0.5);
             margin: 1vh 0vw 0vh 0vw;
             font-weight: 700;
             font-size: 2.5vh;
         }
 
-        .container > div > div1 > a {
+        .container > div > div.exercise-details > a {
             color: black;
             margin: 0vh 0vw 0vh 0vw;
             font-weight: 800;
             font-size: 2.5vh;
-        }
+        }*/
 
     /*DESIGN LINE IN EVERY WORKOUTS*/
-    .container > div > div2 {
+    .container > div > .design-line {
         background-color: #991535;
         height: 100%;
         width: 2%;

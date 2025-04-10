@@ -1,0 +1,64 @@
+﻿@layout Layout.DashboardLayout
+@page "/workout-selections"
+
+@rendermode @(new InteractiveServerRenderMode(prerender: false)) 
+@* If prerender is false, prevent lagging on previous page due to I/O or waiting*@
+
+<div class="header">
+    <p>"Choose your workout: Explore a range of exercises tailored to your fitness goals and preferences"</p>
+    <h1>Workout Playlist</h1>
+    <div class="filter-selection">
+        <button id="strengthBtn">Strength</button>
+        <button id="coreBtn">Core</button>
+        <button id="flexBtn">Flexibility</button>
+        <button id="cardioBtn">Cardio</button>
+    </div>
+</div>
+
+<div class="container">
+    @* <div>
+        <div>
+            <h1>Bench Press</h1>
+            <button>+ Add to Workouts</button>
+        </div>
+        <div class="exercise-details">
+            <p>Exercise Type:</p>
+            <a>Strength</a>
+            <p>Exercise Needed:</p>
+            <a>Barbell</a>
+        </div>
+        <div class="exercise-details">
+            <p>Exercise Difficulty:</p>
+            <a>Beginner</a>
+            <p>Exercise Target:</p>
+            <a>Chest</a>
+        </div>
+        <div class="exercise-details">
+            <p>Typical Reps/Hold:</p>
+            <a>10-15</a>
+            <p>Typical Duration::</p>
+            <a>N/A</a>
+        </div>
+        <div class="design-line"></div>
+    </div> *@
+    @if(isLoading)
+    {
+        <p>Loading..</p>
+    }
+    else
+    {
+        if (Exercises == null || Exercises.Count == 0)
+        {
+            <p>No exercises found.</p>
+        } else
+        {
+            @foreach (var exercise in Exercises)
+            {
+                <WorkoutComponent Exercise="exercise" />
+                <div class="design-line"></div>
+            }
+        }
+    }
+    
+    
+</div>
