@@ -98,3 +98,13 @@
 	::deep .valid.modified {
 		outline: none;
 	}
+
+/*FOR ASTERISK*/
+
+span {
+	font-size: 0.7rem;
+	overflow: hidden;
+	color: red;
+	margin: 0vh 0vw 0vh 0.3vw;
+	vertical-align: super;
+}
