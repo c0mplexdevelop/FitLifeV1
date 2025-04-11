@@ -1,8 +1,6 @@
 ﻿@page "/login"
 @layout Layout.LoginLayout
 
-@rendermode InteractiveServer
-
 <div class="container">
     <div class="flex-centered gap-3 max-size">
         <div class="form-container">
@@ -14,8 +12,6 @@
                     <label for="identifier">Email or Username:</label>
                     <InputText id="identifier" @bind-Value="Model!.LoginIdentifier" class="form-control" />
                 </div>
-
-
                 <div class="input-container">
                     <label for="password">Password:</label>
                     <div class="password-container">
