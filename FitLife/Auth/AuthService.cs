@@ -124,5 +124,9 @@ public class AuthService
         return user;
     }
 
+    public async Task SignOutUser()
+    {
+        await _signInManager.SignOutAsync();
+    }
     
 }

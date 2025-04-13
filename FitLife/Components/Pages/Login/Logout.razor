@@ -1,0 +1,30 @@
+﻿@page "/logout"
+@using FitLife.Auth
+
+@code {
+    [CascadingParameter]
+    private Task<AuthenticationState> AuthenticationStateTask { get; set; } = default!;
+
+    [Inject]
+    private NavigationManager NavigationManager { get; set; } = default!;
+
+    [Inject]
+    private AuthService AuthService { get; set; } = default!;
+
+
+    protected override async Task OnInitializedAsync()
+    {
+        // Perform logout logic here
+        var authState = await AuthenticationStateTask;
+        var user = authState.User;
+
+        if (user.Identity!.IsAuthenticated)
+        {
+            // Assuming you have a method to sign out the user
+            await AuthService.SignOutUser();
+
+            NavigationManager.NavigateTo("/login");
+        }
+        await base.OnInitializedAsync();
+    }
+}
