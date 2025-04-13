@@ -20,10 +20,10 @@ public partial class LoginDetails
     private string PasswordVisibilityState { get; set; } = "password";
     private string EyeVisibilityState { get; set; } = "fa-eye-slash";
 
-    private async Task ChangePasswordVisibility(Microsoft.AspNetCore.Components.Web.MouseEventArgs args)
+    private void ChangePasswordVisibility(Microsoft.AspNetCore.Components.Web.MouseEventArgs args)
     {
-        PasswordVisibilityState = IsPasswordVisible ? "text" : "password";
-        EyeVisibilityState = IsPasswordVisible ? "fa-eye" : "fa-eye-slash";
+        PasswordVisibilityState = !IsPasswordVisible ? "text" : "password";
+        EyeVisibilityState = !IsPasswordVisible ? "fa-eye" : "fa-eye-slash";
         IsPasswordVisible = !IsPasswordVisible;
     }
 
