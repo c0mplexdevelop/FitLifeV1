@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Identity;
 using FitLife.Models.User;
 using FitLife.Auth;
 using Microsoft.Extensions.DependencyInjection.Extensions;
+using Microsoft.AspNetCore.Mvc;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -61,6 +62,11 @@ builder.Services.AddAuthentication(options =>
 })
     .AddCookie("Cookies");
 
+builder.Services.AddAuthorization();
+builder.Services.AddCascadingAuthenticationState();
+builder.Services.AddAntiforgery();
+
+
 builder.Services.AddIdentity<User, IdentityRole<int>>(options =>
 {
     options.Password.RequireDigit = true;
@@ -93,14 +99,14 @@ if (!app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
+app.UseAntiforgery();
+
 app.UseAuthentication();
 app.UseAuthorization();
 
-app.UseAntiforgery();
 
 app.MapStaticAssets();
 app.MapRazorComponents<App>().AddInteractiveServerRenderMode();
-
 
 using var scope = app.Services.CreateScope();
 var context = scope.ServiceProvider.GetRequiredService<DatabaseContext>();
