@@ -5,13 +5,17 @@ namespace FitLife.Components.Pages.Login;
 using FitLife.Auth;
 using FitLife.Models.User;
 using Microsoft.AspNetCore.Components;
+using Microsoft.AspNetCore.Components.Authorization;
 using Microsoft.AspNetCore.Components.Web;
 
 public partial class Login
 {
 
-    [SupplyParameterFromForm]
-    private UserLoginCredential? Model { get; set; }
+    [SupplyParameterFromForm(FormName = "LoginForm")]
+    private UserLoginCredential Model { get; set; }
+
+    [CascadingParameter]
+    private Task<AuthenticationState> AuthenticationStateTask { get; set; } = null!;    
 
     private string errorMessage = string.Empty;
 
@@ -24,22 +28,31 @@ public partial class Login
     [Inject]
     private ILogger<Login> Logger { get; set; } = null!;
 
-    private bool IsPasswordVisible { get; set; } = false;
-    private string PasswordVisibilityState { get; set; } = "password";
-    private string EyeVisibilityState { get; set; } = "fa-eye-slash";
-
-    private void ChangePasswordVisibility(Microsoft.AspNetCore.Components.Web.MouseEventArgs args)
-    {
-        PasswordVisibilityState = IsPasswordVisible ? "text" : "password";
-        EyeVisibilityState = IsPasswordVisible ? "fa-eye" : "fa-eye-slash";
-        IsPasswordVisible = !IsPasswordVisible;
-        Logger.LogInformation($"Password visibility changed to: {PasswordVisibilityState}");
-    }
-
-    protected override Task OnInitializedAsync()
+    protected override async Task OnInitializedAsync()
     {
         Model ??= new UserLoginCredential();
-        return base.OnInitializedAsync();
+
+        if(AuthenticationStateTask is null)
+        {
+            Logger.LogError("AuthenticationStateTask is null, ensure the routes is wrapped in CascadingAuthenticationState");
+            throw new InvalidOperationException("AuthenticationStateTask is null, ensure the routes is wrapped in CascadingAuthenticationState");
+        }
+        
+        var authState = await AuthenticationStateTask;
+        var user = authState.User;
+
+        if (user.Identity!.IsAuthenticated)
+        {
+            Logger.LogInformation("User is already authenticated, redirecting to user dashboard");
+            NavigationManager.NavigateTo("/user-dashboard", forceLoad: true);
+        }
+        else
+        {
+            Logger.LogInformation("User is not authenticated, showing login page");
+        }
+
+
+        await base.OnInitializedAsync();
     }
 
     private async Task HandleValidSubmit()
@@ -47,13 +60,14 @@ public partial class Login
         var result = await AuthService.SignInUser(Model!);
         if (result.Succeeded)
         {
-            NavigationManager.NavigateTo("/user-dashboard");
+            NavigationManager.NavigateTo("/user-dashboard", forceLoad: true);
         }
         else
         {
             errorMessage = "Invalid login attempt.";
             NavigationManager.NavigateTo("/login/");
         }
+        Logger.LogInformation($"Login attempt with identifier: {Model.LoginIdentifier}");
     }
 
 }

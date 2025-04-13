@@ -69,6 +69,10 @@
 	flex-direction: row;
 }
 
+	.password-container:focus-within {
+		box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb
+	}
+
 .eye-button {
 	background-color: transparent;
 	box-shadow: none;
@@ -124,6 +128,8 @@ button[type=submit] {
 	height: 2.5rem;
 	border-radius: 0.5rem;
 	border: 1px solid #33333359; 
+
+	padding-left: 0.5rem;
 }
 
 	::deep input:focus {
@@ -150,7 +156,7 @@ button[type=submit] {
 
 	::deep #password:focus {
 		outline: none !important;
-		/*box-shadow: none;*/
+		box-shadow: none;
 	}
 
 .bg-test {

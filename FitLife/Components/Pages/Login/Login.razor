@@ -5,7 +5,6 @@
     <div class="flex-centered gap-3 max-size">
         <div class="form-container">
             <EditForm Model="Model" class="login-form" OnValidSubmit="HandleValidSubmit" FormName="LoginForm">
-
                 <span>@errorMessage</span>
 
                 <div class="input-container">
@@ -15,8 +14,9 @@
                 <div class="input-container">
                     <label for="password">Password:</label>
                     <div class="password-container">
-                        <InputText id="password" type="@PasswordVisibilityState" @bind-Value="Model.Password" class="form-control" />
-                        <button class="fa @EyeVisibilityState eye-button" type="button" @onclick="ChangePasswordVisibility"></button>
+                        <InputText id="password" type="password" @bind-Value="Model.Password" class="form-control" />
+                        <button id="password-visibility-button" class="fa fa-eye-slash eye-button" 
+                        type="button" onclick="togglePasswordVisibility()"></button>
 
                     </div>
                 </div>
