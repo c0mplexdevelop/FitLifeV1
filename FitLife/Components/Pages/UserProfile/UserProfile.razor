@@ -33,8 +33,26 @@
         <div>
             <p>oneautumnleaf@gmail.com</p>
         </div>
+        <button>Edit Email Address</button>
     </div>
     <div class="content-layout">
         <p>Password</p>
+        <div>
+            <p>test******</p>
+        </div>
+        <button>Edit Password</button>
     </div>
-</div>  
+</div>
+
+
+@* @if (showEmailPopup)
+{
+    <div class="popup-overlay">
+        <div class="popup">
+            <button class="close-btn" @onclick="() => showEmailPopup = false">&times;</button>
+            <h3>New Email Address</h3>
+            <input type="email" placeholder="Enter your new email address" />
+            <button class="confirm-btn">Confirm</button>
+        </div>
+    </div>
+} *@
