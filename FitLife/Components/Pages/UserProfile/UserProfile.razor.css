@@ -55,7 +55,7 @@
     flex-direction: row;
 }
     .otherInfo-container > .content-layout {
-        background-color: yellow;
+        margin-left: 2vw;
         width: 30%;
         height: 100%;
         display: flex;
@@ -68,8 +68,66 @@
             margin: 5vh 0vw 0vh 2vw;
         }
         .content-layout > div {
-            background-color: skyblue;
             margin: 0vh 0vw 0vh 2vw;
             width: 90%;
             height: 20%;
         }
+
+        .content-layout > button {
+            background-color: rgba(65, 130, 249, 0.2);
+            border: 0;
+            border-radius: 10px;
+            cursor: pointer;
+            margin: 5vh 0vw 0vh 2vw;
+            height: 15%;
+            width: 70%;
+            color: #4182F9;
+            font-size: 1rem;
+            text-shadow: 0px 0px 10px rgb(65, 130, 249);
+        }
+
+        .content-layout > button:hover {
+            color: white;
+        }
+
+/*FOR USER EDITING EMAIL AND PASSWORD*/
+/*
+    .popup-overlay {
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.6);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 9999;
+    }
+
+    .popup {
+        background: white;
+        padding: 2rem;
+        border-radius: 10px;
+        min-width: 350px;
+        text-align: center;
+        position: relative;
+        box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .close-btn {
+        position: absolute;
+        top: 10px;
+        right: 15px;
+        font-size: 1.5rem;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+    }
+
+    .confirm-btn {
+        margin-top: 20px;
+        padding: 10px 25px;
+        background-color: #2196f3;
+        color: white;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+    }*/

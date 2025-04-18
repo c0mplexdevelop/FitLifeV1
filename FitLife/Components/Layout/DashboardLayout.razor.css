@@ -140,16 +140,6 @@
                     color: #EE1D52;
                 }
 
-            ::deep #iconSettings {
-                background: url('images/dashboard/settingsIconWhite.svg') no-repeat 20px center;
-                background-size: 15% 100%;
-            }
-                ::deep #iconSettings:hover {
-                    background: rgb(61, 50, 50) url('images/dashboard/settingsIconWhite.svg') no-repeat 20px center;
-                    background-size: 15% 100%;
-                    color: #EE1D52;
-                }
-
 .user-dashboard {
     margin: 0vh 0vw 0vh auto;
     width: 85%;
