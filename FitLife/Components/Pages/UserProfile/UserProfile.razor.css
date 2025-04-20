@@ -84,50 +84,99 @@
             color: #4182F9;
             font-size: 1rem;
             text-shadow: 0px 0px 10px rgb(65, 130, 249);
+            text-align: center;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
+            .content-layout > button:hover {
+                color: white;
+            }
 
-        .content-layout > button:hover {
-            color: white;
-        }
+/*FOR EDITING EMAIL AND PASSWORD*/
 
-/*FOR USER EDITING EMAIL AND PASSWORD*/
-/*
-    .popup-overlay {
-        position: fixed;
-        inset: 0;
-        background: rgba(0, 0, 0, 0.6);
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0,0,0,0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hidden {
+    display: none;
+}
+
+    .edit-detail {
         display: flex;
-        justify-content: center;
-        align-items: center;
-        z-index: 9999;
-    }
-
-    .popup {
-        background: white;
-        padding: 2rem;
+        flex-direction: column;
+        background-color: #FFFFFF;
+        z-index: 1;
+        width: 30%;
+        height: 35vh;
+        border: 0;
         border-radius: 10px;
-        min-width: 350px;
-        text-align: center;
-        position: relative;
-        box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
     }
 
-    .close-btn {
-        position: absolute;
-        top: 10px;
-        right: 15px;
-        font-size: 1.5rem;
-        background: transparent;
-        border: none;
+    .edit-header {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        width: 100%;
+        height: 10vh;
+    }
+
+    .edit-header > p {
+        font-family: "Poppins";
+        margin-left: 2vw;
+        font-size: 1rem;
+        color: #666666;
+    }
+
+    .edit-header > button {
+        margin: 0vh 1vw 0vh auto;
+        background-color: transparent;
+        width: 10%;
+        height: 60%;
+        border-radius: 50px;
         cursor: pointer;
     }
+        .edit-header > button:hover {
+            background-color: rgba(128, 128, 128, 0.2);
+            border-color: white;
+            color: rgba(128, 128, 128, 0.5);
+        }
 
-    .confirm-btn {
-        margin-top: 20px;
-        padding: 10px 25px;
-        background-color: #2196f3;
+    .edit-detail > input {
+        width: 85%;
+        height: 8vh;
+        margin: 2vh 0vw 0vh 2vw;
+        font-family: "Poppins";
+        border: 1px solid rgba(43, 40, 40, 0.5);
+        border-radius: 10px;
+        padding-left: 1vw;
+    }
+
+    .edit-detail > button {
+        background-color: #2196F3;
+        width: 35%;
+        height: 7vh;
+        margin: 3vh 2vw 0vh auto;
+        border: 0;
+        border-radius: 10px;
+        cursor: pointer;
+        font-family: "Poppins";
+        font-size: 1rem;
+        font-weight: 800;
+/*        text-shadow: 0px 0px 5px black;*/
         color: white;
-        border: none;
-        border-radius: 6px;
-        cursor: pointer;
-    }*/
+        }
+        .edit-detail > button:hover {
+            background-color: rgb(33, 150, 243, 0.5);
+            color: rgb(0, 0, 0, 0.5);
+        }
