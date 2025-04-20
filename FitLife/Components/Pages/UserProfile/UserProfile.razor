@@ -1,6 +1,7 @@
 ﻿@layout Layout.DashboardLayout
 
 @page "/user-profile"
+@rendermode InteractiveServer
 
 <div class="info-container">
     <div class="header-info">
@@ -33,8 +34,35 @@
         <div>
             <p>oneautumnleaf@gmail.com</p>
         </div>
+        <button @onclick="editEmail">Edit Email Address</button>
     </div>
     <div class="content-layout">
         <p>Password</p>
+        <div>
+            <p>test******</p>
+        </div>
+        <button @onclick="editPassword">Edit Password</button>
     </div>
-</div>  
+</div>
+
+<div class="overlay @emailOverlay">
+    <div class="edit-detail">
+        <div class="edit-header">
+            <p>New Email Address</p>
+            <button @onclick="closeEditEmail" class="closeBtn">X</button>
+        </div>
+        <input type="email" placeholder="Enter your new email address"/>
+        <button>Confirm</button>
+    </div>
+</div>
+
+<div class="overlay @passwordOverlay">
+    <div class="edit-detail">
+        <div class="edit-header">
+            <p>New Password</p>
+            <button @onclick="closeEditPassword" class="closeBtn">X</button>
+        </div>
+        <input type="text" placeholder="Enter your new password" />
+        <button>Confirm</button>
+    </div>
+</div>

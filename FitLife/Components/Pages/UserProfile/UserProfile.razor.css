@@ -55,7 +55,7 @@
     flex-direction: row;
 }
     .otherInfo-container > .content-layout {
-        background-color: yellow;
+        margin-left: 2vw;
         width: 30%;
         height: 100%;
         display: flex;
@@ -68,8 +68,115 @@
             margin: 5vh 0vw 0vh 2vw;
         }
         .content-layout > div {
-            background-color: skyblue;
             margin: 0vh 0vw 0vh 2vw;
             width: 90%;
             height: 20%;
+        }
+
+        .content-layout > button {
+            background-color: rgba(65, 130, 249, 0.2);
+            border: 0;
+            border-radius: 10px;
+            cursor: pointer;
+            margin: 5vh 0vw 0vh 2vw;
+            height: 15%;
+            width: 70%;
+            color: #4182F9;
+            font-size: 1rem;
+            text-shadow: 0px 0px 10px rgb(65, 130, 249);
+            text-align: center;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+            .content-layout > button:hover {
+                color: white;
+            }
+
+/*FOR EDITING EMAIL AND PASSWORD*/
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0,0,0,0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hidden {
+    display: none;
+}
+
+    .edit-detail {
+        display: flex;
+        flex-direction: column;
+        background-color: #FFFFFF;
+        z-index: 1;
+        width: 30%;
+        height: 35vh;
+        border: 0;
+        border-radius: 10px;
+    }
+
+    .edit-header {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        width: 100%;
+        height: 10vh;
+    }
+
+    .edit-header > p {
+        font-family: "Poppins";
+        margin-left: 2vw;
+        font-size: 1rem;
+        color: #666666;
+    }
+
+    .edit-header > button {
+        margin: 0vh 1vw 0vh auto;
+        background-color: transparent;
+        width: 10%;
+        height: 60%;
+        border-radius: 50px;
+        cursor: pointer;
+    }
+        .edit-header > button:hover {
+            background-color: rgba(128, 128, 128, 0.2);
+            border-color: white;
+            color: rgba(128, 128, 128, 0.5);
+        }
+
+    .edit-detail > input {
+        width: 85%;
+        height: 8vh;
+        margin: 2vh 0vw 0vh 2vw;
+        font-family: "Poppins";
+        border: 1px solid rgba(43, 40, 40, 0.5);
+        border-radius: 10px;
+        padding-left: 1vw;
+    }
+
+    .edit-detail > button {
+        background-color: #2196F3;
+        width: 35%;
+        height: 7vh;
+        margin: 3vh 2vw 0vh auto;
+        border: 0;
+        border-radius: 10px;
+        cursor: pointer;
+        font-family: "Poppins";
+        font-size: 1rem;
+        font-weight: 800;
+/*        text-shadow: 0px 0px 5px black;*/
+        color: white;
+        }
+        .edit-detail > button:hover {
+            background-color: rgb(33, 150, 243, 0.5);
+            color: rgb(0, 0, 0, 0.5);
         }

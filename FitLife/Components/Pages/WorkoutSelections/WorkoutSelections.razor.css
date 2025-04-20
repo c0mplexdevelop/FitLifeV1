@@ -45,24 +45,32 @@
     }
 
     #strengthBtn {
+        background: url("images/WorkoutFilters/musclewhite-solid--muscle.svg") no-repeat 10px center; 
+        background-size: 15% 100%;
         background-color: rgba(238, 29, 82, 0.5);
     }
         #strengthBtn:hover {
             color: skyblue;
         }
     #coreBtn {
+        background: url("images/WorkoutFilters/CORE-muscle-body (1).svg") no-repeat 10px center;
+        background-size: 20% 100%;
         background-color: #EE1D52;
     }
         #coreBtn:hover {
             color: skyblue;
         }
     #flexBtn {
+        background: url("images/WorkoutFilters/FLEXIBILITY--WHITE.svg") no-repeat 10px center;
+        background-size: 15% 100%;
         background-color: rgba(238, 29, 82, 0.5);
     }
         #flexBtn:hover {
             color:  skyblue;
         }
     #cardioBtn {
+        background: url("images/WorkoutFilters/CARDIO--WHITE.svg") no-repeat 10px center;
+        background-size: 15% 100%;
         background-color: rgba(238, 29, 82, 0.5);
     } 
         #cardioBtn:hover {
