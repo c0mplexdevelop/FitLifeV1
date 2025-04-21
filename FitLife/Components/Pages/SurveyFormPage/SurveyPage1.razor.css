@@ -1,0 +1,188 @@
+﻿
+
+header {
+    width: 45%;
+    height: 10vh;
+    margin: 0vh 0vw 2vh 0vw;
+    display: flex;
+    justify-content: center;
+    border-bottom: 10px solid #EE1D52;
+    border-radius: 10px;
+}
+    header > a {
+        font-family: "Poppins";
+        font-weight: 600;
+        font-size: 1.5rem;
+        color: black;
+    }
+
+.main-container {
+    background-color: #FFFFFF;
+    width: 40%;
+    height: 85vh;
+    box-shadow: 0px 0px 20px rgb(0, 0, 0, 0.66);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+    .personal-information {
+        width: 100%;
+        height: 30vh;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .personal-information > label {
+        font-family: "Poppins";
+        color: black;
+        font-weight: 800;
+        margin: 2vh 0vw 0vh 1vw;
+    }
+
+    .personal-information > div {
+        width: 100%; 
+        height: 15vh;
+        display: flex;
+        flex-direction: row;
+        margin-top: 1vh;
+    }
+        .personal-information > div > div {
+            display: flex;
+            flex-direction: column;
+            width: 50%;
+            height: 100%;
+        }
+
+        .personal-information > div > div > label {
+            font-family: "Poppins";
+            font-weight: 500;
+            margin: 0vh 0vw 0vh 1vw;
+        }
+
+        .personal-information > div > div > input {
+            font-family: "Poppins";
+            width: 90%;
+            margin: 1vh 0vw 0vh 1vw;
+            height: 60%;
+            border: 1px solid rgb(48, 45, 45);
+            border-radius: 5px;
+        }
+
+    .fitness-goal {
+        width: 100%;
+        height: 25vh;
+        display: flex;
+        flex-direction: column;
+    }
+
+        .fitness-goal > label {
+            font-family: "Poppins";
+            margin: 2vh 0vw 1vh 1vw;
+            color: black;
+            font-weight: 800;
+        }
+
+        .fitness-goal > div {
+            width: 100%;
+            height: 20vh;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+        }
+
+            .fitness-goal > div > div {
+                background-color: white;
+                margin: auto;
+                width: 22%;
+                height: 90%;
+                border-radius: 10px;
+                border: 1px solid black;
+                display: flex;
+                flex-direction: column; 
+            }
+
+                .fitness-goal > div > div > label {
+                    font-size: 0.7rem;
+                    font-family: "Poppins";
+                    font-weight: 800;
+                    margin: 1vh 0vw 0vh auto;
+                    width: 80%;
+                    height: 40%;
+                }
+
+                .fitness-goal > div > div > p {
+                    font-size: 0.7rem;
+                    font-family: "Poppins";
+                    color: rgb(0, 9, 44, 0.6);
+                    width: 90%;
+                    margin: 2vh auto 0vh auto;
+                }
+
+                .fitness-goal > div > div > input {
+                    margin: auto 0.5vw 0.5vh auto;
+                    cursor: pointer;
+                }
+
+    .secondary-fitnessgoal {
+        width: 100%; 
+        height: 20vh;
+        display: flex;
+        flex-direction: column;
+    }
+        .secondary-fitnessgoal > label {
+            font-family: "Poppins";
+            color: black;
+            font-weight: 800;
+            margin: 1vh 0vw 0vh 1vw;
+        }
+
+        .secondary-fitnessgoal > div {
+            margin: 2vh 0vw 2vh 1vw;
+            width: 90%;
+            height: 20%;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+        }
+
+            .secondary-fitnessgoal > div > label {
+                font-family: "Poppins";
+                font-weight: 500;
+                margin: 0vh 10vw 0vh 0vw;
+                cursor: pointer;
+            }
+
+        .secondary-fitnessgoal > textarea {
+            margin: 0vh 0vw 0vh 1vw;
+            width: 90%;
+            height: 40%;
+            font-family: "Poppins";
+            font-size: 1rem;
+            word-wrap: break-word;
+            resize: none;
+            border: 1px solid black;
+            border-radius: 5px;
+        }
+
+.main-container > button {
+    background-color: black;
+    width: 20%;
+    height: 6vh;
+    margin: auto 1vw 2vh auto;
+    font-family: "Poppins";
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 0;
+    border-radius: 10px;
+}
+
+    .main-container > button:hover {
+        color: skyblue;
+    }
