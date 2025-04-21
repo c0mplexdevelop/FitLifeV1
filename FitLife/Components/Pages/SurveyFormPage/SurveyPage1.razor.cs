@@ -7,7 +7,7 @@
         protected override async Task OnInitializedAsync()
         {
             await base.OnInitializedAsync();
-            await Task.Delay(TimeSpan.FromSeconds(3));
+            await Task.Delay(TimeSpan.FromSeconds(2.5));
 
             isLoading = false;
         }

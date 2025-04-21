@@ -19,7 +19,7 @@ header {
 .main-container {
     background-color: #FFFFFF;
     width: 40%;
-    height: 85vh;
+    height: 105vh;
     box-shadow: 0px 0px 20px rgb(0, 0, 0, 0.66);
     border-radius: 10px;
     display: flex;
@@ -28,7 +28,7 @@ header {
 
     .personal-information {
         width: 100%;
-        height: 30vh;
+        height: 40vh;
         display: flex;
         flex-direction: column;
     }
@@ -45,7 +45,7 @@ header {
         height: 15vh;
         display: flex;
         flex-direction: row;
-        margin-top: 1vh;
+        margin-top: 2vh;
     }
         .personal-information > div > div {
             display: flex;
@@ -108,8 +108,9 @@ header {
                     font-family: "Poppins";
                     font-weight: 800;
                     margin: 1vh 0vw 0vh auto;
-                    width: 80%;
+                    width: 70%;
                     height: 40%;
+                    text-align: center;
                 }
 
                 .fitness-goal > div > div > p {
@@ -124,6 +125,26 @@ header {
                     margin: auto 0.5vw 0.5vh auto;
                     cursor: pointer;
                 }
+
+    /*FOR ICONS OF FITNESS GOALS SELECTION*/
+        #muscleGoal {
+            background: url('images/generategoals/FITNESS GOALS ICONS/MUSCLE-BLACK.svg') no-repeat 10px top;
+            background-size: 15% 45%;
+        }
+
+        #cardioGoal {
+            background: url('images/generategoals/FITNESS GOALS ICONS/HEARTICON-BLACK.svg') no-repeat 10px top;
+            background-size: 15% 45%;
+        }
+
+        #healthGoal {
+            background: url('images/generategoals/FITNESS GOALS ICONS/HEARTWITHPLUS-WHITE.svg') no-repeat 10px top;
+            background-size: 15% 45%;
+        }
+        #weightGoal {
+            background: url('images/generategoals/FITNESS GOALS ICONS/SCALEICON-BLACK.svg') no-repeat 10px top;
+            background-size: 15% 45%;
+        }
 
     .secondary-fitnessgoal {
         width: 100%; 
@@ -167,23 +188,32 @@ header {
             padding-left: 10px;
         }
 
-.main-container > button {
-    background-color: black;
-    width: 20%;
-    height: 6vh;
-    margin: auto 1vw 2vh auto;
-    font-family: "Poppins";
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: white;
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: 0;
-    border-radius: 10px;
-}
 
-    .main-container > button:hover {
-        color: skyblue;
+    .formBtn {
+        width: 50%;
+        height: 6vh;
+        display: flex;
+        flex-direction: row;
+        margin: auto 0vw auto auto;
     }
+
+    ::deep.formBtn > a {
+        background-color: black;
+        width: 40%;
+        height: 100%;
+        margin: 0vh 1vw 0vh 1vw;
+        font-family: "Poppins";
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: white;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 0;
+        border-radius: 10px;
+        text-decoration: none;
+    }
+        ::deep.formBtn > a:hover {
+            color: skyblue;
+        }

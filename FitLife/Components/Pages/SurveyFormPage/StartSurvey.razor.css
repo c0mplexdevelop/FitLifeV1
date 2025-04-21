@@ -1,0 +1,139 @@
+﻿
+.main-container {
+    background-color: #FFFFFF;
+    height: 95%;
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 10px;
+    box-shadow: 0px 10px 10px rgb(0, 0, 0, 0.5);
+}
+
+    .main-container > label {
+        font-family: "Montserrat";
+        font-size: 2rem;
+        font-weight: 500;
+    }
+
+    .main-container > p {
+        font-family: "Inter";
+        font-size: 1rem;
+        letter-spacing: 1px;
+        word-spacing: 1px;
+    }
+
+
+    .main-container-header {
+        width: 80%;
+        height: 20%;
+        display: flex;
+        flex-direction: column;
+        margin-top: 2vh;
+    }
+        .fitnessSurveyLayout {
+            width: 40%;
+            height: 50%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .fitnessSurveyLayout > label {
+            font-family: "Poppins";
+            font-size: 1.2rem;
+            margin: 2vh 0vw 0vh 5vw;
+        }
+
+        .fitnessSurveyLayout > p {
+            font-family: "Inter";
+            font-size: 0.8rem;
+            margin: 0vh 0vw 2vh 5vw;
+            color: rgb(0, 0, 0, 0.5);
+        }
+
+    .main-container-header > label {
+        width: 70%;
+        height: 20%;
+        margin: 1vh 0vw 0vh 0vw;
+        display: flex;
+        align-items: center;
+        padding-left: 3vw;
+        font-family: "Inter";
+        font-size: 0.8rem;
+        color: rgb(0, 0, 0, 0.5);
+    }
+        #protectIcon {
+            background: url('images/generategoals/SHIELDWITHLOCK-GREY.svg') no-repeat -15px center;
+            background-size: 10% 100%;
+        }
+
+        #wandIcon {
+            background: url('images/generategoals/MAGICWAND-GREY.svg') no-repeat -15px center;
+            background-size: 10% 100%;
+        }
+
+    /*START SURVEY BUTTON*/
+    ::deep #goToSurvey {
+        background-color: black;
+        width: 80%;
+        height: 10vh;
+        margin-top: 5vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border:0;
+        border-radius: 10px;
+        font-family: "Poppins";
+        font-size: 1.2rem;
+        font-weight: 500;
+        color: white;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+    ::deep #goToSurvey:hover {
+        color: #387dff;
+    }
+    
+    .fitness-infoLayout {
+        width: 80%;
+        height: 40%;
+        margin: auto 0vw 0vh 0vw;
+        display: flex;
+        flex-direction: row;
+    }
+
+        .fitness-infoLayout > div {
+            height:100%;
+            width: 30%;
+            margin: 0vh auto 0vh auto;
+            display: flex;
+            flex-direction: column;
+            justify-content:center;
+        }
+
+            .fitness-infoLayout > div > label {
+                font-family: "Poppins";
+                font-size: 1.2rem;
+                font-weight: 500;
+            }
+
+            .fitness-infoLayout > div > p {
+                font-family: "Roboto";
+                font-size: 1rem;
+                color: rgb(0, 0, 0, 0.5);
+            }
+
+        #goalsIcon {
+            background: url('images/generategoals/TARGET-ICON.svg') no-repeat top left;
+            background-size: 15% 30%;
+        }
+        #customIcon {
+            background: url('images/generategoals/CALENDAR-HEART-ICON.svg') no-repeat top left;
+            background-size: 15% 30%;
+        }
+        #nutritionIcon {
+            background: url('images/generategoals/icon-park-solid--knife-fork.svg') no-repeat top left;
+            background-size: 15% 30%;
+        }
