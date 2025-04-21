@@ -164,6 +164,7 @@ header {
             resize: none;
             border: 1px solid black;
             border-radius: 5px;
+            padding-left: 10px;
         }
 
 .main-container > button {
