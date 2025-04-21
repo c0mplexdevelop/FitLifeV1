@@ -1,0 +1,116 @@
+﻿
+
+header {
+    width: 45%;
+    height: 10vh;
+    margin: 0vh 0vw 2vh 0vw;
+    display: flex;
+    justify-content: center;
+    border-bottom: 10px solid #EE1D52;
+    border-radius: 10px;
+}
+
+    header > a {
+        font-family: "Poppins";
+        font-weight: 600;
+        font-size: 1.5rem;
+        color: black;
+    }
+
+.main-container {
+    background-color: #FFFFFF;
+    width: 40%;
+    height: 105vh;
+    box-shadow: 0px 0px 20px rgb(0, 0, 0, 0.66);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+}
+    .main-container > label {
+        font-family: "Poppins";
+        color: black;
+        font-weight: 600;
+        margin: 4vh 0vw 0vh 1vw;
+    }
+
+    .selection-layout {
+        width: 100%;
+        height: 20vh;
+        margin-top: 1vh;
+        display: flex;
+        flex-direction: column;
+    }
+
+        .selection-layout > label {
+            font-family: "Poppins";
+            font-weight: 400;
+            font-size: 1rem;
+            color: black;
+            margin: 1vh 0vw 0vh 1vw;
+        }
+
+        .selection-layout > select {
+            font-family: "Poppins";
+            font-size: 0.8rem;
+            width: 90%;
+            height: 25%;
+            margin: 0.5vh 0vw 0vh 1vw;
+            padding-left: 2vw;
+            color: #666666;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+    .checkbox-selection {
+        width: 100%;
+        height: 30vh;
+        display: flex;
+        flex-direction: column;
+    }
+        .checkbox-selection > a {
+            margin: 1vh 0vw 0vh 1vw;
+            width: 95%;
+            font-family: "Poppins";
+            font-size: 1rem;
+            font-weight: 400;
+            color: black;
+        }
+
+        .checkbox-selection > label {
+            font-family: "Poppins";
+            font-size: 0.8rem;
+            margin: 1vh 0vw 0vh 1vw;
+        }
+        .checkbox-selection > label > input {
+            cursor: pointer;
+        }
+
+    .formBtn {
+        width: 50%;
+        height: 6vh;
+        display: flex;
+        flex-direction: row;
+        margin: auto 0vw auto auto;
+    }
+
+    ::deep.formBtn > a {
+        background-color: black;
+        width: 40%;
+        height: 100%;
+        margin: 0vh 1vw 0vh 1vw;
+        font-family: "Poppins";
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: white;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 0;
+        border-radius: 10px;
+        text-decoration: none;
+    }
+
+        ::deep.formBtn > a:hover {
+            color: skyblue;
+        }
