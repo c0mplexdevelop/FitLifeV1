@@ -1,6 +1,6 @@
 ﻿@layout Layout.GenerateGoalLayout
 
-@page "/generate-goal-page1"
+@page "/survey-page1"
 
 @rendermode @(new InteractiveServerRenderMode(prerender: false))
 
@@ -39,22 +39,22 @@ else
         <div class="fitness-goal">
             <label>II. Fitness Goals</label>
             <div>
-                <div>
+                <div id="muscleGoal">
                     <label>Muscle Gain / Hypertrophy</label>
                     <p>Build muscle mass and strength</p>
                     <input type="checkbox" name="muscle" />
                 </div>
-                <div>
+                <div id="cardioGoal">
                     <label>Improved Cardiovascular Fitness</label>
                     <p>Enhance endurance and heart health</p>
                     <input type="checkbox" name="cardio" />
                 </div>
-                <div>
+                <div id="healthGoal">
                     <label>General Fitness / Health Improvement</label>
                     <p>Overall wellness and balanced fitness</p>
                     <input type="checkbox" name="health" />
                 </div>
-                <div>
+                <div id="weightGoal">
                     <label>Weight Loss</label>
                     <p>Loss weight and achieve a healthier</p>
                     <input type="checkbox" name="weightLoss" />
@@ -71,6 +71,9 @@ else
             <textarea placeholder="Please specify"></textarea>
         </div>
 
-        <button>Next</button>
+        <div class="formBtn">
+            <NavLink href="/start-survey">Back</NavLink>
+            <NavLink href="/survey-page2">Next</NavLink>
+        </div>
     </div>
 }
