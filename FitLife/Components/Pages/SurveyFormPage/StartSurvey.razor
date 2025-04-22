@@ -2,30 +2,36 @@
 
 @page "/start-survey"
 
-<div class="main-container">
-    <label>Create Your Personal Fitness Plan</label>
-    <p>Complete this survey to receive a customized fitness plan tailored to your goals and needs</p>
-    <div class="main-container-header">
-        <div class="fitnessSurveyLayout">
-            <label>Fitness Survey</label>
-            <p>7 sections •~ 10 minutes to complete</p>
+@rendermode @(new InteractiveServerRenderMode(prerender: false))
+
+@if (isLoading) {
+    <FitLife.Components.Pages.LoadingPage.LoadingPage/>
+} else {
+    <div class="main-container">
+        <label>Create Your Personal Fitness Plan</label>
+        <p>Complete this survey to receive a customized fitness plan tailored to your goals and needs</p>
+        <div class="main-container-header">
+            <div class="fitnessSurveyLayout">
+                <label>Fitness Survey</label>
+                <p>7 sections •~ 10 minutes to complete</p>
+            </div>
+            <label id="protectIcon">Your data is protected and will only be used to generate your fitness plan</label>
+            <label id="wandIcon">Decision tree analysis recommendations based on your responses</label>
         </div>
-        <label id="protectIcon">Your data is protected and will only be used to generate your fitness plan</label>
-        <label id="wandIcon">Decision tree analysis recommendations based on your responses</label>
+        <NavLink id="goToSurvey" href="/survey-page1">Start Survey</NavLink>
+        <div class="fitness-infoLayout">
+            <div id="goalsIcon">
+                <label>Personalized Goals</label>
+                <p>Set and track your fitness objectives with customized milestones targets</p>
+            </div>
+            <div id="customIcon">
+                <label>Custom Workouts</label>
+                <p>Set and track your fitness objectives with customized milestones targets</p>
+            </div>
+            <div id="nutritionIcon">
+                <label>Nutrition Plans</label>
+                <p>Set and track your fitness objectives with customized milestones targets</p>
+            </div>
+        </div>
     </div>
-    <NavLink id="goToSurvey" href="/survey-page1">Start Survey</NavLink>
-    <div class="fitness-infoLayout">
-        <div id="goalsIcon">
-            <label>Personalized Goals</label>
-            <p>Set and track your fitness objectives with customized milestones targets</p>
-        </div>
-        <div id="customIcon">
-            <label>Custom Workouts</label>
-            <p>Set and track your fitness objectives with customized milestones targets</p>
-        </div>
-        <div id="nutritionIcon">
-            <label>Nutrition Plans</label>
-            <p>Set and track your fitness objectives with customized milestones targets</p>
-        </div>
-    </div>
-</div>
+}
