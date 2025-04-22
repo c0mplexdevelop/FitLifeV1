@@ -11,19 +11,25 @@
     <div class="body-info">
         <div>
             <a>First Name:</a>
-            <p>Chi Qiu</p>
+            <p>@currentUser.FirstName</p>
             <a>Gender:</a>
-            <p>Male</p>
+            <p>@currentUser.Sex</p>
         </div>
         <div>
             <a>Last Name:</a>
-            <p>Ye</p>
+            <p>@currentUser.LastName</p>
             <a>Date of Birth:</a>
-            <p>March 08, 2024</p>
+            <p>@currentUser.DateOfBirth</p>
         </div>
         <div>
             <a>Middle Name:</a>
-            <p>Sie</p>
+            @if(currentUser.MiddleName is null)
+            {
+                <p>N/A</p>
+            } else
+            {
+                <p>@currentUser.MiddleName</p>
+            }
         </div>
     </div>
 </div>

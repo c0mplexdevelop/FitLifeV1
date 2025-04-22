@@ -1,4 +1,10 @@
-﻿using Microsoft.AspNetCore.Components.Web;
+﻿using FitLife.Auth;
+using FitLife.Data;
+using FitLife.Models.User;
+using Microsoft.AspNetCore.Components;
+using Microsoft.AspNetCore.Components.Authorization;
+using Microsoft.AspNetCore.Components.Web;
+using Microsoft.EntityFrameworkCore;
 
 namespace FitLife.Components.Pages.UserProfile
 {
@@ -13,9 +19,24 @@ namespace FitLife.Components.Pages.UserProfile
 
         [CascadingParameter]
         private Task<AuthenticationState> AuthenticationStateTask { get; set; } = null!;
+
+        [Inject]
+        private AuthService AuthService { get; set; } = null!;
+
+        [Inject]
+        private DatabaseContext DbContext { get; set; } = null!;
+
+        private User currentUser { get; set; } = new();
+
         protected override async Task OnInitializedAsync()
         {
             userName = await AuthService.ReturnUserName();
+            currentUser = await DbContext.Users.AsNoTracking()
+                .FirstAsync(u => u.UserName == userName);
+            if (currentUser == null)
+            {
+                throw new InvalidOperationException("User not found in the database.");
+            }
             await base.OnInitializedAsync();
         }
 
