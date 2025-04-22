@@ -76,7 +76,16 @@
         #cardioBtn:hover {
             color: skyblue;
         }
- 
+
+    #allBtn {
+        background: url("images/WorkoutFilters/whitedumbbell.png") no-repeat 10px center;
+        background-size: 25% 70%;
+        background-color: rgba(238, 29, 82, 0.5);
+    }
+        #allBtn:hover {
+            color: skyblue;
+        }
+
 /*FOR WORKOUT PLAYLIST CONTENT*/
 .container {
     width: 95%;

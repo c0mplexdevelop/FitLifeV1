@@ -1,0 +1,119 @@
+﻿
+header {
+    width: 45%;
+    height: 10vh;
+    margin: 0vh 0vw 10vh 0vw;
+    display: flex;
+    justify-content: center;
+    border-bottom: 10px solid #EE1D52;
+    border-radius: 10px;
+}
+
+    header > a {
+        font-family: "Poppins";
+        font-weight: 600;
+        font-size: 3.5vh;
+        color: black;
+    }
+
+.main-container {
+    background-color: #FFFFFF;
+    width: 70%;
+    height: 70%;
+    box-shadow: 0px 0px 20px rgb(0, 0, 0, 0.66);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+    .main-container > label {
+        font-family: "Poppins";
+        font-size: 4.5vh;
+        font-weight: 700;
+        margin-bottom: 5vh;
+    }
+
+.generated-content {
+    width: 85%;
+    height: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+}
+
+.content-container {
+    background-color: #991535;
+    width: 95%;
+    height: 30%;
+    margin-top: 2vh;
+    display: flex;
+    flex-direction: row;
+    box-shadow: 0px 0px 10px rgb(0, 0, 0)
+}
+
+.exercise-type {
+    background-color: white;
+    height: 100%;
+    width: 35%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+    .exercise-type > label {
+        height: 50%;
+        width: 100%;
+        font-family: "Poppins";
+        font-size: 3vh;
+        font-weight: 600;
+        padding-left: 2vw;
+        margin: 1vh 0vw auto 0vw;
+    }
+
+    .exercise-type > button {
+        background-color: #EE1D52;
+        width: 80%;
+        height: 25%;
+        border: 0;
+        border-radius: 5px;
+        cursor: pointer;
+        margin: 0vh 0vw auto 2vw;
+        font-family: "Poppins";
+        font-size: 2vh;
+        font-weight: 500;
+        color: white;
+    }
+
+        .exercise-type > button:hover {
+            color: skyblue;
+        }
+
+.exercise-info {
+    background-color: white;
+    height: 100%;
+    width: 21%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+    .exercise-info > label {
+        width: 100%;
+        height: 20%;
+        display: flex; 
+        align-items: center;
+        font-family: "Poppins";
+        font-size: 2vh;
+        font-weight: 700;
+        color: rgb(0, 0, 0, 0.5);
+    }
+
+    .exercise-info > a {
+        width: 100%;
+        height: 20%;
+        font-family: "Poppins";
+        font-size: 2vh;
+        font-weight: 700;
+        color: black;
+        margin-bottom: 1vh;
+    }

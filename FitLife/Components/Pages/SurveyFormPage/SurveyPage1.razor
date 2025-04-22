@@ -2,78 +2,70 @@
 
 @page "/survey-page1"
 
-@rendermode @(new InteractiveServerRenderMode(prerender: false))
 
+<header>
+    <a>Create Your Personal Fitness Plan</a>
+</header>
 
-@if (isLoading)
-{
-    <FitLife.Components.Pages.LoadingPage.LoadingPage />
-}
-else
-{
-    <header>
-        <a>Create Your Personal Fitness Plan</a>
-    </header>
-
-    <div class="main-container">
-        <div class="personal-information">
-            <label>I. Personal Information</label>
+<div class="main-container">
+    <div class="personal-information">
+        <label>I. Personal Information</label>
+        <div>
             <div>
-                <div>
-                    <label>Age</label>
-                    <input type="number" placeholder="Enter your age" />
-                </div>
-            </div>
-            <div>
-                <div>
-                    <label>Height</label>
-                    <input type="number" step="any" placeholder="Height (cm)" />
-                </div>
-                <div>
-                    <label>Weight</label>
-                    <input type="number" step="any" placeholder="Weight (kg)" />
-                </div>
+                <label>Age</label>
+                <input type="number" placeholder="Enter your age" />
             </div>
         </div>
-
-        <div class="fitness-goal">
-            <label>II. Fitness Goals</label>
+        <div>
             <div>
-                <div id="muscleGoal">
-                    <label>Muscle Gain / Hypertrophy</label>
-                    <p>Build muscle mass and strength</p>
-                    <input type="checkbox" name="muscle" />
-                </div>
-                <div id="cardioGoal">
-                    <label>Improved Cardiovascular Fitness</label>
-                    <p>Enhance endurance and heart health</p>
-                    <input type="checkbox" name="cardio" />
-                </div>
-                <div id="healthGoal">
-                    <label>General Fitness / Health Improvement</label>
-                    <p>Overall wellness and balanced fitness</p>
-                    <input type="checkbox" name="health" />
-                </div>
-                <div id="weightGoal">
-                    <label>Weight Loss</label>
-                    <p>Loss weight and achieve a healthier</p>
-                    <input type="checkbox" name="weightLoss" />
-                </div>
+                <label>Height</label>
+                <input type="number" step="any" placeholder="Height (cm)" />
             </div>
-        </div>
-
-        <div class="secondary-fitnessgoal">
-            <label>Secondary Fitness Goal</label>
             <div>
-                <label><input type="radio" name="answer" value="Yes" />Yes</label>
-                <label><input type="radio" name="answer" value="No" />No</label>
+                <label>Weight</label>
+                <input type="number" step="any" placeholder="Weight (kg)" />
             </div>
-            <textarea placeholder="Please specify"></textarea>
-        </div>
-
-        <div class="formBtn">
-            <NavLink href="/start-survey">Back</NavLink>
-            <NavLink href="/survey-page2">Next</NavLink>
         </div>
     </div>
-}
+
+    <div class="fitness-goal">
+        <label>II. Fitness Goals</label>
+        <div>
+            <div id="muscleGoal">
+                <label>Muscle Gain / Hypertrophy</label>
+                <p>Build muscle mass and strength</p>
+                <input type="checkbox" name="muscle" />
+            </div>
+            <div id="cardioGoal">
+                <label>Improved Cardiovascular Fitness</label>
+                <p>Enhance endurance and heart health</p>
+                <input type="checkbox" name="cardio" />
+            </div>
+            <div id="healthGoal">
+                <label>General Fitness / Health Improvement</label>
+                <p>Overall wellness and balanced fitness</p>
+                <input type="checkbox" name="health" />
+            </div>
+            <div id="weightGoal">
+                <label>Weight Loss</label>
+                <p>Loss weight and achieve a healthier</p>
+                <input type="checkbox" name="weightLoss" />
+            </div>
+        </div>
+    </div>
+
+    <div class="secondary-fitnessgoal">
+        <label>Secondary Fitness Goal</label>
+        <div>
+            <label><input type="radio" name="answer" value="Yes" />Yes</label>
+            <label><input type="radio" name="answer" value="No" />No</label>
+        </div>
+        <textarea placeholder="Please specify"></textarea>
+    </div>
+
+    <div class="formBtn">
+        <NavLink href="/start-survey">Back</NavLink>
+        <NavLink href="/survey-page2">Next</NavLink>
+    </div>
+</div>
+
