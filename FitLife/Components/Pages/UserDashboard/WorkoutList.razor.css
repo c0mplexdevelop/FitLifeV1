@@ -1,0 +1,107 @@
+﻿
+.workout-container {
+    background-color: skyblue;
+    height: 40%;
+    width: 30%;
+    margin: 1vh auto 1vh auto;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgb(0, 0, 0, 0.26)
+}
+
+    .workout-container > header {
+        background-color: black;
+        width: 100%;
+        height: 30%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        border-top-left-radius: inherit;
+        border-top-right-radius: inherit;
+    }
+
+        .workout-container > header > label {
+            margin-left: 1vw;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            width: 60%;
+            height: 90%;
+            overflow-x: auto;
+            white-space: nowrap;
+            font-family: "Poppins";
+            font-weight: 600;
+            font-size: 2.5vh;
+            color: white;
+        }
+
+        .workout-container > header > button {
+            height:50%;
+            width: 10%;
+            cursor: pointer;
+            border: 0;
+            border-radius: 50px;
+        }
+
+        #mark-as-done {
+            background: rgb(128, 128, 128, 0.3) url('images/dashboard/WorkoutPlaylist/markasdone.svg') no-repeat center;
+            margin: 0vh 0.5vw 0vh auto;
+        }
+
+            #mark-as-done:hover {
+                background: rgb(128, 128, 128, 0.5) url('images/dashboard/WorkoutPlaylist/markasdone.svg') no-repeat center;
+            }
+
+        #show-info {
+            background: rgb(128, 128, 128, 0.3) url('images/dashboard/WorkoutPlaylist/cancelworkout.svg') no-repeat center;
+            margin-right: 0.5vw;
+        }
+            #show-info:hover {
+                background: rgb(128, 128, 128, 0.5) url('images/dashboard/WorkoutPlaylist/cancelworkout.svg') no-repeat center;
+            }
+
+.details-layout {
+    background: linear-gradient(to left, rgb(0, 0, 0), white);
+    width: 100%;
+    height: 70%;
+    border-bottom-left-radius: inherit;
+    border-bottom-right-radius: inherit;
+    overflow: auto;
+    white-space: nowrap;
+}
+    .details-layout > div {
+        width: 90%;
+        height: 85%;
+        margin: 1vh 0vw 0vh 1vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+        .exercise-type {
+            font-family: "Poppins";
+            font-size: 4vh;
+            font-weight: 800;
+            width: 100%;
+            height: 95%;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            overflow-y: auto;
+            white-space: nowrap;
+        }
+
+    .details-layout > div > p {
+        font-family: "Poppins";
+        font-size: 2.5vh;
+        font-weight: 700;
+        color: rgb(0, 0, 0, 0.5);
+        margin:0;
+    }
+
+    .details-layout > div > a {
+        font-family: "Poppins";
+        font-size: 2.5vh;
+        font-weight: 700;
+        color: black;
+        margin-bottom: 1vh;
+    }
