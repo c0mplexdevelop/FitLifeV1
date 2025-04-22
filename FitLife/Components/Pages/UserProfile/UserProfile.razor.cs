@@ -26,13 +26,17 @@ namespace FitLife.Components.Pages.UserProfile
         [Inject]
         private DatabaseContext DbContext { get; set; } = null!;
 
+        [Inject]
+        private ILogger<UserProfile> _logger { get; set; } = null!;
+
         private User currentUser { get; set; } = new();
+
+        private EmailModel emailModel { get; set; } = new();
 
         protected override async Task OnInitializedAsync()
         {
             userName = await AuthService.ReturnUserName();
-            currentUser = await DbContext.Users.AsNoTracking()
-                .FirstAsync(u => u.UserName == userName);
+            currentUser = await DbContext.Users.FirstAsync(u => u.UserName == userName);
             if (currentUser == null)
             {
                 throw new InvalidOperationException("User not found in the database.");
@@ -51,6 +55,8 @@ namespace FitLife.Components.Pages.UserProfile
                 emailOverlay = "hidden";
             }
             isOverlayOpen = !isOverlayOpen;
+
+            emailModel.OldEmail = currentUser.Email!;
         }
 
         private void closeEditEmail(MouseEventArgs e)
@@ -63,6 +69,7 @@ namespace FitLife.Components.Pages.UserProfile
                 emailOverlay = string.Empty;
             }
             isOverlayOpen = !isOverlayOpen;
+            emailModel.OldEmail = string.Empty;
 
         }
 
@@ -91,6 +98,17 @@ namespace FitLife.Components.Pages.UserProfile
             }
             isOverlayOpen = !isOverlayOpen;
 
+        }
+
+        private void OnValidEmailSubmit()
+        {
+            _logger.LogInformation("Valid email submitted");
+            _logger.BeginScope("EmailModel: {@EmailModel}", emailModel);
+            DbContext.Entry(currentUser).State = EntityState.Modified;
+            currentUser.Email = emailModel.NewEmail;
+            currentUser.NormalizedEmail = emailModel.NewEmail.ToUpper();
+            DbContext.Update(currentUser);
+            DbContext.SaveChanges();
         }
     }
 }
