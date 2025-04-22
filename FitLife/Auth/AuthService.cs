@@ -3,6 +3,7 @@ using FitLife.Models.State;
 using FitLife.Models.User;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Identity;
+using System.Text;
 using System.Text.RegularExpressions;
 
 namespace FitLife.Auth;
@@ -129,4 +130,15 @@ public class AuthService
         await _signInManager.SignOutAsync();
     }
     
+    public async Task<string> ReturnUserName()
+    {
+        var user = await _userManager.GetUserAsync(_signInManager.Context.User);
+        if (user == null)
+        {
+            _logger.LogError("User not found.");
+            return string.Empty;
+        }
+        return user.UserName!;
+    }
+
 }
