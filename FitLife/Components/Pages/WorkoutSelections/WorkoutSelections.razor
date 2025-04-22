@@ -8,10 +8,10 @@
     <p>"Choose your workout: Explore a range of exercises tailored to your fitness goals and preferences"</p>
     <h1>Workout Playlist</h1>
     <div class="filter-selection">
-        <button id="strengthBtn">Strength</button>
-        <button id="coreBtn">Core</button>
-        <button id="flexBtn">Flexibility</button>
-        <button id="cardioBtn">Cardio</button>
+        <button id="strengthBtn" @onclick="() => SetWorkoutTypeFilter(WorkoutTypeFilter.Strength)">Strength</button>
+        <button id="coreBtn" @onclick="() => SetWorkoutTypeFilter(WorkoutTypeFilter.Core)">Core</button>
+        <button id="flexBtn" @onclick="() => SetWorkoutTypeFilter(WorkoutTypeFilter.Flexibility)">Flexibility</button>
+        <button id="cardioBtn" @onclick="() => SetWorkoutTypeFilter(WorkoutTypeFilter.Cardio)">Cardio</button>
         <button id="allBtn">All</button>
     </div>
 </div>
@@ -53,11 +53,25 @@
             <p>No exercises found.</p>
         } else
         {
-            @foreach (var exercise in Exercises)
+            if(selectedWorkoutType == WorkoutTypeFilter.All)
             {
-                <WorkoutComponent Exercise="exercise" />
-                <div class="design-line"></div>
+                @foreach (var exercise in Exercises)
+                {
+                    <WorkoutComponent Exercise="exercise" />
+                    <div class="design-line"></div>
+                }
+            } else
+            {
+                @foreach (var exercise in Exercises)
+                {
+                    if (selectedWorkoutType.ToString().Equals(exercise.Type, StringComparison.OrdinalIgnoreCase))
+                    {
+                        <WorkoutComponent Exercise="exercise" />
+                        <div class="design-line"></div>
+                    }
+                }
             }
+
         }
     }
 
