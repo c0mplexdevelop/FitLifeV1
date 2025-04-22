@@ -2,14 +2,6 @@
 {
     public partial class SurveyPage1
     {
-        private bool isLoading = true;
 
-        protected override async Task OnInitializedAsync()
-        {
-            await base.OnInitializedAsync();
-            await Task.Delay(TimeSpan.FromSeconds(2.5));
-
-            isLoading = false;
-        }
     }
 }
