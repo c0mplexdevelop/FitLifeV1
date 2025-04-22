@@ -103,7 +103,6 @@ namespace FitLife.Components.Pages.UserProfile
         private void OnValidEmailSubmit()
         {
             _logger.LogInformation("Valid email submitted");
-            _logger.BeginScope("EmailModel: {@EmailModel}", emailModel);
             DbContext.Entry(currentUser).State = EntityState.Modified;
             currentUser.Email = emailModel.NewEmail;
             currentUser.NormalizedEmail = emailModel.NewEmail.ToUpper();
