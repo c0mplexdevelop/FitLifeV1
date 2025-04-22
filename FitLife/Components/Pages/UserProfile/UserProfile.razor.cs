@@ -11,7 +11,7 @@ namespace FitLife.Components.Pages.UserProfile
 
         private void editEmail(MouseEventArgs e)
         {
-            if (isOverlayOpen)
+            if (!isOverlayOpen)
             {
                 emailOverlay = string.Empty;
             }
@@ -24,18 +24,20 @@ namespace FitLife.Components.Pages.UserProfile
 
         private void closeEditEmail(MouseEventArgs e)
         {
-            if (!isOverlayOpen)
+            if (isOverlayOpen)
             {
                 emailOverlay = "hidden";
             } else
             {
                 emailOverlay = string.Empty;
             }
+            isOverlayOpen = !isOverlayOpen;
+
         }
 
         private void editPassword(MouseEventArgs e)
         {
-            if (isOverlayOpen)
+            if (!isOverlayOpen)
             {
                 passwordOverlay = string.Empty;
             }
@@ -48,7 +50,7 @@ namespace FitLife.Components.Pages.UserProfile
 
         private void closeEditPassword(MouseEventArgs e)
         {
-            if (!isOverlayOpen)
+            if (isOverlayOpen)
             {
                 passwordOverlay = "hidden";
             }
@@ -56,6 +58,8 @@ namespace FitLife.Components.Pages.UserProfile
             {
                 passwordOverlay = string.Empty;
             }
+            isOverlayOpen = !isOverlayOpen;
+
         }
     }
 }
