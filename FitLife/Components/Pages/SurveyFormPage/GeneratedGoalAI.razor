@@ -1,0 +1,45 @@
+﻿@layout Layout.GenerateGoalLayout
+
+@page "/ai-generatedgoal"
+
+@rendermode @(new InteractiveServerRenderMode(prerender: false))
+
+@if (isLoading)
+{
+    <FitLife.Components.Pages.LoadingPage.LoadingPage2/>
+} else
+{
+    <header>
+        <a>GENERATED WORKOUT</a>
+    </header>
+    <div class="main-container">
+        <label>WORKOUT NG MGA MASON</label>
+        <div class="generated-content">
+            <div class="content-container">
+                <div class="exercise-type">
+                    <label>Bench Press</label>
+                    <button>+ Add to Workouts</button>
+                </div>
+                <div class="exercise-info">
+                    <label>Exercise Type:</label>
+                    <a>Strength</a>
+                    <label>Equipment Needed:</label>
+                    <a>Barbell</a>
+                </div>
+                <div class="exercise-info">
+                    <label>Exercise Difficulty:</label>
+                    <a>Beginner</a>
+                    <label>Exercise Target:</label>
+                    <a>Chest</a>
+                </div>
+                <div class="exercise-info">
+                    <label>Typical Reps / Hold:</label>
+                    <a>10-15</a>
+                    <label>Type Duration:</label>
+                    <a>N/A</a>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
