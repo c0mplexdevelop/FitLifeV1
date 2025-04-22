@@ -1,4 +1,5 @@
-﻿using FitLife.Data;
+﻿using FitLife.Auth;
+using FitLife.Data;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Authorization;
@@ -18,6 +19,9 @@ public partial class UserDashboard
     [Inject]
     private DatabaseContext DbContext { get; set; } = null!;
 
+    [Inject]
+    private AuthService AuthService { get; set; } = null!;
+
     protected override async Task OnInitializedAsync()
     {
         if (AuthenticationStateTask is null)
@@ -25,9 +29,6 @@ public partial class UserDashboard
             throw new InvalidOperationException("AuthenticationStateTask is null, ensure the routes is wrapped in CascadingAuthenticationState");
         }
 
-        var authState = await AuthenticationStateTask;
-        var user = authState.User;
-         userName = user.Identity!.Name;
-        await base.OnInitializedAsync();
+        userName = await AuthService.ReturnUserName();
     }
 }

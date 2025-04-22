@@ -9,6 +9,16 @@ namespace FitLife.Components.Pages.UserProfile
 
         private bool isOverlayOpen = false;
 
+        private string userName = string.Empty;
+
+        [CascadingParameter]
+        private Task<AuthenticationState> AuthenticationStateTask { get; set; } = null!;
+        protected override async Task OnInitializedAsync()
+        {
+            userName = await AuthService.ReturnUserName();
+            await base.OnInitializedAsync();
+        }
+
         private void editEmail(MouseEventArgs e)
         {
             if (!isOverlayOpen)
