@@ -32,10 +32,17 @@ public partial class WorkoutSelections
         selectedWorkoutType = workoutType;
         isLoading = true;
         Exercises.Clear();
-        Exercises = await dbContext.Exercises
+        if (workoutType == WorkoutTypeFilter.All)
+        {
+            Exercises = await dbContext.Exercises.AsNoTracking().ToListAsync();
+        }
+        else
+        {
+            Exercises = await dbContext.Exercises
             .AsNoTracking()
             .Where(e => e.Type.Equals(workoutType.ToString()))
             .ToListAsync();
+        }
         await Task.Delay(TimeSpan.FromMilliseconds(500));
         isLoading = false;
         StateHasChanged();
