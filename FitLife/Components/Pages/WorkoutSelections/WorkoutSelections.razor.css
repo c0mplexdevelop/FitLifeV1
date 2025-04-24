@@ -62,17 +62,15 @@
             color: skyblue;
         }
     #flexBtn {
-        background: url("images/WorkoutFilters/FLEXIBILITY--WHITE.svg") no-repeat 10px center;
+        background:navy url("images/WorkoutFilters/FLEXIBILITY--WHITE.svg") no-repeat 10px center;
         background-size: 15% 100%;
-        background-color: rgba(238, 29, 82, 0.5);
     }
         #flexBtn:hover {
             color:  skyblue;
         }
     #cardioBtn {
-        background: url("images/WorkoutFilters/CARDIO--WHITE.svg") no-repeat 10px center;
+        background:skyblue url("images/WorkoutFilters/CARDIO--WHITE.svg") no-repeat 10px center;
         background-size: 15% 100%;
-        background-color: rgba(238, 29, 82, 0.5);
         width: 9%;
     } 
         #cardioBtn:hover {
@@ -80,9 +78,8 @@
         }
 
     #allBtn {
-        background: url("images/WorkoutFilters/whitedumbbell.png") no-repeat 10px center;
+        background:limegreen url("images/WorkoutFilters/whitedumbbell.png") no-repeat 10px center;
         background-size: 25% 70%;
-        background-color: rgba(238, 29, 82, 0.5);
         width: 7%;
     }
         #allBtn:hover {
