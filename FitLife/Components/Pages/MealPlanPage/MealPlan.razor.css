@@ -1,2 +1,51 @@
-﻿body {
+﻿
+header {
+    width: 90%;
+    height: 10%;
+    margin: 1vh auto 0vh auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+    header > label {
+        width: auto;
+        height: 50%;
+        font-family: "Poppins";
+        font-size: 3vh;
+        font-weight: 300;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-right: 1vw;
+    }
+    header > button {
+        width: auto;
+        height: 30%;
+        font-family: "Poppins";
+        font-size: 2vh;
+        font-weight: 600;
+        color: white;
+        padding-left: 1vw;
+        padding-right: 1vw;
+        border: 0;
+        margin-right: 1vw;
+        cursor: pointer;
+    }
+
+    #filter-vegan {
+        background-color: rgb(0, 255, 33);
+    }
+
+    #filter-bulk {
+        background-color: rgb(85, 6, 6);
+    }
+
+.meal-plan-container {
+    background: linear-gradient(to right, white, black);
+    box-shadow: 0px 0px 20px rgb(0, 0, 0, 0.7);
+    border-radius: 20px;
+    overflow: auto;
+    width: 90%;
+    height: 70%;
+    margin: 5vh auto 0vh auto;
 }

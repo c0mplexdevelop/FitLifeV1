@@ -32,8 +32,8 @@
 }
     .record-workouts > div {
         background: #FFFFFF;
-        height: 90%;
-        width: 85%;
+        height: 70%;
+        width: 65%;
         margin: auto auto auto auto;
         box-shadow: 1px 10px 15px rgba(0, 0, 0, 0.3);
         border-radius: 10px;
@@ -47,13 +47,14 @@
             height: 20%;
             margin: 2vh 0vw 0vh 1vw;
             display: flex;
+            align-items: center;
             flex-direction: row;
         }
     .record-workouts > div > div1 > a {
         font-family: Poppins;
         font-weight: 100;
         color: black;
-        font-size: 4vh;
+        font-size: 3vh;
     }
 
     .record-workouts > div > div2 {
@@ -66,7 +67,7 @@
     .record-workouts > div > div2 > a {
         font-family: Poppins;
         font-weight: bolder;
-        font-size: 5vh;
+        font-size: 3vh;
         color: black;
         margin-right: 1vw;
     }

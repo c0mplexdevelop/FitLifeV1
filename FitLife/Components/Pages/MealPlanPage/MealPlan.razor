@@ -1,5 +1,13 @@
-﻿<h3>MealPlan</h3>
+﻿@layout Layout.DashboardLayout
 
-@code {
+@page "/meal-plans"
 
-}
+<header>
+    <label>Dietary Preferences: </label>
+    <button id="filter-vegan">Vegan</button>
+    <button id="filter-bulk">Bulk</button>
+</header>
+
+<div class="meal-plan-container">
+    <MealComponents/>
+</div>
