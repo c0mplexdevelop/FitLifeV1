@@ -8,11 +8,11 @@ public class Exercise
     public string Name { get; set; } = string.Empty;
     //public string Description = string.Empty;
     public string Type { get; set; } = string.Empty;
-    public ExerciseDifficulty Difficulty { get; set; }
+    public ExerciseDifficulty Difficulty { get; set; } // Convert to string when feed to model
     public string TargetMuscleGroup { get; set; } = string.Empty;
-    public string EquipmentNeeded { get; set; } = string.Empty;
+    public bool EquipmentNeeded { get; set; } // Convert to float/int when feed to model
     public string Reps { get; set; } = string.Empty;
-    public string Duration { get; set; } = string.Empty;
     public string Sets { get; set; } = string.Empty;
+    public string Duration { get; set; } = string.Empty;
 
 }

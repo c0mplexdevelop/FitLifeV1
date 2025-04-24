@@ -7,6 +7,7 @@ using FitLife.Models.User;
 using FitLife.Auth;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.AspNetCore.Mvc;
+using FitLife.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -20,6 +21,7 @@ builder.Services.AddRazorComponents().AddInteractiveServerComponents();
 
 builder.Services.AddScoped<UserSignUpState>();
 builder.Services.AddScoped<AuthService>();
+builder.Services.AddScoped<SurveyService>();
 
 
 builder.Services.AddDbContext<DatabaseContext>(

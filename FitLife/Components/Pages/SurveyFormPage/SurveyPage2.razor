@@ -7,43 +7,45 @@
 </header>
 
 <div class="main-container">
-    <label>III. Current Fitness Level</label>
-    <div class="selection-layout">
-        <label>How would you describe your current fitness level?</label>
-        <select>
-            <option>Sedentary (Little to no regular exercise)</option>
-            <option>option2</option>
-        </select>
-        <label>How many days per week can you commit to exercise?</label>
-        <select>
-            <option>1-2 days</option>
-            <option>option2</option>
-        </select>
-    </div>
-    <label>IV. Dietary Preferences</label>
-    <div class="selection-layout">
-        <label>What best describes your dietary pattern? (Select one)</label>
-        <select>
-            <option>Sedentary (Little to no regular exercise)</option>
-            <option>option2</option>
-        </select>
-        <label>Do you have any food allergies?</label>
-        <select>
-            <option>1-2 days</option>
-            <option>option2</option>
-        </select>
-    </div>
-    <label>V. Health Information</label>
-    <div class="checkbox-selection">
-        <a>Have you been diagnosed with any of the following conditions? (Check all that apply)</a>
-        <label><input class="checkbox" type="checkbox"/>Cardiovascular Disease</label>
-        <label><input class="checkbox" type="checkbox" />Diabetes</label>
-        <label><input class="checkbox" type="checkbox" />Joint Problems (e.g., arthritis)</label>
-        <label><input class="checkbox" type="checkbox" />None</label>
-        <label><input class="checkbox" type="checkbox" />Others ( Please Specify ) <input type="text" /></label>
-    </div>
-    <div class="formBtn">
-        <NavLink href="/survey-page1">Back</NavLink>
-        <NavLink href="/survey-page3">Next</NavLink>
-    </div>
+    <EditForm Model="_surveyModel">
+        <label>III. Current Fitness Level</label>
+        <div class="selection-layout">
+            <label>How would you describe your current fitness level?</label>
+            <select>
+                <option>Sedentary (Little to no regular exercise)</option>
+                <option>option2</option>
+            </select>
+            <label>How many days per week can you commit to exercise?</label>
+            <select>
+                <option>1-2 days</option>
+                <option>option2</option>
+            </select>
+        </div>
+        <label>IV. Dietary Preferences</label>
+        <div class="selection-layout">
+            <label>What best describes your dietary pattern? (Select one)</label>
+            <select>
+                <option>Sedentary (Little to no regular exercise)</option>
+                <option>option2</option>
+            </select>
+            <label>Do you have any food allergies?</label>
+            <select>
+                <option>1-2 days</option>
+                <option>option2</option>
+            </select>
+        </div>
+        <label>V. Health Information</label>
+        <div class="checkbox-selection">
+            <a>Have you been diagnosed with any of the following conditions? (Check all that apply)</a>
+            <label><input class="checkbox" type="checkbox" />Cardiovascular Disease</label>
+            <label><input class="checkbox" type="checkbox" />Diabetes</label>
+            <label><input class="checkbox" type="checkbox" />Joint Problems (e.g., arthritis)</label>
+            <label><input class="checkbox" type="checkbox" />None</label>
+            <label><input class="checkbox" type="checkbox" />Others ( Please Specify ) <input type="text" /></label>
+        </div>
+        <div class="formBtn">
+            <NavLink href="/survey-page1">Back</NavLink>
+            <button type="submit" href="/survey-page3">Next</button>
+        </div>
+    </EditForm>
 </div>
