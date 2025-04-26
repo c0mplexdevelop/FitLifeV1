@@ -14,17 +14,19 @@
 		margin-right: 2vw;
 		display: flex;
 		flex-direction: column;
-		justify-content: center;
+		justify-content:center;
 	}
 
 		.container > .name-container > a {
 			font-family: "Poppins";
 			font-weight: bold;
 			color: black;
-			width: 80%;
-			height: 40%;
+			width: auto;
+			height: auto;
 			font-size: 3vh;
-			margin: 0vh 0vw 0vh 2vw;
+			margin: auto 0vw auto 2vw;
+			overflow-y: auto;
+			overflow-x: hidden;
 		}
 
 		.container > .name-container > button {
@@ -33,7 +35,7 @@
 			color: white;
 			text-shadow: 0px 0px 2px black;
 			cursor: pointer;
-			margin: 2vh 0vw 0vh 2vw;
+			margin: auto 0vw 1vh 2vw;
 			width: 50%;
 			height: 25%;
 			border: 0;
