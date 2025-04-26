@@ -11,9 +11,9 @@ FLEX_004,Seated Forward Bend (Implied),Flexibility,Beginner,Back,0,15-30s hold,5
 FLEX_005,Standing Quad Stretch (Implied),Flexibility,Intermediate,Legs,0,15-30s hold,5-10 min total
 CARDIO_001,Arm Circles (Implied),Cardio,Beginner,Arms,0,10-15 each direction,5 min total
 CARDIO_002,Lateral Raises (Cardio Pace - Implied),Cardio,Intermediate,Shoulders,1,15-25,N/A
-CARDIO_003,Burpees (Implied),Cardio,Advanced,FullBody,0,10-15,N/A (often part of HIIT)
+CARDIO_003,Burpees (Implied),Cardio,Advanced,FullBody,0,10-15,n/a(often part of HIIT)
 CARDIO_004,Jumping Jacks (Implied),Cardio,Beginner,FullBody,0,20-50,10-20 min total
-CARDIO_005,Mountain Climbers (Implied),Cardio,Intermediate,Core,0,30-60s interval,N/A (often part of HIIT)
+CARDIO_005,Mountain Climbers (Implied),Cardio,Intermediate,Core,0,30-60s interval,n/a(often part of HIIT)
 CARDIO_006,Running (Treadmill/Outdoor),Cardio,Intermediate,FullBody,0,N/A,20-45 min
 CARDIO_007,Jogging,Cardio,Beginner,FullBody,0,N/A,15-30 min
 CARDIO_008,Brisk Walking,Cardio,Beginner,FullBody,0,N/A,20-60 min
@@ -21,22 +21,22 @@ CARDIO_009,Cycling (Stationary/Outdoor),Cardio,Intermediate,Legs,1,N/A,20-60 min
 CARDIO_010,Swimming (Freestyle),Cardio,Intermediate,FullBody,1,N/A,20-45 min
 CARDIO_011,Swimming (Breaststroke),Cardio,Intermediate,FullBody,1,N/A,20-45 min
 CARDIO_012,Swimming (Backstroke),Cardio,Intermediate,FullBody,1,N/A,20-45 min
-CARDIO_013,Swimming (Butterfly),Cardio,Advanced,FullBody,1,N/A (Interval based),15-30 min (Intervals)
+CARDIO_013,Swimming (Butterfly),Cardio,Advanced,FullBody,1,n/a(Interval based),15-30 min (Intervals)
 CARDIO_014,Rowing (Machine/Water),Cardio,Intermediate,FullBody,1,N/A,15-40 min
 CARDIO_015,Elliptical Trainer,Cardio,Beginner,FullBody,1,N/A,15-40 min
 CARDIO_016,Stair Climber / Stepmill,Cardio,Intermediate,Legs,1,N/A,10-30 min
-CARDIO_017,High Knees,Cardio,Beginner,FullBody,0,30-60s interval,N/A (Warmup/HIIT)
-CARDIO_018,Butt Kicks,Cardio,Beginner,Legs,0,30-60s interval,N/A (Warmup/HIIT)
-CARDIO_019,Jump Rope / Skipping,Cardio,Intermediate,FullBody,1,N/A (Time based),10-25 min (Intervals)
-CARDIO_020,Shadow Boxing,Cardio,Intermediate,FullBody,0,N/A (Rounds),15-30 min (Rounds)
+CARDIO_017,High Knees,Cardio,Beginner,FullBody,0,30-60s interval,n/a(Warmup/HIIT)
+CARDIO_018,Butt Kicks,Cardio,Beginner,Legs,0,30-60s interval,n/a(Warmup/HIIT)
+CARDIO_019,Jump Rope / Skipping,Cardio,Intermediate,FullBody,1,n/a(Time based),10-25 min (Intervals)
+CARDIO_020,Shadow Boxing,Cardio,Intermediate,FullBody,0,n/a(Rounds),15-30 min (Rounds)
 CARDIO_021,"Dancing (e.g., Zumba)",Cardio,Intermediate,FullBody,0,N/A,30-60 min
 CARDIO_022,Hiking,Cardio,Intermediate,Legs,0,N/A,45-180 min+
-CARDIO_023,Sprints,Cardio,Advanced,FullBody,0,1 (Sprint),N/A (Short duration)
-CARDIO_024,Agility Ladder Drills,Cardio,Intermediate,FullBody,1,N/A (Pattern based),10-15 min total
-CARDIO_025,Cone Drills (Shuttle Run),Cardio,Intermediate,FullBody,1,1 (Run),N/A (Short duration)
-CARDIO_026,Battle Ropes,Cardio,Intermediate,FullBody,1,20-40s interval,N/A (HIIT)
-CARDIO_027,Assault Bike,Cardio,Advanced,FullBody,1,N/A (Interval based),10-20 min (Intervals)
-CARDIO_028,Ski Erg,Cardio,Intermediate,FullBody,1,N/A (Interval based),10-20 min (Intervals)
+CARDIO_023,Sprints,Cardio,Advanced,FullBody,0,1 (Sprint),n/a(Short duration)
+CARDIO_024,Agility Ladder Drills,Cardio,Intermediate,FullBody,1,n/a(Pattern based),10-15 min total
+CARDIO_025,Cone Drills (Shuttle Run),Cardio,Intermediate,FullBody,1,1 (Run),n/a(Short duration)
+CARDIO_026,Battle Ropes,Cardio,Intermediate,FullBody,1,20-40s interval,n/a(HIIT)
+CARDIO_027,Assault Bike,Cardio,Advanced,FullBody,1,n/a(Interval based),10-20 min (Intervals)
+CARDIO_028,Ski Erg,Cardio,Intermediate,FullBody,1,n/a(Interval based),10-20 min (Intervals)
 STR_006,Bodyweight Squat,Strength,Beginner,Legs,0,15-25,N/A
 STR_007,Barbell Back Squat,Strength,Intermediate,Legs,1,8-12,N/A
 STR_008,Conventional Deadlift,Strength,Advanced,FullBody,1,3-6,N/A
@@ -173,7 +173,7 @@ MOB_001,Cat-Cow Pose,Mobility,Beginner,Back,0,8-12 cycles,5 min total
 MOB_002,Dynamic Leg Swings (Forward/Side),Mobility,Beginner,Legs,0,10-15 each direction,5 min total
 MOB_003,Arm Circles (Forward/Backward),Mobility,Beginner,Shoulders,0,10-15 each direction,5 min total
 MOB_004,Torso Twists,Mobility,Beginner,Core,0,10-15 each side,5 min total
-MOB_005,Foam Rolling (Various Muscles),Mobility,Beginner,FullBody,1,N/A (Time based),5-15 min total
+MOB_005,Foam Rolling (Various Muscles),Mobility,Beginner,FullBody,1,n/a(Time based),5-15 min total
 MOB_006,Thoracic Spine Rotations,Mobility,Beginner,Back,0,8-12 each side,5 min total
 MOB_007,Ankle Mobility Circles,Mobility,Beginner,Legs,0,10-15 each direction,5 min total
 MOB_008,World's Greatest Stretch,Mobility,Beginner,FullBody,0,5-8 each side,5-10 min total

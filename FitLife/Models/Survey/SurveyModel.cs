@@ -17,7 +17,7 @@ public class SurveyModel
     [Required]
     [Range(0, int.MaxValue, ErrorMessage = "Weight cannot be negative")]
     public float Weight { get; set; }
-    public float Gender { get; set; } // Will be converted from Enum to string, enum from the database
+    public string Gender { get; set; } = string.Empty; // Will be converted from Enum to string, enum from the database
     public ActivityLevel ActivityLevel { get; set; } // Will be converted from Enum to string, enum from the dropdown
     public float BMI => Weight / ((Height) / 100 * (Height) / 100); // BMI = weight(kg) / height(m)^2
     public string BMIStatus

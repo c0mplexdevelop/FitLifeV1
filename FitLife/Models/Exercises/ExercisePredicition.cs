@@ -4,8 +4,15 @@ namespace FitLife.Models.Exercises;
 
 public class ExercisePrediction
 {
+    public string ExerciseID { get; set; }
+
     [ColumnName("PredictedLabel")]
-    public string PredictedLabel { get; set; }
+    public bool PredictedLabel { get; set; }
     public float Score { get; set; }
     public float Probability { get; set; }
+
+    public override string ToString()
+    {
+        return $"ExerciseID: {ExerciseID}, PredictedLabel: {PredictedLabel}, Score: {Score}, Probability: {Probability}";
+    }
 }
