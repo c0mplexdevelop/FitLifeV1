@@ -50,15 +50,18 @@
 
 .allergens-list {
     width: 95%;
-    height: 5%;
+    height: auto;
     margin-left: 1vw;
+    overflow-x: auto;
+    white-space: nowrap;
+    scrollbar-width: thin;
+    scrollbar-color: white black;
 }
     .allergens-list > label {
         background-color: black;
         font-family: "Poppins";
         font-size: 2.5vh;
         font-weight: 600;
-        border-right: 1px solid red;
         color: white;
         padding-left: 1vw;
         padding-right: 1vw;
@@ -87,6 +90,8 @@
         display: flex;
         flex-direction: column;
         overflow: auto;
+        scrollbar-width: thin;
+        scrollbar-color: white black;
     }
         .description-layout > div > label {
             font-family: "Poppins";

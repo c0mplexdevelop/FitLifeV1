@@ -24,6 +24,6 @@ public partial class SurveyPage1
     {
         // Save the survey model to the database or perform any other action
         // For example, you can navigate to another page after submission
-        NavigationManager.NavigateTo("/survey-page-2");
+        NavigationManager.NavigateTo("/survey-page2");
     }
 }
