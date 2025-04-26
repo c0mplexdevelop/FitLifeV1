@@ -46,7 +46,9 @@ public partial class SurveyPage2
     }
 
     private string viewExerciseHistory = "hidden";
+    private string viewAddedExerciseHistory = "hidden";
     private bool isOverlayOpen = false;
+    private bool isOverlayOpen2 = false;
 
     private void selectExerciseHistories(MouseEventArgs e)
     {
@@ -62,6 +64,20 @@ public partial class SurveyPage2
 
     }
 
+    private void addedExerciseHistories(MouseEventArgs e)
+    {
+        if (!isOverlayOpen2)
+        {
+            viewAddedExerciseHistory = string.Empty;
+        }
+        else
+        {
+            viewAddedExerciseHistory = "hidden";
+        }
+        isOverlayOpen2 = !isOverlayOpen2;
+
+    }
+
     private void closeSelectExerciseHistories(MouseEventArgs e)
     {
         if (isOverlayOpen)
@@ -73,5 +89,34 @@ public partial class SurveyPage2
             viewExerciseHistory = string.Empty;
         }
         isOverlayOpen = !isOverlayOpen;
+    }
+
+    private void closeAddedExerciseHistories(MouseEventArgs e)
+    {
+        if (isOverlayOpen2)
+        {
+            viewAddedExerciseHistory = "hidden";
+        }
+        else
+        {
+            viewAddedExerciseHistory = string.Empty;
+        }
+        isOverlayOpen2 = !isOverlayOpen2;
+    }
+
+    private void confirmedAddedExerciseHistories(MouseEventArgs e)
+    {
+        if (isOverlayOpen || isOverlayOpen2)
+        {
+            viewAddedExerciseHistory = "hidden";
+            viewExerciseHistory = "hidden";
+        }
+        else
+        {
+            viewAddedExerciseHistory = string.Empty;
+            viewExerciseHistory = string.Empty;
+        }
+        isOverlayOpen = !isOverlayOpen;
+        isOverlayOpen2 = !isOverlayOpen2;
     }
 }
