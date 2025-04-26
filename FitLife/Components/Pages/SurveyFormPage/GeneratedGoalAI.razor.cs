@@ -1,12 +1,11 @@
-﻿using FitLife.Data;
+﻿using FitLife.Auth;
+using FitLife.Data;
 using FitLife.Models.Exercises;
-using FitLife.Models.Exercises.Enums;
+using FitLife.Models.Intermediary;
 using FitLife.Models.Survey;
-using FitLife.Models.User.Enum;
 using FitLife.Services;
 using Microsoft.AspNetCore.Components;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Storage;
 using Microsoft.ML;
 
 namespace FitLife.Components.Pages.SurveyFormPage;
@@ -25,13 +24,10 @@ public partial class GeneratedGoalAI
     private DatabaseContext dbContext { get; set; } = default!;
 
     [Inject]
-    private NavigationManager NavigationManager { get; set; } = default!;
-
-    [Inject]
-    private FitnessDataService fitnessDataService { get; set; } = default!;
-
-    [Inject]
     private ILogger<GeneratedGoalAI> _logger { get; set; } = default!;
+
+    [Inject]
+    private AuthService _authService { get; set; } = default!;
 
     private List<Exercise> exercises = new List<Exercise>();
     private List<Exercise?> predictedExercise = new List<Exercise?>(); 
@@ -140,8 +136,36 @@ public partial class GeneratedGoalAI
             RecommendedSets = randomSets,
             RecommendedReps = randomReps,
             RecommendedDurationMinutes = randomDuration,
-
-
         };
+    }
+
+    //TODO: REFACTOR FOR ABSTRACTION (DRY)
+    private async Task AddExerciseToUser(Exercise exercise)
+    {
+        _logger.LogCritical("PRESSED!");
+        var username = await _authService.ReturnUserName();
+        var user = await dbContext.Users
+            .AsNoTracking()
+            .FirstOrDefaultAsync(u => u.UserName == username); // Replace with actual user ID
+        if (user == null)
+        {
+            _logger.LogError("User is null");
+            return;
+        }
+
+        var userExerciseSub = new UserExerciseSubscription
+        {
+            UserId = user.Id,
+            ExerciseId = exercise.Id
+        };
+        _logger.LogInformation($"User: {user.UserName} Exercise: {exercise.Name} Type: {exercise.Type}");
+        if (await dbContext.UserExerciseSubscriptions
+            .AnyAsync(ues => ues.UserId == user.Id && ues.ExerciseId == exercise.Id))
+        {
+            _logger.LogInformation($"User: {user.UserName} already subscribed to exercise: {exercise.Name}");
+            return;
+        }
+        dbContext.UserExerciseSubscriptions.Add(userExerciseSub);
+        await dbContext.SaveChangesAsync();
     }
 }
