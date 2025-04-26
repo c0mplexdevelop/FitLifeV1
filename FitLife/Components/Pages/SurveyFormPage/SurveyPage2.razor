@@ -1,6 +1,7 @@
 ﻿@layout Layout.GenerateGoalLayout
 
 @page "/survey-page2"
+@using FitLife.Models.User.Enum
 @rendermode InteractiveServer
 <header>
     <a>Create Your Personal Fitness Plan</a>
@@ -11,10 +12,12 @@
             <label>III. Current Fitness Level</label>
             <div class="selection-layout">
                 <label>How would you describe your current fitness level?</label>
-                <select>
-                    <option>Sedentary (Little to no regular exercise)</option>
-                    <option>option2</option>
-                </select>
+                <InputSelect @bind-Value="_surveyModel!.ActivityLevel">
+                    <option value="@ActivityLevel.Sedentary">Sedentary (Little to no regular exercise)</option>
+                    <option value="@ActivityLevel.Light">Lightly Active</option>
+                    <option value="@ActivityLevel.Active">Active</option>
+                    <option value="@ActivityLevel.VeryActive">Very Active</option>
+                </InputSelect>
             </div>
 
             <label>IV. Physical Activity and Exercise History</label>

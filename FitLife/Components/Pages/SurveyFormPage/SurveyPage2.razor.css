@@ -72,7 +72,7 @@ header {
             margin: 1vh 0vw 0vh 1vw;
         }
 
-        .selection-layout > select {
+        .selection-layout > ::deep select {
             font-family: "Poppins";
             font-size: 0.8rem;
             width: 90%;
