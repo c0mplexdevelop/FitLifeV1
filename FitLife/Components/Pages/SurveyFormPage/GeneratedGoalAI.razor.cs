@@ -13,8 +13,8 @@ namespace FitLife.Components.Pages.SurveyFormPage;
 
 public partial class GeneratedGoalAI
 {
-    [Parameter]
-    public SurveyModel? surveyModel { get; set; }
+    [Inject]
+    private SurveyService _surveyService { get; set; } = default!;
     private const string MODEL_PATH = "AIModel.zip";
 
     private bool isLoading = true;
@@ -37,22 +37,25 @@ public partial class GeneratedGoalAI
     private List<Exercise?> predictedExercise = new List<Exercise?>(); 
     protected override async Task OnInitializedAsync()
     {
-        surveyModel ??= new SurveyModel
-        {
-            Age = 21,
-            Height = 153,
-            Weight = 56.5f,
-            Gender = "Female",
-            ActivityLevel = ActivityLevel.Active,
-            StruggledPreviously = 1,
-            FitnessGoal = "Muscle Gain",
-            Exercises = [
-                dbContext.Exercises.AsNoTracking()
-                    .Where(exercise => exercise.Id == "STR_016")
-                    .FirstOrDefault()
-                ],
-            Label = default
-        };
+        //surveyModel ??= new SurveyModel
+        //{
+        //    Age = 21,
+        //    Height = 153,
+        //    Weight = 56.5f,
+        //    Gender = "Female",
+        //    ActivityLevel = ActivityLevel.Active,
+        //    StruggledPreviously = 1,
+        //    FitnessGoal = "Muscle Gain",
+        //    Exercises = [
+        //        dbContext.Exercises.AsNoTracking()
+        //            .Where(exercise => exercise.Id == "STR_016")
+        //            .FirstOrDefault()
+        //        ],
+        //    Label = default
+        //};
+        SurveyModel surveyModel = _surveyService.SurveyModel;
+        // Display surveyModel
+        _logger.LogInformation($"SurveyModel: {surveyModel}");
         await base.OnInitializedAsync();
         await Task.Delay(TimeSpan.FromSeconds(4));
 

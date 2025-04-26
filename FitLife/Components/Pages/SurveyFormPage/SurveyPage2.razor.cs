@@ -119,4 +119,18 @@ public partial class SurveyPage2
         isOverlayOpen = !isOverlayOpen;
         isOverlayOpen2 = !isOverlayOpen2;
     }
+
+    private void AssignExerciseToUser(Exercise exercise)
+    {
+        if(_surveyModel!.Exercises.Contains(exercise))
+        {
+            _logger.LogWarning($"Exercise {exercise.Name} already exists in the list.");
+        }
+
+        else
+        {
+            _surveyModel.Exercises.Add(exercise);
+            _logger.LogInformation($"Exercise {exercise.Name} added to the list.");
+        }
+    }
 }

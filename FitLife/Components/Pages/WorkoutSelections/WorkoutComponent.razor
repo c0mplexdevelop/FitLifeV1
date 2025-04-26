@@ -1,7 +1,10 @@
-﻿<div class="container">
+﻿@rendermode @(new InteractiveServerRenderMode(prerender: false))
+
+<div class="container">
     <div class="name-container">
         <a>@Exercise.Name</a>
-        <button>+ Add to Workouts</button>
+        <button @onclick="RunButton">+ Add to Workouts</button>
+
     </div>
     <div class="exercise-details">
         <p>Exercise Type:</p>
