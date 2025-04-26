@@ -22,6 +22,7 @@ builder.Services.AddRazorComponents().AddInteractiveServerComponents();
 builder.Services.AddScoped<UserSignUpState>();
 builder.Services.AddScoped<AuthService>();
 builder.Services.AddScoped<SurveyService>();
+builder.Services.AddScoped<FitnessDataService>();
 
 
 builder.Services.AddDbContext<DatabaseContext>(
