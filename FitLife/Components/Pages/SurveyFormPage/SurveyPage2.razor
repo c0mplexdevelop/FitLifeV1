@@ -7,44 +7,48 @@
 </header>
 
 <EditForm class="editform" Model="_surveyModel" OnValidSubmit="OnValidSubmit">
-<div class="main-container">
-        <label>III. Current Fitness Level</label>
-        <div class="selection-layout">
-            <label>How would you describe your current fitness level?</label>
-            <select>
-                <option>Sedentary (Little to no regular exercise)</option>
-                <option>option2</option>
-            </select>
-        </div>
-
-        <label>IV. Physical Activity and Exercise History</label>
-
-        <div class="selection-layout">
-            <label>What Exercise have you done?</label>
-            <button type="button" @onclick="selectExerciseHistories">Select Exercise History</button>
-        </div>
-
-        <div class="selection-layout">
-            <label>Have you struggled with the Exercise you previously did?</label>
-            <div>
-                <input type="radio" name="answer" value="No" />
-                <label>No</label>
-                <input type="radio" name="answer" value="Yes" />
-                <label>Yes</label>
+    <div class="main-container">
+            <label>III. Current Fitness Level</label>
+            <div class="selection-layout">
+                <label>How would you describe your current fitness level?</label>
+                <select>
+                    <option>Sedentary (Little to no regular exercise)</option>
+                    <option>option2</option>
+                </select>
             </div>
-        </div>
 
-        <div class="formBtn">
-            <NavLink href="/survey-page1">Back</NavLink>
-            <button class="submit-button" type="submit">Submit</button>
-        </div>
-</div>
+            <label>IV. Physical Activity and Exercise History</label>
+
+            <div class="selection-layout">
+                <label>What Exercise have you done?</label>
+                <button type="button" @onclick="selectExerciseHistories">Select Exercise History</button>
+            </div>
+
+            <div class="selection-layout">
+                <label>Have you struggled with the Exercise you previously did?</label>
+                <div>
+                    <input type="radio" name="answer" value="No" />
+                    <label>No</label>
+                    <input type="radio" name="answer" value="Yes" />
+                    <label>Yes</label>
+                </div>
+            </div>
+
+            <div class="formBtn">
+                <NavLink href="/survey-page1">Back</NavLink>
+                <button class="submit-button" type="submit">Submit</button>
+            </div>
+    </div>
 </EditForm>
 
 <div class="overlay @viewExerciseHistory">
     <div id="exercise-history">
         <button type="button" @onclick="closeSelectExerciseHistories" id="close-btn"></button>
         <div id="exercise-list">
+            @foreach (var exercise in exercises)
+            {
+                <FitLife.Components.Pages.WorkoutSelections.WorkoutComponent Exercise="exercise" />
+            }
         </div>
     </div>
 </div>

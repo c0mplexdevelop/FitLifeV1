@@ -1,8 +1,11 @@
-﻿using FitLife.Models.Survey;
+﻿using FitLife.Data;
+using FitLife.Models.Exercises;
+using FitLife.Models.Survey;
 using FitLife.Models.User;
 using FitLife.Services;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Web;
+using Microsoft.EntityFrameworkCore;
 
 namespace FitLife.Components.Pages.SurveyFormPage;
 
@@ -14,11 +17,25 @@ public partial class SurveyPage2
     [Inject]
     private SurveyService _surveyService { get; set; } = default!;
 
-    private SurveyModel? _surveyModel;
+    private SurveyModel? _surveyModel = new SurveyModel();
 
-    protected override void OnInitialized()
+    [Inject]
+    private DatabaseContext dbContext { get; set; } = default!;
+
+    [Inject]
+    private ILogger<SurveyPage2> _logger { get; set; } = default!;
+
+    private List<Exercise> exercises = [];
+    protected override async Task OnInitializedAsync()
     {
+        // Fetch the list of exercises from the database
+        exercises = await dbContext.Exercises.AsNoTracking().ToListAsync();
         _surveyModel = _surveyService.SurveyModel;
+        // Check if the survey model is null
+
+        _logger.LogInformation($"SurveyModel: {_surveyModel is null}");
+        await base.OnInitializedAsync();
+
     }
 
     private void OnValidSubmit()
