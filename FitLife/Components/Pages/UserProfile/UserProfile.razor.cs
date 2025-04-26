@@ -11,7 +11,6 @@ namespace FitLife.Components.Pages.UserProfile
     public partial class UserProfile
     {
         private string emailOverlay = "hidden";
-        private string passwordOverlay = "hidden";
 
         private bool isOverlayOpen = false;
 
@@ -70,33 +69,6 @@ namespace FitLife.Components.Pages.UserProfile
             }
             isOverlayOpen = !isOverlayOpen;
             emailModel.OldEmail = string.Empty;
-
-        }
-
-        private void editPassword(MouseEventArgs e)
-        {
-            if (!isOverlayOpen)
-            {
-                passwordOverlay = string.Empty;
-            }
-            else
-            {
-                passwordOverlay = "hidden";
-            }
-            isOverlayOpen = !isOverlayOpen;
-        }
-
-        private void closeEditPassword(MouseEventArgs e)
-        {
-            if (isOverlayOpen)
-            {
-                passwordOverlay = "hidden";
-            }
-            else
-            {
-                passwordOverlay = string.Empty;
-            }
-            isOverlayOpen = !isOverlayOpen;
 
         }
 

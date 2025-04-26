@@ -89,11 +89,12 @@
 /*FOR WORKOUT PLAYLIST CONTENT*/
 .container {
     width: 95%;
-    height: 80vh;
+    height: 60%;
     margin: 2vh auto 0vh auto;
     display: flex;
     flex-direction: column;
     overflow-y: auto;
+    padding: 0;
 }
    /* .container > div {
         background-color: #FFFFFF;
