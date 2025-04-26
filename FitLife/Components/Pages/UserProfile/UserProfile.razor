@@ -44,14 +44,6 @@
         </div>
         <button @onclick="editEmail">Edit Email Address</button>
     </div>
-    <div class="content-layout">
-        <p>Password</p>
-        <div>
-            <div id="currentPassword"/>
-            <p>test******</p>
-        </div>
-        <button @onclick="editPassword">Edit Password</button>
-    </div>
 </div>
 
 <div class="overlay @emailOverlay">
@@ -59,21 +51,10 @@
         <div class="edit-detail">
             <div class="edit-header">
                 <p>New Email Address</p>
-                <button @onclick="closeEditEmail" class="closeBtn">X</button>
+                <button type="button" @onclick="closeEditEmail" class="closeBtn">X</button>
             </div>
             <InputText @bind-value="emailModel.NewEmail" type="email" placeholder="Enter your new email address" />
             <button type="submit">Confirm</button>
         </div>
     </EditForm>
-</div>
-
-<div class="overlay @passwordOverlay">
-    <div class="edit-detail">
-        <div class="edit-header">
-            <p>New Password</p>
-            <button @onclick="closeEditPassword" class="closeBtn">X</button>
-        </div>
-        <input type="text" placeholder="Enter your new password" />
-        <button>Confirm</button>
-    </div>
 </div>
