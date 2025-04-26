@@ -47,6 +47,20 @@ public class SurveyModel
      */
     public List<Exercise> Exercises { get; set; } = new List<Exercise>(); // Will be converted from string to object, object for the dropdown
     public float Label { get; set; } // Will be converted from string to object, object for the dropdown
+    public override string ToString()
+    {
+        return $"Age: {Age}, " +
+               $"Height: {Height} cm, " +
+               $"Weight: {Weight} kg, " +
+               $"Gender: {Gender}, " +
+               $"Activity Level: {ActivityLevel}, " +
+               $"BMI: {BMI:F2}, " +
+               $"BMI Status: {BMIStatus}, " +
+               $"Struggled Previously: {StruggledPreviously}, " +
+               $"Fitness Goal: {FitnessGoal}, " +
+               $"Exercises: [{string.Join(", ", Exercises.Select(e => e.Id))}], " +
+               $"Label: {Label}";
+    }
 
 
 
