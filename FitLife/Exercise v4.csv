@@ -1,0 +1,188 @@
+ExerciseID,Exercise Name,ExerciseType,ExerciseDifficulty,ExerciseTargetMuscleGroup,IsEquipmentNeeded,Min Reps/Hold,Max Reps / Hold,Min. Duration in minutes (Cardio/Flex) ,Max. Duration in minutes(Cardio/Flex),Equipment Needed,Min No. of Recommended Sets,Max No. of Recommended Sets
+BAL_001,Single-Leg Stand / Single-Leg Balance,Balance,Beginner,Legs,0,15s hold each sides,45s hold each side,N/A,N/A,n/a,2,3
+BAL_002,Tandem Walk (Heel-to-Toe),Balance,Beginner,FullBody,0,1km,5km,N/A,N/A,n/a,2,3
+BAL_003,Yoga Tree Pose,Balance,Beginner,Legs,0,20s hold each side,60s hold each side,N/A,N/A,n/a,2,3
+BAL_004,Single-Leg Romanian Deadlift (SLRDL),Balance,Advanced,Hamstrings,1,6 each leg,10 each leg,N/A,N/A,n/a(optional: Dumbbell/Kettlebell),2,4
+BAL_005,Bosu Ball Squats,Balance,Intermediate,Legs,1,10,15,N/A,N/A,Bosu Ball,2,3
+BAL_006,Stability Ball Pike,Balance,Intermediate,Core,1,10,15,N/A,N/A,Stability Ball,2,4
+CARDIO_001,Arm Circles (Implied),Cardio,Beginner,Arms,0,10-15 each direction,10-15 each direction,3,5,n/a,1,3
+CARDIO_002,Lateral Raises (Cardio Pace - Implied),Cardio,Intermediate,Shoulders,1,15,25,N/A,N/A,Light Dumbbells (optional),1,3
+CARDIO_003,Burpees (Implied),Cardio,Advanced,FullBody,0,10,15,N/A,N/A,n/a,2,3
+CARDIO_004,Jumping Jacks (Implied),Cardio,Beginner,FullBody,0,20,50,10,20,n/a,2,3
+CARDIO_005,Mountain Climbers (Implied),Cardio,Intermediate,Core,0,30s interval,60s interval,N/A,N/A,n/a,2,3
+CARDIO_006,Running (Treadmill/Outdoor),Cardio,Intermediate,FullBody,0,N/A,N/A,20,45,(optional:Treadmill),2,3
+CARDIO_007,Jogging,Cardio,Beginner,FullBody,0,N/A,N/A,15,30,n/a,2,3
+CARDIO_008,Brisk Walking,Cardio,Beginner,FullBody,0,N/A,N/A,20,60,n/a,2,3
+CARDIO_009,Cycling (Stationary/Outdoor),Cardio,Intermediate,Legs,1,N/A,N/A,20,60,Stationary Bike or Bicycle,2,3
+CARDIO_010,Swimming (Freestyle),Cardio,Intermediate,FullBody,1,N/A,N/A,20,45,Pool,2,3
+CARDIO_011,Swimming (Breaststroke),Cardio,Intermediate,FullBody,1,N/A,N/A,20,45,Pool,2,3
+CARDIO_012,Swimming (Backstroke),Cardio,Intermediate,FullBody,1,N/A,N/A,20,45,Pool,2,3
+CARDIO_013,Swimming (Butterfly),Cardio,Advanced,FullBody,1,n/a,n/a,15,30,Pool,2,3
+CARDIO_014,Rowing (Machine/Water),Cardio,Intermediate,FullBody,1,N/A,N/A,15,40,Rowing Machine or Boat/Oars,2,3
+CARDIO_015,Elliptical Trainer,Cardio,Beginner,FullBody,1,N/A,N/A,15,40,Elliptical Machine,2,3
+CARDIO_016,Stair Climber / Stepmill,Cardio,Intermediate,Legs,1,N/A,N/A,10,30,Stair Climber / Stepmill Machine,2,3
+CARDIO_017,High Knees,Cardio,Beginner,FullBody,0,30s interval,60s interval,N/A,N/A,n/a,2,3
+CARDIO_018,Butt Kicks,Cardio,Beginner,Legs,0,30s interval,60s interval,N/A,N/A,n/a,2,3
+CARDIO_019,Jump Rope / Skipping,Cardio,Intermediate,FullBody,1,N/A,N/A,10,25,Jump Rope,2,3
+CARDIO_020,Shadow Boxing,Cardio,Intermediate,FullBody,0,N/A,N/A,15 (Rounds),30 min (Rounds),n/a,2,3
+CARDIO_021,"Dancing (e.g., Zumba)",Cardio,Intermediate,FullBody,0,N/A,N/A,30,60,n/a,2,3
+CARDIO_022,Hiking,Cardio,Intermediate,Legs,0,N/A,N/A,45,180,n/a,2,3
+CARDIO_023,Sprints,Cardio,Advanced,FullBody,0,1 (Sprint),1 (Sprint),N/A,N/A,n/a,2,3
+CARDIO_024,Agility Ladder Drills,Cardio,Intermediate,FullBody,1,N/A,N/A,10,15,Agility Ladder,2,4
+CARDIO_025,Cone Drills (Shuttle Run),Cardio,Intermediate,FullBody,1,1 (Run),5,N/A,N/A,Cones,3,6
+CARDIO_026,Battle Ropes,Cardio,Intermediate,FullBody,1,20s interval,40s interval,N/A,N/A,Battle Ropes,6,10
+CARDIO_027,Assault Bike,Cardio,Advanced,FullBody,1,N/A,N/A,10,20,Assault Bike / Air Bike,8,-
+CARDIO_028,Ski Erg,Cardio,Intermediate,FullBody,1,N/A,N/A,10,20,Ski Erg Machine,5,-
+CORE_001,Side Plank,Core,Beginner,Core,0,20s hold each side,45s hold each side,N/A,N/A,n/a,2,4
+CORE_002,Up-Down Plank / Plank Walk-out,Core,Intermediate,Core,0,8,15,N/A,N/A,n/a,2,4
+CORE_003,Crunch,Core,Beginner,Core,0,15,30,N/A,N/A,(optional: Mat),2,4
+CORE_004,Reverse Crunch,Core,Beginner,Core,0,15,25,N/A,N/A, (optional: Mat),2,4
+CORE_005,Bicycle Crunch,Core,Beginner,Core,0,20,40,N/A,N/A,n/a(optional: Mat),2,4
+CORE_006,Leg Raise (Lying/Hanging),Core,Intermediate,Core,1,12,20,N/A,N/A,n/a(Lying) or Pull-up Bar / Captain's Chair (Hanging),2,4
+CORE_007,Knee Tuck (Hanging/Stability Ball),Core,Intermediate,Core,1,12,20,N/A,N/A,Pull-up Bar / Captain's Chair or Stability Ball,2,4
+CORE_008,Russian Twist (Bodyweight/Weighted),Core,Beginner,Core,0,20,40,N/A,N/A,(optional: Weight Plate/Dumbbell/Medicine Ball),2,4
+CORE_009,Sit-up,Core,Beginner,Core,0,15,25,N/A,N/A,"n/a(optional: Anchor for feet, Mat)",2,4
+CORE_010,V-Up,Core,Intermediate,Core,0,10,18,N/A,N/A, (optional: Mat),2,4
+CORE_011,Flutter Kicks,Core,Beginner,Core,0,30s interval,60s interval,N/A,N/A, (optional: Mat),2,4
+CORE_012,Scissor Kicks,Core,Beginner,Core,0,30s interval,60s interval,N/A,N/A, (optional: Mat),2,4
+CORE_013,Bird Dog,Core,Beginner,Core,0,10 each side,15 each side,N/A,N/A, (optional: Mat),2,4
+CORE_014,Ab Wheel Rollout,Core,Advanced,Core,1,8,15,N/A,N/A,Ab Wheel,2,4
+CORE_015,Cable Woodchop (High-to-Low / Low-to-High),Core,Intermediate,Core,1,10 each side,15 each side,N/A,N/A,Cable Machine (with handle),2,4
+CORE_016,Pallof Press,Core,Intermediate,Core,1,20s hold each side,45s hold each side,N/A,N/A,Cable Machine or Resistance Band,2,4
+CORE_017,Dead Bug,Core,Beginner,Core,0,10 each side,15 each side,N/A,N/A, (optional: Mat),2,4
+CORE_018,Dragon Flag,Core,Advanced,Core,1,3,8,N/A,N/A,Sturdy Bench or Pole/Rack for grip,1,3
+CORE_019,Hanging Windshield Wipers,Core,Advanced,Core,1,8,15,N/A,N/A,Pull-up Bar,2,4
+FLEX_001,Plank (Implied),Core,Beginner,Core,0,20s hold,60s hold,N/A,N/A,n/a,2,4
+STR_016,Plank (Forearm/High),Core,Beginner,Core,0,20s hold,60s hold,N/A,N/A,n/a,2,4
+STR_039,Superman,Core,Beginner,Back,0,15,20,N/A,N/A, (optional: Mat),2,3
+FLEX_002,Cat-Cow Pose (Implied),Flexibility,Intermediate,FullBody,0,5 cycles,10 cycles,5,10, (optional: Mat),1,3
+FLEX_003,Doorway Chest Stretch (Implied),Flexibility,Advanced,Chest,0,15s hold,30s hold,5,10,Doorway,1,3
+FLEX_004,Seated Forward Bend (Implied),Flexibility,Beginner,Back,0,15s hold,30s hold,5,10, (optional: Mat),1,3
+FLEX_005,Standing Quad Stretch (Implied),Flexibility,Intermediate,Legs,0,15s hold,30s hold,5,10,n/a,1,3
+FLEX_006,Static Hamstring Stretch,Flexibility,Beginner,Hamstrings,0,20s hold,45s hold,5,10, (optional: Strap),1,3
+FLEX_007,Static Quadriceps Stretch,Flexibility,Beginner,Legs,0,20s hold,45s hold,5,10,,1,3
+FLEX_008,Static Calf Stretch,Flexibility,Beginner,Calves,0,20s hold,45s hold,5,10, (optional: Wall/Step),1,3
+FLEX_009,Static Chest Stretch (Doorway),Flexibility,Beginner,Chest,0,20s hold,45s hold,5,10,Doorway,1,3
+FLEX_010,Static Shoulder Stretch (Across body),Flexibility,Beginner,Shoulders,0,20s hold,45s hold,5,10,n/a,1,3
+FLEX_011,Static Triceps Stretch,Flexibility,Beginner,Arms,0,20s hold,45s hold,5,10,n/a,1,3
+FLEX_012,Hip Flexor Stretch (Kneeling),Flexibility,Beginner,Legs,0,20s hold each side,45s hold each side,5,10, (optional: Pad for knee),1,3
+FLEX_013,Pigeon Pose,Flexibility,Intermediate,Legs,0,30s hold each side,60s hold each side,5,10, (optional: Mat),1,3
+FLEX_015,Downward-Facing Dog,Flexibility,Beginner,FullBody,0,30s hold,60s hold,5,10, (optional: Mat),1,3
+FLEX_016,Cobra Pose / Upward-Facing Dog,Flexibility,Beginner,Back,0,15s hold,30s hold,5,10, (optional: Mat),1,3
+FLEX_017,Child's Pose,Flexibility,Beginner,Back,0,30s hold,60s hold,5,10, (optional: Mat),1,3
+MOB_001,Cat-Cow Pose,Mobility,Beginner,Back,0,8 cycles,12 cycles,5,5, (optional: Mat),1,3
+MOB_002,Dynamic Leg Swings (Forward/Side),Mobility,Beginner,Legs,0,10 each direction,15 each direction,5,5, (optional: Wall/Support),1,3
+MOB_003,Arm Circles (Forward/Backward),Mobility,Beginner,Shoulders,0,10 each direction,15 each direction,5,5,n/a,1,3
+MOB_004,Torso Twists,Mobility,Beginner,Core,0,10 each side,15 each side,5,5,n/a,1,3
+MOB_005,Foam Rolling (Various Muscles),Mobility,Beginner,FullBody,1,N/A,N/A,5,15,Foam Roller,1,1
+MOB_006,Thoracic Spine Rotations,Mobility,Beginner,Back,0,8 each side,12 each side,5,5, (optional: Mat),1,3
+MOB_007,Ankle Mobility Circles,Mobility,Beginner,Legs,0,10 each direction,15 each direction,5,5,n/a,1,3
+MOB_008,World's Greatest Stretch,Mobility,Beginner,FullBody,0,5 each side,8 each side,5,10, (optional: Mat),1,3
+MOB_009,Wrist Circles,Mobility,Beginner,Arms,0,10 each direction,15 each direction,5,5,n/a,1,3
+MOB_010,Neck Tilts/Circles,Mobility,Beginner,Neck,0,5 each direction,10 each direction,5,5,n/a,1,3
+MOB_011,Shoulder Dislocates (Band/Stick),Mobility,Intermediate,Shoulders,1,8,15,5,5,Resistance Band or PVC Pipe/Stick,1,3
+PLYO_001,Box Jump,Plyometrics,Intermediate,Legs,1,3,8,N/A,N/A,Plyometric Box,3,5
+PLYO_002,Broad Jump,Plyometrics,Beginner,Legs,0,3,6,N/A,N/A,,3,5
+PLYO_003,Medicine Ball Throws,Plyometrics,Intermediate,FullBody,1,8,12,N/A,N/A,Medicine Ball (optional: Wall),3,5
+PLYO_004,Depth Jump,Plyometrics,Advanced,Legs,1,3,6,N/A,N/A,Plyometric Box or Elevated Surface,3,5
+PWR_001,Power Clean,Power,Advanced,FullBody,1,1,5,N/A,N/A,"Barbell, Weight Plates (optional: Platform)",3,5
+PWR_002,Squat Clean,Power,Advanced,FullBody,1,1,5,N/A,N/A,"Barbell, Weight Plates (optional: Platform)",3,5
+PWR_003,Snatch (Power/Squat),Power,Advanced,FullBody,1,1,3,N/A,N/A,"Barbell, Weight Plates (optional: Platform)",3,5
+PWR_004,Clean and Jerk,Power,Advanced,FullBody,1,1,3,N/A,N/A,"Barbell, Weight Plates (optional: Platform)",3,5
+PWR_005,Thruster (Barbell/Dumbbell),Power,Intermediate,FullBody,1,5,10,N/A,N/A,"Barbell or Dumbbells, Weight Plates",3,5
+PWR_006,Kettlebell Swing (Russian/American),Power,Intermediate,FullBody,1,10,20,N/A,N/A,Kettlebell,3,5
+PWR_007,Turkish Get-Up,Power,Advanced,FullBody,1,1 each side,3 each side,N/A,N/A,Kettlebell or Dumbbell,1,3
+PWR_008,Wall Ball,Power,Intermediate,FullBody,1,10,20,N/A,N/A,"Medicine Ball, Wall Target",3,5
+PWR_009,Tire Flip,Power,Advanced,FullBody,1,3,6,N/A,N/A,Large Tire,3,5
+PWR_010,Sled Push,Power,Intermediate,FullBody,1,200m,500m,N/A,N/A,"Prowler Sled, Weight Plates",3,6
+PWR_011,Sled Pull,Power,Intermediate,FullBody,1,200m,500m,N/A,N/A,"Prowler Sled, Weight Plates, Harness/Straps",3,6
+STR_001,Bench Press (Implied),Strength,Beginner,Chest,1,10,10-15,N/A,N/A,"Barbell, Bench, Weight Plates",3,5
+STR_002,Bent-Over Row (Implied),Strength,Intermediate,Back,1,8,12,N/A,N/A,Barbell or Dumbbells,3,5
+STR_003,Barbell Back Squat (Implied),Strength,Advanced,Legs,1,4,4,N/A,N/A,"Barbell, Squat Rack/Stand, Weight Plates",3,5
+STR_004,Bicep Curl (Implied),Strength,Beginner,Arms,1,10,10,N/A,N/A,Dumbbells or Barbell,2,4
+STR_005,Overhead Press (Implied),Strength,Intermediate,Shoulders,1,8,8,N/A,N/A,"Barbell or Dumbbells (optional: Bench/Seat, Rack)",3,5
+STR_006,Bodyweight Squat,Strength,Beginner,Legs,0,15,15,N/A,N/A,n/a,2,4
+STR_007,Barbell Back Squat,Strength,Intermediate,Legs,1,8,8,N/A,N/A,"Barbell, Squat Rack/Stand, Weight Plates",3,5
+STR_008,Conventional Deadlift,Strength,Advanced,FullBody,1,3,6,N/A,N/A,"Barbell, Weight Plates",1,5
+STR_009,Push-up (Standard),Strength,Beginner,Chest,0,10,20,N/A,N/A,n/a,2,5
+STR_010,Pull-up (Overhand Grip),Strength,Intermediate,Back,1,5,10,N/A,N/A,Pull-up Bar,3,5
+STR_011,Chin-up (Underhand Grip),Strength,Intermediate,Back,1,5,12,N/A,N/A,Pull-up Bar,3,5
+STR_012,Overhead Press (Barbell/DB),Strength,Intermediate,Shoulders,1,6,10,N/A,N/A,"Barbell or Dumbbells (optional: Bench/Seat, Rack)",3,5
+STR_013,Bench Press (Barbell/DB - Flat),Strength,Intermediate,Chest,1,8,12,N/A,N/A,"Barbell or Dumbbells, Flat Bench, Weight Plates",3,5
+STR_014,Bent-Over Row (Barbell/DB),Strength,Intermediate,Back,1,8,12,N/A,N/A,Barbell or Dumbbells,3,5
+STR_015,Lunge (Forward/Reverse),Strength,Beginner,Legs,0,10 each leg,15 each leg,N/A,N/A,n/a(optional: Dumbbells/Barbell),2,4
+STR_017,Farmer's Walk,Strength,Intermediate,FullBody,1,1km,3km,N/A,N/A,Heavy Dumbbells / Kettlebells / Farmer's Walk Handles,2,4
+STR_018,Incline Push-up,Strength,Beginner,Chest,0,12,20,N/A,N/A,"Elevated Surface (Bench, Box, Wall)",2,4
+STR_019,Decline Push-up,Strength,Intermediate,Chest,1,8,15,N/A,N/A,"Elevated Surface for feet (Bench, Box)",2,4
+STR_020,Diamond Push-up,Strength,Intermediate,Arms,0,8,15,N/A,N/A,n/a,2,4
+STR_021,Wide-Grip Push-up,Strength,Intermediate,Chest,0,12,18,N/A,N/A,n/a,2,4
+STR_022,Pike Push-up,Strength,Intermediate,Shoulders,0,6,12,N/A,N/A,n/a,2,4
+STR_023,Handstand Push-up (Strict/Kipping),Strength,Advanced,Shoulders,1,3,10,N/A,N/A,Wall (or n/aif freestanding),3,5
+STR_024,Incline Bench Press (Barbell/Dumbbell),Strength,Intermediate,Chest,1,8,12,N/A,N/A,"Barbell or Dumbbells, Incline Bench, Weight Plates",3,4
+STR_025,Decline Bench Press (Barbell/Dumbbell),Strength,Intermediate,Chest,1,8,12,N/A,N/A,"Barbell or Dumbbells, Decline Bench, Weight Plates",3,4
+STR_026,Chest Fly (Dumbbell/Cable/Machine),Strength,Beginner,Chest,1,10,15,N/A,N/A,"Dumbbells / Cable Machine / Pec Deck Machine, Bench (DB)",2,4
+STR_027,Dip (Chest Focused),Strength,Intermediate,Chest,1,8,15,N/A,N/A,Dip Station / Parallel Bars,3,5
+STR_028,Dip (Triceps Focused),Strength,Intermediate,Arms,1,8,15,N/A,N/A,Dip Station / Parallel Bars / Bench,3,5
+STR_029,Cable Crossover,Strength,Beginner,Chest,1,12,18,N/A,N/A,Cable Machine,2,4
+STR_030,Dumbbell Pullover,Strength,Intermediate,Chest,1,10,15,N/A,N/A,"Dumbbell, Bench",2,3
+STR_031,Neutral Grip Pull-up,Strength,Intermediate,Back,1,6,12,N/A,N/A,Pull-up Bar (with neutral grips) or Handles,3,5
+STR_032,Lat Pulldown (Wide/Narrow/Underhand),Strength,Beginner,Back,1,10,15,N/A,N/A,Lat Pulldown Machine (with bar attachment),3,4
+STR_033,Seated Cable Row,Strength,Beginner,Back,1,10,15,N/A,N/A,Cable Row Machine (with handle attachment),3,4
+STR_034,Single-Arm Dumbbell Row,Strength,Beginner,Back,1,10 each arm,15 each arm,N/A,N/A,"Dumbbell, Bench",3,4
+STR_035,T-Bar Row,Strength,Intermediate,Back,1,8,12,N/A,N/A,T-Bar Row Machine or Barbell + Landmine + Handle,3,4
+STR_036,Inverted Row / Bodyweight Row,Strength,Beginner,Back,1,10,20,N/A,N/A,Low Bar / Suspension Trainer / Rings / Smith Machine Bar,3,4
+STR_037,Face Pull,Strength,Beginner,Shoulders,1,15,25,N/A,N/A,Cable Machine with Rope Attachment,2,4
+STR_038,Back Extension / Hyperextension,Strength,Beginner,Back,1,12,20,N/A,N/A,Hyperextension Bench / Roman Chair / GHD Machine,2,4
+STR_040,Overhead Press (Barbell - Standing/Seated),Strength,Intermediate,Shoulders,1,6,10,N/A,N/A,"Barbell (optional: Bench/Seat, Rack)",3,5
+STR_041,Overhead Press (Dumbbell - Standing/Seated),Strength,Intermediate,Shoulders,1,8,12,N/A,N/A,Dumbbells (optional: Bench/Seat),3,5
+STR_042,Arnold Press,Strength,Intermediate,Shoulders,1,8,12,N/A,N/A,"Dumbbells, Bench/Seat",3,4
+STR_043,Lateral Raise (Dumbbell/Cable),Strength,Beginner,Shoulders,1,12,20,N/A,N/A,Dumbbells or Cable Machine,2,4
+STR_044,Front Raise (Dumbbell/Plate/Cable),Strength,Beginner,Shoulders,1,12,18,N/A,N/A,Dumbbell / Weight Plate / Cable Machine,2,4
+STR_045,Rear Delt Fly / Reverse Fly,Strength,Beginner,Shoulders,1,15,25,N/A,N/A,Dumbbells / Cable Machine / Reverse Pec Deck Machine,2,4
+STR_046,Upright Row,Strength,Intermediate,Shoulders,1,10,15,N/A,N/A,Barbell / Dumbbells / Cable Machine,2,3
+STR_047,Barbell Shrug,Strength,Beginner,Shoulders,1,10,15,N/A,N/A,Barbell,2,4
+STR_048,Dumbbell Shrug,Strength,Beginner,Shoulders,1,12,20,N/A,N/A,Dumbbells,2,4
+STR_049,Bicep Curl (Barbell),Strength,Beginner,Arms,1,8,12,N/A,N/A,Barbell,2,4
+STR_050,Bicep Curl (Dumbbell - Standing/Seated/Incline),Strength,Beginner,Arms,1,10,15,N/A,N/A,Dumbbells (optional: Bench/Incline Bench),2,4
+STR_051,Hammer Curl,Strength,Beginner,Arms,1,10,15,N/A,N/A,Dumbbells,2,4
+STR_052,Concentration Curl,Strength,Beginner,Arms,1,12,18,N/A,N/A,"Dumbbell, Bench/Thigh support",2,3
+STR_053,Preacher Curl,Strength,Intermediate,Arms,1,8,12,N/A,N/A,"Preacher Curl Bench, Barbell (EZ Bar) or Dumbbell",2,4
+STR_054,Cable Bicep Curl,Strength,Beginner,Arms,1,10,15,N/A,N/A,Cable Machine (with handle/bar attachment),2,4
+STR_055,Triceps Pushdown (Rope/Bar),Strength,Beginner,Arms,1,10,15,N/A,N/A,Cable Machine with Rope or Bar Attachment,2,4
+STR_056,Overhead Triceps Extension (Dumbbell/Cable/Barbell),Strength,Beginner,Arms,1,10,15,N/A,N/A,Dumbbell / Cable Machine / Barbell (EZ Bar),2,4
+STR_057,Triceps Kickback,Strength,Beginner,Arms,1,12,20,N/A,N/A,Dumbbells (optional: Bench for support),2,3
+STR_058,Skullcrusher / Lying Triceps Extension,Strength,Intermediate,Arms,1,8,12,N/A,N/A,"Barbell (EZ Bar common) or Dumbbells, Bench",2,4
+STR_059,Close-Grip Bench Press,Strength,Intermediate,Arms,1,6,10,N/A,N/A,"Barbell, Bench, Weight Plates",3,4
+STR_060,Barbell Front Squat,Strength,Intermediate,Legs,1,6,10,N/A,N/A,"Barbell, Squat Rack/Stand, Weight Plates",3,5
+STR_061,Goblet Squat,Strength,Beginner,Legs,1,10,15,N/A,N/A,Kettlebell or Dumbbell,3,4
+STR_062,Overhead Squat,Strength,Advanced,FullBody,1,3,6,N/A,N/A,"Barbell, Weight Plates",3,5
+STR_063,Split Squat,Strength,Beginner,Legs,0,10 each leg,15 each leg,N/A,N/A,(optional: Dumbbells/Barbell),2,4
+STR_064,Bulgarian Split Squat,Strength,Intermediate,Legs,1,8 each leg,12 each leg,N/A,N/A,Bench or Elevated Surface (optional: Dumbbells/Barbell),2,4
+STR_065,Pistol Squat (Single-Leg Squat),Strength,Advanced,Legs,0,3 each leg,8 each leg,N/A,N/A,n/a,2,4
+STR_066,Lunge (Walking),Strength,Beginner,Legs,0,10  each leg,15 each leg,N/A,N/A, (optional: Dumbbells/Barbell),2,4
+STR_067,Lunge (Side),Strength,Beginner,Legs,0,10  each leg,12 each leg,N/A,N/A,(optional: Dumbbells/Kettlebell),2,4
+STR_068,Curtsy Lunge,Strength,Beginner,Legs,0,10  each leg,12 each leg,N/A,N/A, (optional: Dumbbells/Kettlebell),2,4
+STR_069,Sumo Deadlift,Strength,Advanced,FullBody,1,3,6,N/A,N/A,"Barbell, Weight Plates",1,5
+STR_070,Romanian Deadlift (RDL),Strength,Intermediate,Hamstrings,1,8,12,N/A,N/A,Barbell or Dumbbells,3,4
+STR_071,Stiff-Legged Deadlift,Strength,Intermediate,Hamstrings,1,8,12,N/A,N/A,Barbell or Dumbbells,3,4
+STR_073,Glute Bridge,Strength,Beginner,Glutes,0,15,25,N/A,N/A,(optional: Barbell/Weight Plate),2,4
+STR_074,Barbell Hip Thrust,Strength,Intermediate,Glutes,1,8,15,N/A,N/A,"Barbell, Bench, Weight Plates (optional: pad)",3,5
+STR_075,Leg Press,Strength,Beginner,Legs,1,10,20,N/A,N/A,Leg Press Machine,3,5
+STR_076,Hack Squat,Strength,Intermediate,Legs,1,8,15,N/A,N/A,Hack Squat Machine,3,4
+STR_077,Leg Extension,Strength,Beginner,Legs,1,12,20,N/A,N/A,Leg Extension Machine,2,4
+STR_078,Hamstring Curl (Lying/Seated/Standing),Strength,Beginner,Hamstrings,1,12,20,N/A,N/A,Hamstring Curl Machine (specific type),2,4
+STR_079,Good Morning,Strength,Intermediate,Hamstrings,1,10,15,N/A,N/A,Barbell (optional: Rack),2,3
+STR_080,Step-Up (Box/Bench),Strength,Beginner,Legs,1,10 each leg,15 each leg,N/A,N/A,Box or Bench (optional: Dumbbells/Barbell),2,4
+STR_081,Standing Calf Raise,Strength,Beginner,Calves,0,15,30,N/A,N/A,"(optional: Calf Raise Machine/Block, Weights)",3,5
+STR_082,Seated Calf Raise,Strength,Beginner,Calves,1,15,25,N/A,N/A,Seated Calf Raise Machine,3,5
+STR_083,Donkey Calf Raise,Strength,Intermediate,Calves,1,15,20,N/A,N/A,Donkey Calf Raise Machine / Partner / Belt+Weight,3,4
+STR_084,Kipping Pull-ups,Strength,Advanced,Back,1,5,15,N/A,N/A,Pull-up Bar,-,-
+STR_085,Dead Hang,Strength,Beginner,Back,1,15s hold,60s hold,N/A,N/A,Pull-up Bar,2,4
+STR_086,Calf Press (Machine),Strength,Beginner,Calves,1,15,25,N/A,N/A,Leg Press Machine or Calf Press Machine,3,5
+STR_087,Seated Dip Machine,Strength,Beginner,Arms,1,10,15,N/A,N/A,Seated Dip Machine,2,4
+STR_088,Peck Deck Machine,Strength,Beginner,Chest,1,12,18,N/A,N/A,Pec Deck Machine / Chest Fly Machine,2,4
+STR_089,Reverse Pec Deck,Strength,Beginner,Shoulders,1,15,25,N/A,N/A,Reverse Pec Deck Machine / Rear Delt Fly Machine,2,4
+STR_090,Leg Adduction Machine,Strength,Beginner,Legs,1,15,25,N/A,N/A,Leg Adduction Machine,2,4
+STR_091,Leg Abduction Machine,Strength,Beginner,Legs,1,15,25,N/A,N/A,Leg Abduction Machine,2,4
+STR_092,Wrist Curls,Strength,Beginner,Arms,1,15,25,N/A,N/A,Dumbbell or Barbell (optional: Bench),2,3
+STR_093,Reverse Wrist Curls,Strength,Beginner,Arms,1,15,25,N/A,N/A,Dumbbell or Barbell (optional: Bench),2,3

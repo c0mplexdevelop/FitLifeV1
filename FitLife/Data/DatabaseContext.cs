@@ -56,14 +56,14 @@ public class DatabaseContext: IdentityDbContext<User, IdentityRole<int>, int>
        
         if(!Set<Exercise>().Any())
         {
-            var csvPath = Path.Combine(Directory.GetCurrentDirectory(), "ExerciseTable.csv");
+            var csvPath = Path.Combine(Directory.GetCurrentDirectory(), "ExerciseTable v2.csv");
             using var csvReader = GetExercises.SetCSVReader(csvPath);
 
             var records = GetExercises.GetExercisesFromCsv(csvReader);
 
             foreach (var record in records)
             {
-                _logger?.LogInformation($"Exercise: {record.Name}, Type: {record.Type}, Target Muscle Group: {record.TargetMuscleGroup}, Equipment Needed: {record.EquipmentNeeded}, Reps: {record.Reps}, Duration: {record.Duration}, Difficulty: {record.Difficulty}");
+                //_logger?.LogInformation($"Exercise: {record.Name}, Type: {record.Type}, Target Muscle Group: {record.TargetMuscleGroup}, Equipment Needed: {record.EquipmentNeeded}, Reps: {record.Reps}, Duration: {record.Duration}, Difficulty: {record.Difficulty}");
                 Set<Exercise>().Add(record);
             }
         }
