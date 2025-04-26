@@ -1,13 +1,13 @@
 ﻿@layout Layout.GenerateGoalLayout
 
 @page "/survey-page2"
-
+@rendermode InteractiveServer
 <header>
     <a>Create Your Personal Fitness Plan</a>
 </header>
 
+<EditForm class="editform" Model="_surveyModel" OnValidSubmit="OnValidSubmit">
 <div class="main-container">
-    <EditForm Model="_surveyModel">
         <label>III. Current Fitness Level</label>
         <div class="selection-layout">
             <label>How would you describe your current fitness level?</label>
@@ -15,37 +15,36 @@
                 <option>Sedentary (Little to no regular exercise)</option>
                 <option>option2</option>
             </select>
-            <label>How many days per week can you commit to exercise?</label>
-            <select>
-                <option>1-2 days</option>
-                <option>option2</option>
-            </select>
         </div>
-        <label>IV. Dietary Preferences</label>
+
+        <label>IV. Physical Activity and Exercise History</label>
+
         <div class="selection-layout">
-            <label>What best describes your dietary pattern? (Select one)</label>
-            <select>
-                <option>Sedentary (Little to no regular exercise)</option>
-                <option>option2</option>
-            </select>
-            <label>Do you have any food allergies?</label>
-            <select>
-                <option>1-2 days</option>
-                <option>option2</option>
-            </select>
+            <label>What Exercise have you done?</label>
+            <button type="button" @onclick="selectExerciseHistories">Select Exercise History</button>
         </div>
-        <label>V. Health Information</label>
-        <div class="checkbox-selection">
-            <a>Have you been diagnosed with any of the following conditions? (Check all that apply)</a>
-            <label><input class="checkbox" type="checkbox" />Cardiovascular Disease</label>
-            <label><input class="checkbox" type="checkbox" />Diabetes</label>
-            <label><input class="checkbox" type="checkbox" />Joint Problems (e.g., arthritis)</label>
-            <label><input class="checkbox" type="checkbox" />None</label>
-            <label><input class="checkbox" type="checkbox" />Others ( Please Specify ) <input type="text" /></label>
+
+        <div class="selection-layout">
+            <label>Have you struggled with the Exercise you previously did?</label>
+            <div>
+                <input type="radio" name="answer" value="No" />
+                <label>No</label>
+                <input type="radio" name="answer" value="Yes" />
+                <label>Yes</label>
+            </div>
         </div>
+
         <div class="formBtn">
             <NavLink href="/survey-page1">Back</NavLink>
-            <button type="submit" href="/survey-page3">Next</button>
+            <button class="submit-button" type="submit">Submit</button>
         </div>
-    </EditForm>
+</div>
+</EditForm>
+
+<div class="overlay @viewExerciseHistory">
+    <div id="exercise-history">
+        <button type="button" @onclick="closeSelectExerciseHistories" id="close-btn"></button>
+        <div id="exercise-list">
+        </div>
+    </div>
 </div>
