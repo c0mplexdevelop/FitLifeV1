@@ -170,7 +170,7 @@ header {
     left: 0;
     width: 100vw;
     height: 100vh;
-    background-color: rgba(0,0,0,0.5);
+    background-color: rgba(0,0,0,0.7);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -180,29 +180,65 @@ header {
     display: none;
 }
 
-#exercise-history {
-    background-color: white;
+.exercise-history {
+    border-radius: 10px;
+    background: linear-gradient(to bottom, white, black);
     width: 70%;
     height: 90%;
     display: flex;
     flex-direction: column;
 }
+    .exercise-history > button {
+        background-color: black;
+        box-shadow: 0px 0px 5px white;
+        width: auto;
+        height: 10%;
+        border: 0;
+        border-radius: 10px;
+        font-family: "Poppins";
+        color: white;
+        margin: auto 5vw 2vh auto;
+        cursor: pointer;
+    }
+    .exercise-history > button:hover {
+        color: skyblue;
+    }
 
-#exercise-list {
-    background-color: yellow;
+.overlay-header {
+    height:10%;
     width: 100%;
-    height: 80%;
-    margin: auto;
-    overflow-y: auto;
-    overflow-x: hidden;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }
 
-#close-btn {
+    .overlay-header > label {
+        font-family:"Poppins";
+        font-size: 3vh;
+        font-weight: 600;
+        margin-left: 1vw;
+    }
+
+.exercise-list {
+    width: 100%;
+    height: 70%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: auto;
+    overflow-x: hidden;
+    background-color: yellow;
+}
+
+.close-btn {
     background: url('images/generategoals/closebutton.svg') no-repeat center;
     background-size: 70%;
     width: 5%;
-    height: 7%;
+    height: 100%;
     border: 0;
-    margin: 1vh 1vw 0vh auto;
+    margin-left: auto;
     cursor: pointer;
+    padding-left: 1vw;
+    padding-right: 1vw;
 }

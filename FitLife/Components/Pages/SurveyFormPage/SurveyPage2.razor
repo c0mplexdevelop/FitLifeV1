@@ -45,13 +45,30 @@
 </EditForm>
 
 <div class="overlay @viewExerciseHistory">
-    <div id="exercise-history">
-        <button type="button" @onclick="closeSelectExerciseHistories" id="close-btn"></button>
-        <div id="exercise-list">
+    <div class="exercise-history">
+        <div class="overlay-header">
+            <label>Select Exercise History</label>
+            <button type="button" @onclick="closeSelectExerciseHistories" class="close-btn"></button>
+        </div>
+        <div class="exercise-list">
             @foreach (var exercise in exercises)
             {
                 <FitLife.Components.Pages.WorkoutSelections.WorkoutComponent Exercise="exercise" />
             }
         </div>
+        <button @onclick="addedExerciseHistories">Added Exercise</button>
+    </div>
+</div>
+
+<div class="overlay @viewAddedExerciseHistory">
+    <div class="exercise-history">
+        <div class="overlay-header">
+            <label>Exercise History Added</label>
+            <button type="button" @onclick="closeAddedExerciseHistories" class="close-btn"></button>
+        </div>
+        <div class="exercise-list">
+
+        </div>
+        <button @onclick="confirmedAddedExerciseHistories">Confirm</button>
     </div>
 </div>
