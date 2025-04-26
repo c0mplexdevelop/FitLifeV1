@@ -1,4 +1,5 @@
-﻿using FitLife.Models.User.Enum;
+﻿using FitLife.Models.Intermediary;
+using FitLife.Models.User.Enum;
 using Microsoft.AspNetCore.Identity;
 using System.ComponentModel.DataAnnotations;
 
@@ -29,6 +30,9 @@ public class User : IdentityUser<int>
     [StringLength(16, MinimumLength = 6)]
     [ProtectedPersonalData]
     public override string? UserName { get; set; } = null!;
+
+    // Navigation properties
+    public virtual ICollection<UserExerciseSubscription> ExerciseSubscriptions { get; set; } = new List<UserExerciseSubscription>();
 
     // Apparently we dont need to do this anymore.. Identity  Handles it
 

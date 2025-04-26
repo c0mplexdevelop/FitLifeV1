@@ -1,5 +1,8 @@
-﻿using FitLife.Data;
+﻿using FitLife.Auth;
+using FitLife.Data;
 using FitLife.Models.Exercises;
+using FitLife.Models.Intermediary;
+using FitLife.Models.User;
 using Microsoft.AspNetCore.Components;
 using Microsoft.EntityFrameworkCore;
 using System.Threading.Tasks;
@@ -13,6 +16,14 @@ public partial class WorkoutSelections
     [Inject]
     private DatabaseContext dbContext { get; set; } = default!;
 
+    [Inject]
+    private AuthService authService { get; set; } = default!;
+
+    [Inject]
+    private ILogger<WorkoutSelections> _logger { get; set; } = default!;
+
+    private User? User { get; set; }
+
     private bool isLoading = true;
 
     private WorkoutTypeFilter selectedWorkoutType = WorkoutTypeFilter.All;
@@ -22,7 +33,10 @@ public partial class WorkoutSelections
         await base.OnInitializedAsync();
         await Task.Delay(TimeSpan.FromSeconds(2));
         Exercises = await dbContext.Exercises.AsNoTracking().ToListAsync();
-
+        var userName = await authService.ReturnUserName();
+        User = await dbContext.Users
+            .AsNoTracking()
+            .FirstOrDefaultAsync(u => u.UserName == userName); // Replace with actual user ID
         isLoading = false;
         await InvokeAsync(StateHasChanged);
     }
@@ -46,6 +60,32 @@ public partial class WorkoutSelections
         await Task.Delay(TimeSpan.FromMilliseconds(500));
         isLoading = false;
         StateHasChanged();
+    }
+
+    //TODO: REFACTOR FOR ABSTRACTION (DRY)
+    private async Task AddExerciseToUser(Exercise exercise)
+    {
+        _logger.LogCritical("PRESSED!");
+        if (User == null)
+        {
+            _logger.LogError("User is null");
+            return;
+        }
+
+        var userExerciseSub = new UserExerciseSubscription
+        {
+            UserId = User.Id,
+            ExerciseId = exercise.Id
+        };
+        _logger.LogInformation($"User: {User.UserName} Exercise: {exercise.Name} Type: {exercise.Type}");
+        if (await dbContext.UserExerciseSubscriptions
+            .AnyAsync(ues => ues.UserId == User.Id && ues.ExerciseId == exercise.Id))
+        {
+            _logger.LogInformation($"User: {User.UserName} already subscribed to exercise: {exercise.Name}");
+            return;
+        }
+        dbContext.UserExerciseSubscriptions.Add(userExerciseSub);
+        await dbContext.SaveChangesAsync();
     }
 }
 

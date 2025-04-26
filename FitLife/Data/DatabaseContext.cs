@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity;
 using FitLife.Models.Exercises;
 using FitLife.Utilities;
+using FitLife.Models.Intermediary;
 
 
 namespace FitLife.Data;
@@ -12,6 +13,7 @@ public class DatabaseContext: IdentityDbContext<User, IdentityRole<int>, int>
 {
     public DbSet<User> Accounts { get; set; }
     public DbSet<Exercise> Exercises { get; set; }
+    public DbSet<UserExerciseSubscription> UserExerciseSubscriptions { get; set; }
 
     private ILogger<DatabaseContext>? _logger;
 
@@ -28,6 +30,21 @@ public class DatabaseContext: IdentityDbContext<User, IdentityRole<int>, int>
 
         builder.Entity<Exercise>().Property(e => e.Id).ValueGeneratedOnAdd();
         base.OnModelCreating(builder);
+
+        builder.Entity<UserExerciseSubscription>()
+            .HasKey(ues => new { ues.UserId, ues.ExerciseId });
+
+        // User to Exercise relationship
+        builder.Entity<UserExerciseSubscription>()
+            .HasOne(ues => ues.User)
+            .WithMany(user => user.ExerciseSubscriptions)
+            .HasForeignKey(ues => ues.UserId);
+
+        // Exercise to User relationship
+        builder.Entity<UserExerciseSubscription>()
+            .HasOne(ues => ues.Exercise)
+            .WithMany(exercise => exercise.UserSubscriptions)
+            .HasForeignKey(ues => ues.ExerciseId);
     }
 
     public void SeedDataAsync()
