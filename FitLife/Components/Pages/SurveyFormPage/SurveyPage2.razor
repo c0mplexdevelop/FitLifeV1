@@ -9,38 +9,38 @@
 
 <EditForm class="editform" Model="_surveyModel" OnValidSubmit="OnValidSubmit">
     <div class="main-container">
-            <label>III. Current Fitness Level</label>
-            <div class="selection-layout">
-                <label>How would you describe your current fitness level?</label>
-                <InputSelect @bind-Value="_surveyModel!.ActivityLevel">
-                    <option value="@ActivityLevel.Sedentary">Sedentary (Little to no regular exercise)</option>
-                    <option value="@ActivityLevel.Light">Lightly Active</option>
-                    <option value="@ActivityLevel.Active">Active</option>
-                    <option value="@ActivityLevel.VeryActive">Very Active</option>
-                </InputSelect>
-            </div>
+        <label>III. Current Fitness Level</label>
+        <div class="selection-layout">
+            <label>How would you describe your current fitness level?</label>
+            <InputSelect @bind-Value="_surveyModel!.ActivityLevel">
+                <option value="@ActivityLevel.Sedentary">Sedentary (Little to no regular exercise)</option>
+                <option value="@ActivityLevel.Light">Lightly Active</option>
+                <option value="@ActivityLevel.Active">Active</option>
+                <option value="@ActivityLevel.VeryActive">Very Active</option>
+            </InputSelect>
+        </div>
 
-            <label>IV. Physical Activity and Exercise History</label>
+        <label>IV. Physical Activity and Exercise History</label>
 
-            <div class="selection-layout">
-                <label>What Exercise have you done?</label>
-                <button type="button" @onclick="selectExerciseHistories">Select Exercise History</button>
-            </div>
+        <div class="selection-layout">
+            <label>What Exercise have you done?</label>
+            <button type="button" @onclick="selectExerciseHistories">Select Exercise History</button>
+        </div>
 
-            <div class="selection-layout">
-                <label>Have you struggled with the Exercise you previously did?</label>
-                <div>
-                    <input type="radio" name="answer" value="No" />
-                    <label>No</label>
-                    <input type="radio" name="answer" value="Yes" />
-                    <label>Yes</label>
-                </div>
+        <div class="selection-layout">
+            <label>Have you struggled with the Exercise you previously did?</label>
+            <div>
+                <input type="radio" name="answer" value="No" />
+                <label>No</label>
+                <input type="radio" name="answer" value="Yes" />
+                <label>Yes</label>
             </div>
+        </div>
 
-            <div class="formBtn">
-                <NavLink href="/survey-page1">Back</NavLink>
-                <button class="submit-button" type="submit">Submit</button>
-            </div>
+        <div class="formBtn">
+            <NavLink href="/survey-page1">Back</NavLink>
+            <button class="submit-button" type="submit">Submit</button>
+        </div>
     </div>
 </EditForm>
 
@@ -53,7 +53,7 @@
         <div class="exercise-list">
             @foreach (var exercise in exercises)
             {
-                <FitLife.Components.Pages.WorkoutSelections.WorkoutComponent Exercise="exercise" />
+                <FitLife.Components.Pages.WorkoutSelections.WorkoutComponent Exercise="exercise" Delegate="@AssignExerciseToUser"/>
             }
         </div>
         <button @onclick="addedExerciseHistories">Added Exercise</button>
@@ -67,7 +67,10 @@
             <button type="button" @onclick="closeAddedExerciseHistories" class="close-btn"></button>
         </div>
         <div class="exercise-list">
-
+            @foreach(var exercise in _surveyModel.Exercises)
+            {
+                <FitLife.Components.Pages.WorkoutSelections.WorkoutComponent Exercise="exercise" Delegate="@AssignExerciseToUser" />
+            }
         </div>
         <button @onclick="confirmedAddedExerciseHistories">Confirm</button>
     </div>
