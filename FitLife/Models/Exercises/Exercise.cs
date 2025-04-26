@@ -1,4 +1,5 @@
 ﻿using FitLife.Models.Exercises.Enums;
+using FitLife.Models.Intermediary;
 
 namespace FitLife.Models.Exercises;
 
@@ -18,4 +19,7 @@ public class Exercise
     public string? Equipments { get; set; }
     public int MinSets { get; set; }
     public int MaxSets { get; set; }
+
+    // Navigation properties
+    public virtual ICollection<UserExerciseSubscription> UserSubscriptions { get; set; } = new List<UserExerciseSubscription>();
 }
