@@ -19,12 +19,13 @@ header {
 
 .main-container {
     background-color: #FFFFFF;
-    width: 40%;
-    height: 105vh;
+    width: 35vw;
+    height: 60vh;
     box-shadow: 0px 0px 20px rgb(0, 0, 0, 0.66);
     border-radius: 10px;
     display: flex;
     flex-direction: column;
+    margin: 10vh auto;
 }
     .main-container > label {
         font-family: "Poppins";
@@ -36,11 +37,32 @@ header {
 
     .selection-layout {
         width: 100%;
-        height: 20vh;
+        height: 10vh;
         margin-top: 1vh;
         display: flex;
         flex-direction: column;
     }
+
+        .selection-layout > div {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            margin-top: auto;
+            width: 100%;
+            height: 50%;
+            padding-left: 1vw;
+
+        }
+
+        .selection-layout > div > input {
+            cursor: pointer;
+        }
+
+        .selection-layout > div > label {
+            font-family: "Poppins";
+            font-size: 2vh;
+            margin-right: 5vw;
+        }
 
         .selection-layout > label {
             font-family: "Poppins";
@@ -54,7 +76,7 @@ header {
             font-family: "Poppins";
             font-size: 0.8rem;
             width: 90%;
-            height: 25%;
+            height: 50%;
             margin: 0.5vh 0vw 0vh 1vw;
             padding-left: 2vw;
             color: #666666;
@@ -62,32 +84,25 @@ header {
             border-radius: 5px;
         }
 
-    .checkbox-selection {
-        width: 100%;
-        height: 30vh;
-        display: flex;
-        flex-direction: column;
-    }
-        .checkbox-selection > a {
-            margin: 1vh 0vw 0vh 1vw;
-            width: 95%;
+        .selection-layout > button {
+            background-color: #FFFFFF;
+            width: 30%;
+            height: 50%;
+            padding-left: 2px;
+            padding-right: 2px;
+            margin-top: auto;
+            margin-left: 1vw;
             font-family: "Poppins";
             font-size: 2vh;
-            font-weight: 400;
-            color: black;
+            cursor: pointer;
+            border: 1px solid black;
+            border-radius: 5px;
+            outline: none;
         }
 
-        .checkbox-selection > label {
-            font-family: "Poppins";
-            font-size: 1.5vh;
-            margin: 1vh 0vw 0vh 1vw;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-        }
-        .checkbox-selection > label > input {
-            cursor: pointer;
-        }
+            .selection-layout > button:hover {
+                color: blue;
+            }
 
     .formBtn {
         width: 50%;
@@ -118,3 +133,76 @@ header {
         ::deep.formBtn > a:hover {
             color: skyblue;
         }
+
+    .submit-button {
+        background-color: black;
+        width: 40%;
+        height: 100%;
+        margin: 0vh 1vw 0vh 1vw;
+        font-family: "Poppins";
+        font-size: 2vh;
+        font-weight: 700;
+        color: white;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 0;
+        border-radius: 10px;
+        text-decoration: none;
+    }
+
+        .submit-button:hover {
+            color: skyblue;
+        }
+
+/*FOR EDITFORM LAYOUT*/
+
+::deep.editform {
+    width: 100%;
+    height: 100%;
+}
+
+/*OVERLAY FOR SELECTING EXERCISE HISTORY*/
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0,0,0,0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hidden {
+    display: none;
+}
+
+#exercise-history {
+    background-color: white;
+    width: 70%;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+}
+
+#exercise-list {
+    background-color: yellow;
+    width: 100%;
+    height: 80%;
+    margin: auto;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+#close-btn {
+    background: url('images/generategoals/closebutton.svg') no-repeat center;
+    background-size: 70%;
+    width: 5%;
+    height: 7%;
+    border: 0;
+    margin: 1vh 1vw 0vh auto;
+    cursor: pointer;
+}
