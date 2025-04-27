@@ -92,7 +92,7 @@ public partial class UserDashboard
             StateHasChanged();
             return;
         }
-        var userExerciseHistory = CreateExerciseHistory(subscription, user, true);
+        var userExerciseHistory = CreateExerciseHistory(subscription, user, false);
         DbContext.UserExerciseSubscriptions.Remove(refetchedSubscription);
         DbContext.UserExerciseHistory.Add(userExerciseHistory);
         await DbContext.SaveChangesAsync();
