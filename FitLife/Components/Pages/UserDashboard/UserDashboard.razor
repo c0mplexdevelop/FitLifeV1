@@ -1,6 +1,7 @@
 ﻿@layout Layout.DashboardLayout
 @page "/user-dashboard"
 
+@rendermode @(new InteractiveServerRenderMode(prerender: false))
 
 <div class="header">
     <div class="user-details">
@@ -13,7 +14,7 @@
                 <a>Workouts</a>
             </div1>
             <div2>
-                <a>0</a>
+                <a>@completedWorkoutsCount</a>
                 <a>completed</a>
             </div2>
         </div>
@@ -28,7 +29,10 @@
     <h2>Workout Playlist</h2>
     <div>
         <div class="workout-listLayout">
-            <WorkoutList/>
+            @foreach (var sub in UserExercisesSubscriptions)
+            {
+                <WorkoutList Subscription="sub" OnCompleteClick="CompleteExercise" OnDeleteClick="DeleteExercise"/>
+            }
         </div>
     </div>
 </div>
