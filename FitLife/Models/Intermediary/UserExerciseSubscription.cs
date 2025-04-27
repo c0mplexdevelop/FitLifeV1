@@ -11,6 +11,7 @@ public class UserExerciseSubscription
     // Foreign key to the ExerciseTable
     public string ExerciseId { get; set; } = string.Empty;
 
+    // Navigation properties
     public virtual User.User User { get; set; } = null!;
     public virtual Exercise Exercise { get; set; } = null!;
 }
