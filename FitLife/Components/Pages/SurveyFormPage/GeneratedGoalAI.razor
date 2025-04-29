@@ -19,7 +19,7 @@
         <div class="generated-content">
             @foreach(var exercise in predictedExercise)
             {
-                <WorkoutComponent Exercise="exercise" />
+                <WorkoutComponent Exercise="exercise" Delegate="AddExerciseToUser"/>
 
             }
             @* <div class="content-container">

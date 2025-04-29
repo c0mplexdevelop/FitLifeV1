@@ -1,5 +1,6 @@
 ﻿@layout Layout.DashboardLayout
 @page "/workout-selections"
+@using FitLife.Utilities
 
 @rendermode @(new InteractiveServerRenderMode(prerender: false)) 
 @* If prerender is false, prevent lagging on previous page due to I/O or waiting*@
@@ -60,7 +61,7 @@
             {
                 @foreach (var exercise in Exercises)
                 {
-                    <WorkoutComponent Exercise="exercise" />
+                    <WorkoutComponent Exercise="exercise" Delegate="AddExerciseToUser" />
                     <div class="design-line"></div>
                 }
             } else
@@ -69,7 +70,7 @@
                 {
                     if (selectedWorkoutType.ToString().Equals(exercise.Type, StringComparison.OrdinalIgnoreCase))
                     {
-                        <WorkoutComponent Exercise="exercise" />
+                        <WorkoutComponent Exercise="exercise" Delegate="AddExerciseToUser" />
                         <div class="design-line"></div>
                     }
                 }
