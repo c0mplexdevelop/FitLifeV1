@@ -34,8 +34,9 @@
         font-weight: 600;
         text-shadow: 0px 0px 2px black;
         text-align: right;
-        padding-right: 15px;
-        width: 10%;
+        padding-right: 1vw;
+        padding-left: 3vw;
+        width: auto;
         height: 100%;
         margin: 0vh 1vw 0vh 0vw;
         cursor: pointer;
@@ -56,7 +57,6 @@
         background: url("images/WorkoutFilters/CORE-muscle-body (1).svg") no-repeat 10px center;
         background-size: 20% 100%;
         background-color: #EE1D52;
-        width: 8%;
     }
         #coreBtn:hover {
             color: skyblue;
@@ -71,16 +71,36 @@
     #cardioBtn {
         background:skyblue url("images/WorkoutFilters/CARDIO--WHITE.svg") no-repeat 10px center;
         background-size: 15% 100%;
-        width: 9%;
     } 
         #cardioBtn:hover {
+            color: skyblue;
+        }
+    #plyoBtn {
+        background: blue url("images/WorkoutFilters/CARDIO--WHITE.svg") no-repeat 10px center;
+        background-size: 10% 100%;
+    }
+        #plyoBtn:hover {
+            color: skyblue;
+        }
+
+    #mobilityBtn {
+        background: blue url("images/WorkoutFilters/sprint.svg") no-repeat 10px center;
+        background-size: 20% 100%;
+    }
+        #mobilityBtn:hover {
+            color: skyblue;
+        }
+    #powerBtn {
+        background: greenyellow url("images/WorkoutFilters/whitedumbbell.png") no-repeat 10px center;
+        background-size: 25% 70%;
+    }
+        #powerBtn:hover {
             color: skyblue;
         }
 
     #allBtn {
         background:limegreen url("images/WorkoutFilters/whitedumbbell.png") no-repeat 10px center;
         background-size: 25% 70%;
-        width: 7%;
     }
         #allBtn:hover {
             color: skyblue;
