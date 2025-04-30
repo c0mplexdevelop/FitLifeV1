@@ -78,7 +78,7 @@ header {
             width: 90%;
             height: 50%;
             margin: 0.5vh 0vw 0vh 1vw;
-            padding-left: 2vw;
+            padding-left: 1vw;
             color: #666666;
             cursor: pointer;
             border-radius: 5px;
@@ -86,12 +86,11 @@ header {
 
         .selection-layout > button {
             background-color: #FFFFFF;
-            width: 30%;
+            width: auto;
             height: 50%;
-            padding-left: 2px;
-            padding-right: 2px;
-            margin-top: auto;
-            margin-left: 1vw;
+            padding-left: 1vw;
+            padding-right: 1vw;
+            margin: auto auto 0vh 1vw;
             font-family: "Poppins";
             font-size: 2vh;
             cursor: pointer;
@@ -228,7 +227,6 @@ header {
     align-items: center;
     overflow-y: auto;
     overflow-x: hidden;
-    background-color: yellow;
 }
 
 .close-btn {

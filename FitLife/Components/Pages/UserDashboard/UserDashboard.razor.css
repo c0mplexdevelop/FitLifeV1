@@ -97,6 +97,40 @@
         align-items: center;
     }
 
+.filter-playlist {
+    width: 100%;
+    height: 10vh;
+    margin-bottom: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.filter-playlist > button {
+    width: auto;
+    height: 50%;
+    display: flex;
+    align-items: center;
+    padding-left: 2vw;
+    padding-right: 2vw;
+    border: 0;
+    border-radius: 5px;
+    margin-left: 1vw;
+    font-family: "Poppins";
+    font-size: 2vh;
+    color: white;
+    cursor: pointer;
+}
+    .filter-playlist > button:hover {
+        color: skyblue;
+    }
+    ::deep #pending {
+        background-color: forestgreen;
+    }
+    ::deep #history {
+        background-color: darkred
+    }
+
 .workout-listLayout {
     display: flex;
     flex-wrap: wrap;
