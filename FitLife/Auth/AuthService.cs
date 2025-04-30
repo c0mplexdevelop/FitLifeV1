@@ -130,15 +130,26 @@ public class AuthService
         await _signInManager.SignOutAsync();
     }
     
-    public async Task<string> ReturnUserName()
+    public async Task<User> GetCurrentUser()
     {
         var user = await _userManager.GetUserAsync(_signInManager.Context.User);
         if (user == null)
         {
             _logger.LogError("User not found.");
-            return string.Empty;
+            throw new Exception("User not found.");
         }
+        return user;
+    }
+
+    public async Task<string> ReturnUserName()
+    {
+        var user = await GetCurrentUser();
         return user.UserName!;
     }
 
+    public async Task<int> ReturnUserId()
+    {
+        var user = await GetCurrentUser();
+        return user.Id;
+    }
 }

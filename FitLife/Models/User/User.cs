@@ -34,6 +34,7 @@ public class User : IdentityUser<int>
     // Navigation properties
     public virtual ICollection<UserExerciseSubscription> ExerciseSubscriptions { get; set; } = new List<UserExerciseSubscription>();
 
+    public virtual ICollection<UserExerciseHistory> ExerciseHistory { get; set; } = new List<UserExerciseHistory>();
     // Apparently we dont need to do this anymore.. Identity  Handles it
 
     //[Required]

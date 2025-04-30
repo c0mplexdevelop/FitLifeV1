@@ -115,5 +115,19 @@ using var scope = app.Services.CreateScope();
 var context = scope.ServiceProvider.GetRequiredService<DatabaseContext>();
 context.SeedDataAsync();
 
+await ApplyPendingMigrations(app.Services);
 
 app.Run();
+
+// --- Helper methods below ples ---
+
+static async Task ApplyPendingMigrations(IServiceProvider serviceProvider)
+{
+    using var scope = serviceProvider.CreateScope();
+    var dbContext = scope.ServiceProvider.GetRequiredService<DatabaseContext>();
+    var pendingMigrations = await dbContext.Database.GetPendingMigrationsAsync();
+    if (pendingMigrations.Any())
+    {
+        await dbContext.Database.MigrateAsync();
+    }
+}

@@ -14,6 +14,7 @@ public class DatabaseContext: IdentityDbContext<User, IdentityRole<int>, int>
     public DbSet<User> Accounts { get; set; }
     public DbSet<Exercise> Exercises { get; set; }
     public DbSet<UserExerciseSubscription> UserExerciseSubscriptions { get; set; }
+    public DbSet<UserExerciseHistory> UserExerciseHistory { get; set; }
 
     private ILogger<DatabaseContext>? _logger;
 
@@ -45,6 +46,24 @@ public class DatabaseContext: IdentityDbContext<User, IdentityRole<int>, int>
             .HasOne(ues => ues.Exercise)
             .WithMany(exercise => exercise.UserSubscriptions)
             .HasForeignKey(ues => ues.ExerciseId);
+
+        // User to Exercise history relationship
+        builder.Entity<UserExerciseHistory>()
+            .HasKey(ueh => ueh.Id);
+
+        builder.Entity<UserExerciseHistory>()
+            .Property(ueh => ueh.Id)
+            .ValueGeneratedOnAdd();
+
+        builder.Entity<UserExerciseHistory>()
+            .HasOne(ueh => ueh.User)
+            .WithMany(user => user.ExerciseHistory)
+            .HasForeignKey(ueh => ueh.UserId);
+
+        builder.Entity<UserExerciseHistory>()
+            .HasOne(ueh => ueh.Exercise)
+            .WithMany()
+            .HasForeignKey(ueh => ueh.ExerciseId);
     }
 
     public void SeedDataAsync()
