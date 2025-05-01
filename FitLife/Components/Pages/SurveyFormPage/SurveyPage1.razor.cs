@@ -39,7 +39,7 @@ public partial class SurveyPage1
         var username = await _authService.ReturnUserName();
         var user = await dbContext.Users.AsNoTracking()
             .FirstOrDefaultAsync(u => u.UserName == username);
-        _surveyModel.Gender = user.Sex.ToString();
+        _surveyModel!.Gender = user!.Sex.ToString();
         _logger.LogWarning($"Var surveymodel: {_surveyModel.Age}");
         _logger.LogWarning($"Service surveyModel: {_surveyService.SurveyModel.Age}");
         NavigationManager.NavigateTo("/survey-page2");
