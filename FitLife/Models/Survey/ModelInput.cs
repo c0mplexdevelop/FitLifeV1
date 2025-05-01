@@ -27,7 +27,7 @@ namespace FitLife.Models.Survey
         public float BMI { get; set; }
 
         [LoadColumn(6)]
-        public string BMICategory { get; set; }
+        public string BMICategory { get; set; } = string.Empty;
 
         [LoadColumn(7)]
         public float StruggledPreviously { get; set; }
