@@ -35,8 +35,8 @@
         <div class="workout-listLayout">
             @if (!IsHistory)
             {
-            @foreach (var sub in UserExercisesSubscriptions)
-            {
+                @foreach (var sub in UserExercisesSubscriptions)
+                {
                     <WorkoutList IntermediaryBase="sub" OnCompleteClick="CompleteExercise"
                                  OnDeleteClick="DeleteExercise" IsHistory="IsHistory" />
                 }
