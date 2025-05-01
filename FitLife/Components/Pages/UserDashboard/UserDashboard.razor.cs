@@ -2,6 +2,7 @@
 using FitLife.Data;
 using FitLife.Models.Exercises;
 using FitLife.Models.Intermediary;
+using FitLife.Models.Intermediary.Interfaces;
 using FitLife.Models.User;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Components;
