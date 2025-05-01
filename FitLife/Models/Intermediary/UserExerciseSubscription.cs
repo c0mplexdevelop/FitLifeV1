@@ -1,9 +1,9 @@
-﻿using System.ComponentModel.DataAnnotations;
-using FitLife.Models.Exercises;
+﻿using FitLife.Models.Exercises;
+using FitLife.Models.Intermediary.Interfaces;
 
 namespace FitLife.Models.Intermediary;
 
-public class UserExerciseSubscription
+public class UserExerciseSubscription : IIntermediaryBase
 {
     // Foreign key to the UserTable
     public int UserId { get; set; }
