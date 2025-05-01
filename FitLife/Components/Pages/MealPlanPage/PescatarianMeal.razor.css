@@ -12,6 +12,7 @@
     width: 50%;
     height: 100%;
 }
+
     .meal-details > label {
         width: auto;
         margin-left: 1vw;
@@ -20,12 +21,13 @@
     }
 
 .meal-name {
-    height:20%;
+    height: 20%;
     width: 100%;
     padding-left: 1vw;
     display: flex;
     flex-direction: column;
 }
+
     .meal-name > label {
         width: 100%;
         height: 50%;
@@ -47,8 +49,6 @@
         align-items: center;
         overflow-x: auto;
         white-space: nowrap;
-        scrollbar-width: thin;
-        scrollbar-color: white black;
     }
 
 .allergens-list {
@@ -60,6 +60,7 @@
     scrollbar-width: thin;
     scrollbar-color: white black;
 }
+
     .allergens-list > label {
         background-color: black;
         font-family: "Poppins";
@@ -80,6 +81,7 @@
     display: flex;
     flex-direction: column;
 }
+
     .description-layout > label {
         font-family: "Poppins";
         font-size: 2.5vh;
@@ -96,6 +98,7 @@
         scrollbar-width: thin;
         scrollbar-color: white black;
     }
+
         .description-layout > div > p {
             font-family: "Poppins";
             font-size: 2vh;
@@ -110,6 +113,7 @@
     display: flex;
     flex-direction: column;
 }
+
     .meal-img > label {
         background-color: rgb(128, 128, 128, 0.2);
         width: auto;
@@ -125,6 +129,7 @@
         border-left: 1px solid white;
         color: white;
     }
+
     .meal-img > img {
         width: 90%;
         height: 50%;

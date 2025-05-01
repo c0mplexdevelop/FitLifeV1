@@ -1,13 +1,23 @@
 ﻿@layout Layout.DashboardLayout
 
 @page "/meal-plans"
-
+@rendermode InteractiveServer
 <header>
     <label>Dietary Preferences: </label>
-    <button id="filter-vegan">Vegan</button>
-    <button id="filter-bulk">Bulk</button>
+    <button @onclick="viewVegetarianMeals" id="filter-vegetarian">Vegetarian</button>
+    <button @onclick="viewVeganMeals" id="filter-vegan">Vegan</button>
+    <button @onclick="viewPescatarialMeals" id ="filter-pescatarian">Pescatarian</button>
 </header>
 
-<div class="meal-plan-container">
-    <VeganMeal/>
+<div class="@showTypeOfMeal">
+    @if (showTypeOfMeal == "vegan-plan-container")
+    {
+        <VeganMeal/>
+    } else if (showTypeOfMeal == "pescatarian-plan-container")
+    {
+        <PescatarianMeal/>
+    } else if (showTypeOfMeal == "vegetarian-plan-container")
+    {
+        <VegetarianMeal/>
+    }
 </div>
