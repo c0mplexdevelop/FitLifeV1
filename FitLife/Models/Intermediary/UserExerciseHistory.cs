@@ -1,9 +1,9 @@
 ﻿using FitLife.Models.Exercises;
-using System;
+using FitLife.Models.Intermediary.Interfaces;
 
 namespace FitLife.Models.Intermediary;
 
-public class UserExerciseHistory
+public class UserExerciseHistory : IIntermediaryBase
 {
     public int Id { get; set; } // Primary key, auto-incremented
     // Foreign key to the UserTable

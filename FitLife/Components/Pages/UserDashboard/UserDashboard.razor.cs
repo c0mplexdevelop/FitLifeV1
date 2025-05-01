@@ -2,6 +2,7 @@
 using FitLife.Data;
 using FitLife.Models.Exercises;
 using FitLife.Models.Intermediary;
+using FitLife.Models.Intermediary.Interfaces;
 using FitLife.Models.User;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Components;
@@ -26,7 +27,9 @@ public partial class UserDashboard
     [Inject]
     private AuthService AuthService { get; set; } = null!;
 
+    private bool IsHistory { get; set; } = false;
     private List<UserExerciseSubscription> UserExercisesSubscriptions { get; set; } = new();
+    private List<UserExerciseHistory> UserExerciseHistory { get; set; } = new();
 
     private int completedWorkoutsCount = 0;
     protected override async Task OnInitializedAsync()
@@ -46,10 +49,17 @@ public partial class UserDashboard
 
         completedWorkoutsCount = await DbContext.UserExerciseHistory
             .CountAsync(ueh => ueh.UserId == user.Id && ueh.IsCompleted);
+
+        UserExerciseHistory = await DbContext.UserExerciseHistory.AsNoTracking()
+            .Include(ueh => ueh.Exercise)
+            .Where(ueh => ueh.UserId == user.Id)
+            .ToListAsync();
     }
 
-    public async Task CompleteExercise(UserExerciseSubscription subscription)
+    public async Task CompleteExercise(IIntermediaryBase intermediary)
     {
+        var subscription = intermediary as UserExerciseSubscription 
+            ?? new UserExerciseSubscription();
         var user = await AuthService.GetCurrentUser();
         var exercise = subscription.Exercise;
         if (exercise == null)
@@ -74,8 +84,10 @@ public partial class UserDashboard
         UserExercisesSubscriptions.Remove(subscription);
     }
 
-    public async Task DeleteExercise(UserExerciseSubscription subscription)
+    public async Task DeleteExercise(IIntermediaryBase intermediary)
     {
+        var subscription = intermediary as UserExerciseSubscription 
+            ?? new UserExerciseSubscription();
         var user = await AuthService.GetCurrentUser();
         var exercise = subscription.Exercise;
         if (exercise == null)

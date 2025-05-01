@@ -12,7 +12,7 @@ public partial class Login
 {
 
     [SupplyParameterFromForm(FormName = "LoginForm")]
-    private UserLoginCredential Model { get; set; }
+    private UserLoginCredential Model { get; set; } = default!;
 
     [CascadingParameter]
     private Task<AuthenticationState> AuthenticationStateTask { get; set; } = null!;    

@@ -4,7 +4,7 @@ namespace FitLife.Models.Exercises;
 
 public class ExercisePrediction
 {
-    public string ExerciseID { get; set; }
+    public string ExerciseID { get; set; } = string.Empty;
 
     [ColumnName("PredictedLabel")]
     public bool PredictedLabel { get; set; }

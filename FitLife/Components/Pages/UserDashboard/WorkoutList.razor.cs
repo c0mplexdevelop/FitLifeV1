@@ -1,5 +1,6 @@
 ﻿using FitLife.Models.Exercises;
 using FitLife.Models.Intermediary;
+using FitLife.Models.Intermediary.Interfaces;
 using Microsoft.AspNetCore.Components;
 
 namespace FitLife.Components.Pages.UserDashboard;
@@ -7,29 +8,32 @@ namespace FitLife.Components.Pages.UserDashboard;
 public partial class WorkoutList
 {
     [Parameter]
-    public UserExerciseSubscription Subscription { get; set; } = default!;
+    public IIntermediaryBase IntermediaryBase { get; set; } = default!;
 
     [Parameter]
-    public EventCallback<UserExerciseSubscription> OnCompleteClick { get; set; }
+    public EventCallback<IIntermediaryBase> OnCompleteClick { get; set; }
 
     [Parameter]
-    public EventCallback<UserExerciseSubscription> OnDeleteClick { get; set; }
+    public EventCallback<IIntermediaryBase> OnDeleteClick { get; set; }
 
-    private Exercise Exercise => Subscription.Exercise ?? new Exercise();
+    [Parameter]
+    public bool IsHistory { get; set; } = false;
+
+    private Exercise Exercise => IntermediaryBase.Exercise ?? new Exercise();
 
     private async Task CompleteExercise()
     {
-        if (Subscription != null)
+        if (IntermediaryBase != null)
         {
-            await OnCompleteClick.InvokeAsync(Subscription);
+            await OnCompleteClick.InvokeAsync(IntermediaryBase);
         }
     }
 
     private async Task DeleteExercise()
     {
-        if (Subscription != null)
+        if (IntermediaryBase != null)
         {
-            await OnDeleteClick.InvokeAsync(Subscription);
+            await OnDeleteClick.InvokeAsync(IntermediaryBase);
         }
     }
 }

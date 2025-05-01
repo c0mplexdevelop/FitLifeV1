@@ -67,7 +67,7 @@
             <button type="button" @onclick="closeAddedExerciseHistories" class="close-btn"></button>
         </div>
         <div class="exercise-list">
-            @foreach(var exercise in _surveyModel.Exercises)
+            @foreach(var exercise in _surveyModel!.Exercises)
             {
                 <FitLife.Components.Pages.WorkoutSelections.WorkoutComponent Exercise="exercise" Delegate="@AssignExerciseToUser" />
             }

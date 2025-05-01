@@ -29,14 +29,27 @@
     <h2>Workout Playlist</h2>
     <div>
         <div class="filter-playlist">
-            <button id="pending">Pending</button>
-            <button id="history">History</button>
+            <button @onclick="() => IsHistory = false" id="pending">Pending</button>
+            <button @onclick="() => IsHistory = true" id="history">History</button>
         </div>
         <div class="workout-listLayout">
-            @foreach (var sub in UserExercisesSubscriptions)
+            @if (!IsHistory)
             {
-                <WorkoutList Subscription="sub" OnCompleteClick="CompleteExercise" OnDeleteClick="DeleteExercise"/>
+                @foreach (var sub in UserExercisesSubscriptions)
+                {
+                    <WorkoutList IntermediaryBase="sub" OnCompleteClick="CompleteExercise"
+                                 OnDeleteClick="DeleteExercise" IsHistory="IsHistory" />
+                }
             }
+            else
+            {
+                @foreach (var history in UserExerciseHistory)
+                {
+                    <WorkoutList IntermediaryBase="history" OnCompleteClick="CompleteExercise"
+                                 OnDeleteClick="DeleteExercise" IsHistory="IsHistory" />
+                }
+            }
+            
         </div>
     </div>
 </div>

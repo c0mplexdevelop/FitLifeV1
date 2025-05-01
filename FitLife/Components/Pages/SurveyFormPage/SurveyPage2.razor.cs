@@ -1,4 +1,5 @@
-﻿using FitLife.Data;
+﻿using FitLife.Auth;
+using FitLife.Data;
 using FitLife.Models.Exercises;
 using FitLife.Models.Survey;
 using FitLife.Models.User;
@@ -25,16 +26,27 @@ public partial class SurveyPage2
     [Inject]
     private ILogger<SurveyPage2> _logger { get; set; } = default!;
 
+    [Inject]
+    private AuthService _authService { get; set; } = default!;
+
     private List<Exercise> exercises = [];
     protected override async Task OnInitializedAsync()
     {
         // Fetch the list of exercises from the database
         exercises = await dbContext.Exercises.AsNoTracking().ToListAsync();
         _surveyModel = _surveyService.SurveyModel;
+
+        var user = await _authService.GetCurrentUser();
         // Check if the survey model is null
 
         _logger.LogInformation($"SurveyModel: {_surveyModel is null}");
         await base.OnInitializedAsync();
+
+        _surveyModel!.Exercises = dbContext.UserExerciseHistory.AsNoTracking()
+            .Include(ueh => ueh.Exercise)
+            .Where(ueh => ueh.UserId == user.Id)
+            .Select(ueh => ueh.Exercise)
+            .ToList();
 
     }
 
