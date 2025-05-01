@@ -1,8 +1,11 @@
 ﻿<div class="workout-container">
     <header>
         <label>@Exercise.Name</label>
-        <button @onclick="CompleteExercise" id="mark-as-done" title="Mark as done"></button>
-        <button @onclick="DeleteExercise" id="show-info" title="Cancel Workout"></button>
+        @if(!IsHistory)
+        {
+            <button @onclick="CompleteExercise" id="mark-as-done" title="Mark as done"></button>
+            <button @onclick="DeleteExercise" id="show-info" title="Cancel Workout"></button>
+        }
     </header>
     <div class="details-layout">
         <div>
