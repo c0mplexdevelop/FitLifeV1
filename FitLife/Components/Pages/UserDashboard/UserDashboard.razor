@@ -33,10 +33,23 @@
             <button @onclick="() => IsHistory = true" id="history">History</button>
         </div>
         <div class="workout-listLayout">
+            @if (!IsHistory)
+            {
             @foreach (var sub in UserExercisesSubscriptions)
             {
-                <WorkoutList Subscription="sub" OnCompleteClick="CompleteExercise" OnDeleteClick="DeleteExercise"/>
+                    <WorkoutList IntermediaryBase="sub" OnCompleteClick="CompleteExercise"
+                                 OnDeleteClick="DeleteExercise" IsHistory="IsHistory" />
+                }
             }
+            else
+            {
+                @foreach (var history in UserExerciseHistory)
+                {
+                    <WorkoutList IntermediaryBase="history" OnCompleteClick="CompleteExercise"
+                                 OnDeleteClick="DeleteExercise" IsHistory="IsHistory" />
+                }
+            }
+            
         </div>
     </div>
 </div>
