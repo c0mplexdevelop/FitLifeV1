@@ -1,0 +1,139 @@
+﻿
+.meal-container {
+    background: linear-gradient(to right, white, black);
+    width: 80%;
+    height: 85%;
+    margin: 1vh auto 0vh auto;
+    display: flex;
+    flex-direction: row;
+}
+
+.meal-details {
+    width: 50%;
+    height: 100%;
+}
+
+    .meal-details > label {
+        width: auto;
+        margin-left: 1vw;
+        font-family: "Poppins";
+        font-size: 2.5vh;
+    }
+
+.meal-name {
+    height: 20%;
+    width: 100%;
+    padding-left: 1vw;
+    display: flex;
+    flex-direction: column;
+}
+
+    .meal-name > label {
+        width: 100%;
+        height: 50%;
+        font-family: "Poppins";
+        font-size: 3.5vh;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        white-space: nowrap;
+    }
+
+    .meal-name > p {
+        width: 100%;
+        height: 50%;
+        font-family: "Poppins";
+        font-size: 2.5vh;
+        margin-top: 1vh;
+        display: flex;
+        align-items: center;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
+.allergens-list {
+    width: 95%;
+    height: auto;
+    margin-left: 1vw;
+    overflow-x: auto;
+    white-space: nowrap;
+    scrollbar-width: thin;
+    scrollbar-color: white black;
+}
+
+    .allergens-list > label {
+        background-color: black;
+        font-family: "Poppins";
+        font-size: 2.5vh;
+        font-weight: 600;
+        color: white;
+        padding-left: 1vw;
+        padding-right: 1vw;
+        height: 100%;
+        width: auto;
+    }
+
+.description-layout {
+    width: 100%;
+    height: 30%;
+    padding-left: 1vw;
+    margin-top: 2vh;
+    display: flex;
+    flex-direction: column;
+}
+
+    .description-layout > label {
+        font-family: "Poppins";
+        font-size: 2.5vh;
+    }
+
+    .description-layout > div {
+        background-color: rgb(0, 0, 0, 0.1);
+        margin-top: auto;
+        width: 100%;
+        height: 80%;
+        display: flex;
+        flex-direction: column;
+        overflow: auto;
+        scrollbar-width: thin;
+        scrollbar-color: white black;
+    }
+
+        .description-layout > div > p {
+            font-family: "Poppins";
+            font-size: 2vh;
+            font-weight: 300;
+            margin-top: 1vh;
+            line-height: 4vh;
+        }
+
+.meal-img {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+    .meal-img > label {
+        background-color: rgb(128, 128, 128, 0.2);
+        width: auto;
+        height: 7%;
+        margin: 1vh 1vw 0vh auto;
+        padding-left: 1vw;
+        padding-right: 1vw;
+        display: flex;
+        align-items: center;
+        font-family: "Poppins";
+        font-size: 2.5vh;
+        font-weight: 600;
+        border-left: 1px solid white;
+        color: white;
+    }
+
+    .meal-img > img {
+        width: 90%;
+        height: 50%;
+        margin: auto;
+        border-radius: 10px;
+        box-shadow: 0px 0px 5px white;
+    }
