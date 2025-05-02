@@ -121,3 +121,10 @@ public partial class UserDashboard
         };
     }
 }
+
+public enum ViewMode
+{
+    Ongoing,
+    Completed,
+    Cancelled
+}
