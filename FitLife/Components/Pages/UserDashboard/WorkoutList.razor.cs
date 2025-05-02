@@ -17,7 +17,7 @@ public partial class WorkoutList
     public EventCallback<IIntermediaryBase> OnDeleteClick { get; set; }
 
     [Parameter]
-    public bool IsHistory { get; set; } = false;
+    public ViewMode ViewFilter { get; set; }
 
     private Exercise Exercise => IntermediaryBase.Exercise ?? new Exercise();
 

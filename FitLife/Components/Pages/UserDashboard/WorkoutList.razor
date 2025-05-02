@@ -1,7 +1,7 @@
 ﻿<div class="workout-container">
     <header>
         <label>@Exercise.Name</label>
-        @if(!IsHistory)
+        @if(ViewFilter == ViewMode.Ongoing)
         {
             <button @onclick="CompleteExercise" id="mark-as-done" title="Mark as done"></button>
             <button @onclick="DeleteExercise" id="show-info" title="Cancel Workout"></button>
