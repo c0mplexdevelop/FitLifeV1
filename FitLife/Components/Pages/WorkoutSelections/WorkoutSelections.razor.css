@@ -53,12 +53,18 @@
         #strengthBtn:hover {
             color: skyblue;
         }
+        #strengthBtn:focus {
+            color: skyblue;
+        }
     #coreBtn {
         background: url("images/WorkoutFilters/CORE-muscle-body (1).svg") no-repeat 10px center;
         background-size: 20% 100%;
         background-color: #EE1D52;
     }
         #coreBtn:hover {
+            color: skyblue;
+        }
+        #coreBtn:focus {
             color: skyblue;
         }
     #flexBtn {
@@ -68,11 +74,17 @@
         #flexBtn:hover {
             color:  skyblue;
         }
+        #flexBtn:focus {
+            color: skyblue;
+        }
     #cardioBtn {
         background:skyblue url("images/WorkoutFilters/CARDIO--WHITE.svg") no-repeat 10px center;
         background-size: 15% 100%;
     } 
         #cardioBtn:hover {
+            color: skyblue;
+        }
+        #cardioBtn:focus {
             color: skyblue;
         }
     #plyoBtn {
@@ -82,12 +94,17 @@
         #plyoBtn:hover {
             color: skyblue;
         }
-
+        #plyoBtn:focus {
+            color: skyblue;
+        }
     #mobilityBtn {
         background: blue url("images/WorkoutFilters/sprint.svg") no-repeat 10px center;
         background-size: 20% 100%;
     }
         #mobilityBtn:hover {
+            color: skyblue;
+        }
+        #mobilityBtn:focus {
             color: skyblue;
         }
     #powerBtn {
@@ -97,7 +114,9 @@
         #powerBtn:hover {
             color: skyblue;
         }
-
+        #powerBtn:focus {
+            color: skyblue;
+        }
     #allBtn {
         background:limegreen url("images/WorkoutFilters/whitedumbbell.png") no-repeat 10px center;
         background-size: 25% 70%;
@@ -105,7 +124,9 @@
         #allBtn:hover {
             color: skyblue;
         }
-
+        #allBtn:focus {
+            color: skyblue;
+        }
 /*FOR WORKOUT PLAYLIST CONTENT*/
 .container {
     width: 95%;
