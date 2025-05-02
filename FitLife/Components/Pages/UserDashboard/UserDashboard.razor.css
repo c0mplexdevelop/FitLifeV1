@@ -124,7 +124,7 @@
     .filter-playlist > button:hover {
         color: skyblue;
     }
-    ::deep #pending {
+    ::deep #ongoing {
         background-color: forestgreen;
     }
     ::deep #history {
