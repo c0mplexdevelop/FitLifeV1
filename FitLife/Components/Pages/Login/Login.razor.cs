@@ -28,6 +28,13 @@ public partial class Login
     [Inject]
     private ILogger<Login> Logger { get; set; } = null!;
 
+    // For Login Validation UI
+    private string validationLogin = "";
+    private string validationResult = "";
+    private string validationResultImg = "";
+    private string hideValidationLogin = "hidden";
+    private bool isLoginValid = false;
+
     protected override async Task OnInitializedAsync()
     {
         Model ??= new UserLoginCredential();
@@ -51,7 +58,6 @@ public partial class Login
             Logger.LogInformation("User is not authenticated, showing login page");
         }
 
-
         await base.OnInitializedAsync();
     }
 
@@ -60,14 +66,54 @@ public partial class Login
         var result = await AuthService.SignInUser(Model!);
         if (result.Succeeded)
         {
-            NavigationManager.NavigateTo("/user-dashboard", forceLoad: true);
+            loginValidationSuccess();
+            //NavigationManager.NavigateTo("/user-dashboard", forceLoad: true);
         }
         else
         {
+            loginValidationError();
             errorMessage = "Invalid login attempt.";
-            NavigationManager.NavigateTo("/login/");
+            //NavigationManager.NavigateTo("/login/");
         }
         Logger.LogInformation($"Login attempt with identifier: {Model.LoginIdentifier}");
+    }
+
+    private void loginValidationSuccess()
+    {
+        if (!isLoginValid)
+        {
+            validationLogin = "overlay";
+            validationResult = "Login Successfully!";
+            validationResultImg = "images/login-validation/check-black.svg";
+            hideValidationLogin = string.Empty;
+        }
+        else
+        {
+            validationLogin = string.Empty;
+            validationResult = string.Empty;
+            validationResultImg = string.Empty;
+            hideValidationLogin = "hidden";
+        }
+        isLoginValid = !isLoginValid;
+    }
+
+    private void loginValidationError()
+    {
+        if (!isLoginValid)
+        {
+            validationLogin = "overlay";
+            validationResult = "Login Failed!";
+            validationResultImg = "images/login-validation/error-black.svg";
+            hideValidationLogin = string.Empty;
+        }
+        else
+        {
+            validationLogin = string.Empty;
+            validationResult = string.Empty;
+            validationResultImg = string.Empty;
+            hideValidationLogin = "hidden";
+        }
+        isLoginValid = !isLoginValid;
     }
 
 }
