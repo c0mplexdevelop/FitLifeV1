@@ -79,12 +79,29 @@ public partial class PersonalDetails
         User? user = await AuthService.RegisterUserAsync(State);
         if (user != null)
         {
-            Navigation.NavigateTo("/");
+            RegisteredSuccessfully();
         }
         else
         {
             Logger.LogError("User registration failed.");
         }
+    }
+
+    private string successRegistration = "";
+    private string hideRegistration = "hidden";
+    private bool isRegistrationSuccess = false;
+    private void RegisteredSuccessfully()
+    {
+        if (!isRegistrationSuccess)
+        {
+            successRegistration = "overlay";
+            hideRegistration = string.Empty;
+        } else
+        {
+            successRegistration = string.Empty;
+            hideRegistration = "hidden";
+        }
+        isRegistrationSuccess = !isRegistrationSuccess;
     }
 }
 
