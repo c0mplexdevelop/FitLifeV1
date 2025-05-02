@@ -27,7 +27,7 @@ public partial class UserDashboard
     [Inject]
     private AuthService AuthService { get; set; } = null!;
 
-    private bool IsHistory { get; set; } = false;
+    private ViewMode ViewFilter { get; set; } = ViewMode.Ongoing;
     private List<UserExerciseSubscription> UserExercisesSubscriptions { get; set; } = new();
     private List<UserExerciseHistory> UserExerciseHistory { get; set; } = new();
 
@@ -119,6 +119,26 @@ public partial class UserDashboard
             ExerciseId = subscription.Exercise.Id,
             IsCompleted = isComplete
         };
+    }
+
+    private async Task ChangeViewFilter(ViewMode viewMode)
+    {
+        var user = await AuthService.GetCurrentUser();
+        ViewFilter = viewMode;
+        if(viewMode == ViewMode.Completed)
+        {
+            UserExerciseHistory = await DbContext.UserExerciseHistory
+                .Include(ueh => ueh.Exercise)
+                .Where(ueh => ueh.UserId == user.Id && ueh.IsCompleted)
+                .ToListAsync();
+        } else if(viewMode == ViewMode.Cancelled)
+        {
+            UserExerciseHistory = await DbContext.UserExerciseHistory
+                .Include(ueh => ueh.Exercise)
+                .Where(ueh => ueh.UserId == user.Id && !ueh.IsCompleted)
+                .ToListAsync();
+        }
+        await InvokeAsync(StateHasChanged);
     }
 }
 
