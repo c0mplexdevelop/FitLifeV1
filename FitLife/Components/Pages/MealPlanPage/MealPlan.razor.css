@@ -31,18 +31,30 @@ header {
         margin-right: 1vw;
         cursor: pointer;
     }
+        header > button:hover {
+            color: skyblue;
+        }
 
     #filter-vegan {
         background-color: rgb(0, 255, 33);
     }
+        #filter-vegan:focus {
+            color: skyblue;
+        }
 
     #filter-pescatarian {
         background-color: rgb(85, 6, 6);
     }
+        #filter-pescatarian:focus {
+            color: skyblue;
+        }
 
     #filter-vegetarian {
         background-color: green;
     }
+        #filter-vegetarian:focus {
+            color: skyblue;
+        }
 
 .vegan-plan-container {
     background: linear-gradient(to right, white, black);

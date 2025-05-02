@@ -11,6 +11,8 @@
     [Inject]
     private AuthService AuthService { get; set; } = default!;
 
+    private string hideValidation = "hidden";
+    private bool isValidationOn = false;
 
     protected override async Task OnInitializedAsync()
     {
@@ -20,11 +22,16 @@
 
         if (user.Identity!.IsAuthenticated)
         {
-            // Assuming you have a method to sign out the user
             await AuthService.SignOutUser();
-
-            NavigationManager.NavigateTo("/login");
         }
         await base.OnInitializedAsync();
     }
 }
+
+<div id="logout-validation" class="overlay">
+    <div class="validation-logout">
+        <img src="images/login-validation/check-black.svg" />
+        <label>Logout Successfully!</label>
+        <button type="button" onclick="closeLogoutValidation()">Close</button>
+    </div>
+</div>
