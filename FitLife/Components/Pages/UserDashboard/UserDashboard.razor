@@ -29,16 +29,17 @@
     <h2>Workout Playlist</h2>
     <div>
         <div class="filter-playlist">
-            <button @onclick="() => IsHistory = false" id="pending">Pending</button>
-            <button @onclick="() => IsHistory = true" id="history">History</button>
+            <button @onclick="() => ChangeViewFilter(ViewMode.Ongoing)" id="ongoing">Ongoing</button>
+            <button @onclick="() => ChangeViewFilter(ViewMode.Completed)" id="history">Completed</button>
+            <button @onclick="() => ChangeViewFilter(ViewMode.Cancelled)" id="history">Cancelled</button>
         </div>
         <div class="workout-listLayout">
-            @if (!IsHistory)
+            @if (ViewFilter == ViewMode.Ongoing)
             {
                 @foreach (var sub in UserExercisesSubscriptions)
                 {
                     <WorkoutList IntermediaryBase="sub" OnCompleteClick="CompleteExercise"
-                                 OnDeleteClick="DeleteExercise" IsHistory="IsHistory" />
+                                 OnDeleteClick="DeleteExercise" ViewFilter="ViewFilter" />
                 }
             }
             else
@@ -46,7 +47,7 @@
                 @foreach (var history in UserExerciseHistory)
                 {
                     <WorkoutList IntermediaryBase="history" OnCompleteClick="CompleteExercise"
-                                 OnDeleteClick="DeleteExercise" IsHistory="IsHistory" />
+                                 OnDeleteClick="DeleteExercise" ViewFilter="ViewFilter" />
                 }
             }
             
