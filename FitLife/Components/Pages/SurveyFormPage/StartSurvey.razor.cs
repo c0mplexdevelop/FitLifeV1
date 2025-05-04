@@ -1,5 +1,8 @@
-﻿namespace FitLife.Components.Pages.SurveyFormPage
+﻿using Microsoft.AspNetCore.Authorization;
+
+namespace FitLife.Components.Pages.SurveyFormPage
 {
+    [Authorize]
     public partial class StartSurvey
     {
         private bool isLoading = true;

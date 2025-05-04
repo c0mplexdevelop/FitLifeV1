@@ -11,6 +11,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace FitLife.Components.Pages.UserDashboard;
 
+[Authorize]
 public partial class UserDashboard
 {
     [CascadingParameter]
