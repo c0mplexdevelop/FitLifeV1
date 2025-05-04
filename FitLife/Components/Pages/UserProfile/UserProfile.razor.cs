@@ -1,6 +1,7 @@
 ﻿using FitLife.Auth;
 using FitLife.Data;
 using FitLife.Models.User;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Authorization;
 using Microsoft.AspNetCore.Components.Web;
@@ -8,6 +9,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace FitLife.Components.Pages.UserProfile
 {
+    [Authorize]
     public partial class UserProfile
     {
         private string emailOverlay = "hidden";

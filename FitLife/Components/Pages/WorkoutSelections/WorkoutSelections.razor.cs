@@ -3,12 +3,14 @@ using FitLife.Data;
 using FitLife.Models.Exercises;
 using FitLife.Models.Intermediary;
 using FitLife.Models.User;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Components;
 using Microsoft.EntityFrameworkCore;
 using System.Threading.Tasks;
 
 namespace FitLife.Components.Pages.WorkoutSelections;
 
+[Authorize]
 public partial class WorkoutSelections
 {
     private List<Exercise> Exercises { get; set; } = new();
