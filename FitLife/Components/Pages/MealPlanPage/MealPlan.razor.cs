@@ -1,7 +1,8 @@
-﻿using Microsoft.AspNetCore.Components.Web;
+﻿using Microsoft.AspNetCore.Authorization;
 
 namespace FitLife.Components.Pages.MealPlanPage
 {
+    [Authorize]
     public partial class MealPlan
     {
         private string showTypeOfMeal = "vegetarian-plan-container";

@@ -124,6 +124,9 @@
     .filter-playlist > button:hover {
         color: skyblue;
     }
+    .filter-playlist > button:focus {
+        color: skyblue;
+    }
     ::deep #ongoing {
         background-color: forestgreen;
     }
